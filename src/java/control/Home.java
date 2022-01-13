@@ -37,8 +37,10 @@ public class Home extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         DAO dao = new DAO();
+         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
         request.setAttribute("listCate", listC);
+        request.setAttribute("listP", list);
         request.getRequestDispatcher("Home.jsp").forward(request, response);
     }
 
