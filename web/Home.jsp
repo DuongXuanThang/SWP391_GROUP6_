@@ -76,10 +76,10 @@
                             <li><a href="./shop-grid.html">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="Detail.jsp">Shop Details</a></li>
+                                    <li><a href="Cart.jsp">Shoping Cart</a></li>
+                                    <li><a href="Checkout.jsp">Check Out</a></li>
+                                   
                                 </ul>
                             </li>
                             
@@ -116,7 +116,7 @@
                         </div>
                         <ul>
                             <c:forEach items="${listCate}" var="o">
-                                <li class="list-group-item text-white"><a href="#">${o.cname}</a></li>
+                                <li class="list-group-item text-white"><a href="Detail.jsp">${o.cname}</a></li>
                             </c:forEach>
                         </ul>
                     </div>
@@ -130,7 +130,7 @@
                                     <span class="arrow_carrot-down"></span>
                                 </div>
                                 <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">Search</button>
+                                <button type="submit" class="site-btn">Tìm kiếm</button>
                             </form>
                         </div>
                         <div class="hero__search__phone">
@@ -148,7 +148,7 @@
                             <span>FRUIT FRESH</span>
                             <h2>Vegetable <br />100% Organic</h2>
                             <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <a href="Detail.jsp" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>
                 </div>
@@ -164,27 +164,27 @@
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat_thuoc1.jpg">
-                            <h5><a href="#">Trunature</a></h5>
+                            <h5><a href="Detail.jsp">Trunature</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat_thuoc2.jpg">
-                            <h5><a href="#">Glumet</a></h5>
+                            <h5><a href="Detail.jsp">Glumet</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat_thuoc3.jpg">
-                            <h5><a href="#">Vegetables</a></h5>
+                            <h5><a href="Detail.jsp">Vegetables</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat_thuoc4.png">
-                            <h5><a href="#">Alpha brenNL</a></h5>
+                            <h5><a href="Detail.jsp">Alpha brenNL</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat_thuoc5.jpg">
-                            <h5><a href="#">Bvinko</a></h5>
+                            <h5><a href="Detail.jsp">Bvinko</a></h5>
                         </div>
                     </div>
                 </div>
@@ -204,10 +204,8 @@
                     <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Oranges</li>
-                            <li data-filter=".fresh-meat">Fresh Meat</li>
-                            <li data-filter=".vegetables">Vegetables</li>
-                            <li data-filter=".fastfood">Fastfood</li>
+                             
+                               <li data-filter=".oranges">${o.cname}</li>   
                         </ul>
                     </div>
                 </div>
@@ -223,7 +221,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Featured Product</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
@@ -238,7 +236,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Featured Product</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
@@ -253,7 +251,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Featured Product</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
@@ -268,7 +266,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Featured Product</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
@@ -283,7 +281,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Featured Product</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
@@ -298,7 +296,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Featured Product</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
@@ -313,7 +311,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Featured Product</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
@@ -328,7 +326,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Featured Product</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
@@ -371,7 +369,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -380,7 +378,7 @@
                                         <img src="img/latest-product/lp-2.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -389,7 +387,7 @@
                                         <img src="img/latest-product/lp-3.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -400,7 +398,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -409,7 +407,7 @@
                                         <img src="img/latest-product/lp-2.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -418,7 +416,7 @@
                                         <img src="img/latest-product/lp-3.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -436,7 +434,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -445,7 +443,7 @@
                                         <img src="img/latest-product/lp-2.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -454,7 +452,7 @@
                                         <img src="img/latest-product/lp-3.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -465,7 +463,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -474,7 +472,7 @@
                                         <img src="img/latest-product/lp-2.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -483,7 +481,7 @@
                                         <img src="img/latest-product/lp-3.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -501,7 +499,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -510,7 +508,7 @@
                                         <img src="img/latest-product/lp-2.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -519,7 +517,7 @@
                                         <img src="img/latest-product/lp-3.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -530,7 +528,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -539,7 +537,7 @@
                                         <img src="img/latest-product/lp-2.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -548,7 +546,7 @@
                                         <img src="img/latest-product/lp-3.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Featured Product</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
