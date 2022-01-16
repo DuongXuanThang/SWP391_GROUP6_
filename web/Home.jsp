@@ -73,7 +73,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="./index.html">Trang chủ</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li><a href="Shopgrid.jsp">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="Detail.jsp">Shop Details</a></li>
