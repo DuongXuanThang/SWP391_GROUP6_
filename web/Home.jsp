@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="Home.jsp"><img src="img/lastlogo.png " width="120" height="120" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -567,7 +567,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                            <a href="Home.jsp"><img src="img/safety shop (1).png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>
