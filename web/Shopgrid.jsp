@@ -15,7 +15,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>Safety Shop</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -69,14 +69,14 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="Home.jsp"><img src="img/lastlogo.png " width="120" height="120" alt=""></a>
+                        <a href="Home.jsp"><img src="img/lastlogo.png" width="120" height="120" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Trang chủ</a></li>
-                            <li><a href="Shopgrid.jsp">Shop</a></li>
+                            <li><a href="Home.jsp">Trang chủ</a></li>
+                            <li class="active"><a href="Shopgrid.jsp">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="Detail.jsp">Shop Details</a></li>

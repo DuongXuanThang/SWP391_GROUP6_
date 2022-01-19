@@ -66,19 +66,19 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="Home.jsp"><img src="img/lastlogo.png " width="120" height="120" alt=""></a>
+                        <a href="Home.jsp"><img src="img/lastlogo.png" width="120" height="120" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="./index.html">Trang chủ</a></li>
-                            <li><a href="Shopgrid.jsp">Shop</a></li>
-                            <li><a href="#">Pages</a>
+                            <li><a href="Shopgrid.jsp">Cửa hàng</a></li>
+                            <li><a href="#">Trang</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="Detail.jsp">Shop Details</a></li>
-                                    <li><a href="Cart.jsp">Shoping Cart</a></li>
-                                    <li><a href="Checkout.jsp">Check Out</a></li>
+                                    <li><a href="Detail.jsp">Chi tiết cửa hàng</a></li>
+                                    <li><a href="Cart.jsp">Giỏ hàng</a></li>
+                                    <li><a href="Checkout.jsp">Thanh toán</a></li>
                                    
                                 </ul>
                             </li>
@@ -112,7 +112,7 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>All departments</span>
+                            <span>Loại sản phẩm</span>
                         </div>
                         <ul>
                             <c:forEach items="${listCate}" var="o">
@@ -145,10 +145,10 @@
                     </div>
                     <div class="hero__item set-bg" data-setbg="img/hero/thuoc1.png">
                         <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="Detail.jsp" class="primary-btn">SHOP NOW</a>
+                            <span><h2>Glumet</h2></span>
+                            <h2>Feel better<br />Live longer</h2>
+                            <p>Chăm sóc sức khỏe – chia sẻ niềm vui</p>
+                            <a href="Shopgrid.jsp" class="primary-btn">Mua ngay!</a>
                         </div>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat_thuoc3.jpg">
-                            <h5><a href="Detail.jsp">Vegetables</a></h5>
+                            <h5><a href="Detail.jsp">Orihio</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
