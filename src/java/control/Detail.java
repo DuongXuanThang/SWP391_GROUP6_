@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "Home", urlPatterns = {"/Home"})
-public class Home extends HttpServlet {
+@WebServlet(name = "Detail", urlPatterns = {"/Detail"})
+public class Detail extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,11 +37,12 @@ public class Home extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         DAO dao = new DAO();
-        List<Product> list = dao.getAllProduct();
+       
         List<Category> listC = dao.getAllCategory();
         request.setAttribute("listCate", listC);
-        request.setAttribute("listP", list);
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
+        
+        request.getRequestDispatcher("Detail.jsp").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
