@@ -3,14 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/SWP391/SWP391_GROUP6_/web/Home.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_/web/Checkout.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_/web/css2/bootstrap.min.css</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_/src/java/context/DBContext.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_/web/Login.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/src/java/control/Detail.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_/src/java/control/Home.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/src/java/control/Shopgrid.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/web/Login.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/src/java/context/DBContext.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/src/java/control/Checkout.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/web/Home.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_/web/Detail.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/web/Cart.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/web/Checkout.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_/src/java/dao/DAO.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/src/java/control/Cart.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/web/css2/bootstrap.min.css</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_/web/Shopgrid.jsp</file>
         </group>
     </open-files>
 </project-private>
