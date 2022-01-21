@@ -622,8 +622,9 @@ ol {
 	padding-bottom: 12px;
 }
 
-.hero__categories ul li {
+.hero__categories ul li :hover {
 	list-style: none;
+        background-color: greenyellow;
 }
 
 .hero__categories ul li a {
