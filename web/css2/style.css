@@ -624,7 +624,7 @@ ol {
 
 .hero__categories ul li :hover {
 	list-style: none;
-        background-color: greenyellow;
+        background-color: yellowgreen;
 }
 
 .hero__categories ul li a {
