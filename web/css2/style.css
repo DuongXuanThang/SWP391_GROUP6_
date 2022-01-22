@@ -622,9 +622,10 @@ ol {
 	padding-bottom: 12px;
 }
 
-.hero__categories ul li :hover {
+.hero__categories ul li {
 	list-style: none;
         background-color: yellowgreen;
+       
 }
 
 .hero__categories ul li a {
@@ -632,7 +633,9 @@ ol {
 	color: #1c1c1c;
 	line-height: 39px;
 	display: block;
+        
 }
+
 
 .hero__search {
 	overflow: hidden;
