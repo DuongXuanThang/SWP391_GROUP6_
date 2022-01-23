@@ -7,6 +7,7 @@ package control;
 
 import dao.DAO;
 import entity.Category;
+import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -35,12 +36,12 @@ public class Shopgrid extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        response.setContentType("text/html;charset=UTF-8");
+        
         DAO dao = new DAO();
-       
+        List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
         request.setAttribute("listCate", listC);
-        
+        request.setAttribute("listP", list);
         request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
         }
     
