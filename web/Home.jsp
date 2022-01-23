@@ -33,75 +33,7 @@
 <body>
 
     <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> thanngdxse@gmail.com</li>
-                               
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                            </div>
-                            
-                            <div class="header__top__right__auth">
-                                <a href="Login.jsp"><i class="fa fa-user"></i> Đăng nhập</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="Home.jsp"><img src="img/lastlogo.png" width="120" height="120" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                            <li class="active"><a href="./index.html">Trang chủ</a></li>
-                            <li><a href="Shopgrid.jsp">Cửa hàng</a></li>
-                            <li><a href="#">Trang</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="Detail.jsp">Chi tiết cửa hàng</a></li>
-                                    <li><a href="Cart.jsp">Giỏ hàng</a></li>
-                                    <li><a href="Checkout.jsp">Thanh toán</a></li>
-                                   
-                                </ul>
-                            </li>
-                            
-                            <li><a href="./contact.html">Liên hệ</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="Cart.jsp"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </header>
+    
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
@@ -199,7 +131,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Featured Product</h2>
+                        <h2>Loại sản phẩm</h2>
                     </div>
                     <div class="featured__controls">
                         <ul>
