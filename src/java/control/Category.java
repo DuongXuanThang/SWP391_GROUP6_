@@ -5,8 +5,12 @@
  */
 package control;
 
+import dao.DAO;
+import entity.Product;
+import static java.awt.PageAttributes.MediaType.D;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,7 +36,12 @@ public class Category extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
+       String cateID = request.getParameter("cid");
+       DAO dao = new DAO();
+        List<Product> list= dao.getProductbyCId(cateID);
+        request.setAttribute("listP",list);
+       //lay id category
+       request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

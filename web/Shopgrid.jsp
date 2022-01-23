@@ -67,7 +67,7 @@
                             
                             <ul>
                             <c:forEach items="${listCate}" var="o">
-                               <li><a href="#">${o.cname}</a></li>
+                               <li><a href="Category?cid=${o.cid}">${o.cname}</a></li>
                             </c:forEach>
                                 
                             </ul>
