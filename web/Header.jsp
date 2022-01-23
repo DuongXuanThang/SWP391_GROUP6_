@@ -69,9 +69,10 @@
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
+                      
                         <ul>
-                            <li id="1" class="active"><a href="Home.jsp">Trang chủ</a></li>
-                            <li id="2"><a href="Shopgrid.jsp">Cửa hàng</a></li>
+                            <li ><a href="Home.jsp">Trang chủ</a></li>
+                            <li class="activeStatus"><a href="Shopgrid.jsp">Cửa hàng</a></li>
                             <li><a href="#">Trang</a>
                                 <ul class="header__menu__dropdown">
                                    
@@ -132,5 +133,7 @@
             </div>
         </div>
     </section>
+    
     </body>
+   
 </html>
