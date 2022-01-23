@@ -1112,6 +1112,9 @@ ol {
 	display: block;
         list-style-type: none;
 }
+.sidebar__item .actived {
+background-color: #7fad39 ;
+}
 
 .sidebar__item .latest-product__text {
 	position: relative;

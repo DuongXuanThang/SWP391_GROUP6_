@@ -70,18 +70,18 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Trang chủ</a></li>
-                            <li><a href="Shopgrid.jsp">Cửa hàng</a></li>
+                            <li id="1" class="active"><a href="Home.jsp">Trang chủ</a></li>
+                            <li id="2"><a href="Shopgrid.jsp">Cửa hàng</a></li>
                             <li><a href="#">Trang</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="Detail.jsp">Chi tiết cửa hàng</a></li>
+                                   
                                     <li><a href="Cart.jsp">Giỏ hàng</a></li>
                                     <li><a href="Checkout.jsp">Thanh toán</a></li>
                                    
                                 </ul>
                             </li>
                             
-                            <li><a href="./contact.html">Liên hệ</a></li>
+                            <li id="3"><a href="#">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>
