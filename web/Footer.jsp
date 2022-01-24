@@ -20,7 +20,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="Home.jsp"><img src="img/safety shop (1).png" alt=""></a>
+                            <a href="Home"><img src="img/safety shop (1).png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>

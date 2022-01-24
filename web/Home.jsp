@@ -72,8 +72,8 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="Home.jsp">Trang chủ</a></li>
-                            <li><a href="Shopgrid.jsp">Cửa hàng</a></li>
+                            <li class="active"><a href="Home">Trang chủ</a></li>
+                            <li><a href="Shopgrid">Cửa hàng</a></li>
                             <li><a href="#">Trang</a>
                                 <ul class="header__menu__dropdown">
                                     
@@ -91,7 +91,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="Cart.jsp"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="Cart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
@@ -116,7 +116,7 @@
                         </div>
                         <ul>
                             <c:forEach items="${listCate}" var="o">
-                                <li class="list-group-item text-white"><a href="Detail.jsp">${o.cname}</a></li>
+                                <li class="list-group-item text-white"><a href="Category?cid=${o.cid}">${o.cname}</a></li>
                             </c:forEach>
                         </ul>
                     </div>
@@ -129,7 +129,7 @@
                                     Tất cả sản phẩm
                                     <span class="arrow_carrot-down"></span>
                                 </div>
-                                <input type="text" placeholder="What do yo u need?">
+                                <input name="txt" value="txtS"  type="text" placeholder="Tìm kiếm sản phẩm">
                                 <button type="submit" class="site-btn">Tìm kiếm</button>
                             </form>
                         </div>
@@ -206,7 +206,7 @@
                         <ul>
                             
                              <c:forEach items="${listCate}" var="o">
-                                <li data-filter="*">${o.cname}</li>
+                                <li class="${tag == o.cid ? "actived" : "" }"><a href="Home?cid=${o.cid}">${o.cname}</a></li>
                             </c:forEach> 
                               
                         </ul>

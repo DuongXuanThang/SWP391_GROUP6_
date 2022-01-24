@@ -5,12 +5,8 @@
  */
 package control;
 
-import dao.DAO;
-import entity.Product;
-import static java.awt.PageAttributes.MediaType.D;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "Category", urlPatterns = {"/Category"})
-public class Category extends HttpServlet {
+@WebServlet(name = "Login", urlPatterns = {"/Login"})
+public class Login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,20 +32,18 @@ public class Category extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String cateID = request.getParameter("cid");
-        DAO dao = new DAO();
-        List<Product> list= dao.getProductbyCId(cateID);//lay id category
-        request.setAttribute("listP",list);
-        List<entity.Category> listC = dao.getAllCategory();
-        request.setAttribute("listCate", listC);
-        
-        request.setAttribute("tag", cateID);
-       
-        List<Product> listLast = dao.getlastProducts();
-        request.setAttribute("listLast", listLast);
-       request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
-       
-        
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Logiin</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Logiin at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

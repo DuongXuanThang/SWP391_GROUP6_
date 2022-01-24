@@ -53,7 +53,7 @@
                             </div>
                             
                             <div class="header__top__right__auth">
-                                <a href="Login.jsp"><i class="fa fa-user"></i> Đăng nhập</a>
+                                <a href="Login"><i class="fa fa-user"></i> Đăng nhập</a>
                             </div>
                         </div>
                     </div>
@@ -64,20 +64,20 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="Home.jsp"><img src="img/lastlogo.png" width="120" height="120" alt=""></a>
+                        <a href="Home"><img src="img/lastlogo.png" width="120" height="120" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                       
                         <ul>
-                            <li ><a href="Home.jsp">Trang chủ</a></li>
-                            <li class="activeStatus"><a href="Shopgrid.jsp">Cửa hàng</a></li>
+                            <li ><a href="Home">Trang chủ</a></li>
+                            <li class="activeStatus"><a href="Shopgrid">Cửa hàng</a></li>
                             <li><a href="#">Trang</a>
                                 <ul class="header__menu__dropdown">
                                    
-                                    <li><a href="Cart.jsp">Giỏ hàng</a></li>
-                                    <li><a href="Checkout.jsp">Thanh toán</a></li>
+                                    <li><a href="Cart">Giỏ hàng</a></li>
+                                    <li><a href="Checkout">Thanh toán</a></li>
                                    
                                 </ul>
                             </li>
@@ -114,7 +114,7 @@
                                     Tất cả sản phẩm
                                     <span class="arrow_carrot-down"></span>
                                 </div>
-                                <input name="txt" value="${txtS}" type="text" placeholder="Tìm kiếm sản phẩm?">
+                                <input name="txt" value="${txtS}" type="text" placeholder="Tìm kiếm sản phẩm">
                                 <button type="submit" class="site-btn">Tìm kiếm</button>
                             </form>
                         </div>
