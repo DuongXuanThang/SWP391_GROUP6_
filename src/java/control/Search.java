@@ -6,7 +6,6 @@
 package control;
 
 import dao.DAO;
-import entity.Category;
 import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "Shopgrid", urlPatterns = {"/Shopgrid"})
-public class Shopgrid extends HttpServlet {
+@WebServlet(name = "Search", urlPatterns = {"/search"})
+public class Search extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,18 +34,24 @@ public class Shopgrid extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
-        DAO dao = new DAO();
-        List<Product> list = dao.getAllProduct();
-        List<Category> listC = dao.getAllCategory();
+       response.setContentType("text/html;charset=UTF-8");
+       request.setCharacterEncoding("UTF-8");
+       String txtSearch = request.getParameter("txt"); // lay txt trên thanh search
+       DAO dao = new DAO();
+       List<Product> list = dao.getAllProduct();
+        List<entity.Category> listC = dao.getAllCategory();
         request.setAttribute("listCate", listC);
         request.setAttribute("listP", list);
         List<Product> listLast = dao.getlastProducts();
-        request.setAttribute("listLast", listLast);
-        request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
-        }
-    
+        
+       List<Product> listS = dao.getProductByName(txtSearch);
+       request.setAttribute("listLast", listLast);
+       request.setAttribute("listP", listS);
+       request.setAttribute("txtS", txtSearch);
+       request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
+       
+       
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
