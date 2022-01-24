@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "Detail", urlPatterns = {"/Detail"})
+@WebServlet(name = "Detail", urlPatterns = {"/detail"})
 public class Detail extends HttpServlet {
 
     /**
@@ -36,10 +36,14 @@ public class Detail extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String id = request.getParameter("pid");
+        
         DAO dao = new DAO();
        
+        Product p = dao.getProductbyId(id);
         List<Category> listC = dao.getAllCategory();
         request.setAttribute("listCate", listC);
+        request.setAttribute("detail", p);
         
         request.getRequestDispatcher("Detail.jsp").forward(request, response);
         

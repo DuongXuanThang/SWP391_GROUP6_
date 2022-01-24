@@ -99,16 +99,39 @@ public class DAO {
         }
         return list;
     }
+      public Product getProductbyId(String id) {
+        
+        String query = "select * from product\n"
+                +"where id=?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Product(rs.getInt(1),
+                        rs.getString(3),
+                        rs.getString(8),
+                        rs.getString(4),
+                        rs.getString(6),
+                        rs.getString(7));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
      public static void main(String[] args) {
         DAO dao = new DAO();
         
         //List<Category> listC = dao.getAllCategory();
         //List<Product> listP = dao.getAllProduct();
-        List<Product> listP = dao.getlastProducts();
-
-        for (Product p : listP) {
-            System.out.println(p);
-        }
+        Product p1 = dao.getProductbyId("1");
+         System.out.println(p1);
+//        List<Product> listP = dao.getlastProducts();
+//        
+//        for (Product p : listP) {
+//            System.out.println(p);
+//        }
        
     }
 }

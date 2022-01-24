@@ -202,8 +202,8 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
+                                    <h6><a href="detail?pid=${o.id}">${o.name}</a></h6>
+                                    <h5>${o.price}</h5>
                                 </div>
                             </div>
                         </div>
