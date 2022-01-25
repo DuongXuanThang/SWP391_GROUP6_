@@ -6,6 +6,7 @@
 package dao;
 
 import context.DBContext;
+import entity.Account;
 import entity.Category;
 import entity.Product;
 import java.sql.Connection;
@@ -142,6 +143,30 @@ public class DAO {
         }
         return list;
        }
+       
+       public Account login(String user,String pass){
+            String query = "select * from Customer\n"
+                +"where username = ?\n"
+                    +"where password = ?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, user);
+             ps.setString(2, user);
+            
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Account(rs.getInt(1),
+                        rs.getString(5),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(6));
+            }
+        } catch (Exception e) {
+        }
+           return null;
+       }
      public static void main(String[] args) {
         DAO dao = new DAO();
         
@@ -151,7 +176,8 @@ public class DAO {
        // Product p1 = dao.getProductbyId("1");
         // System.out.println(p1);
        // List<Product> listP = dao.getlastProducts();
-        
+        Account a = dao.login("thang", "123456");
+        System.out.println(a);
         for (Product p : listP) {
             System.out.println(p);
         }
