@@ -49,7 +49,7 @@ public class Search extends HttpServlet {
        request.setAttribute("listP", listS);
        request.setAttribute("txtS", txtSearch);
        request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
-       request.getRequestDispatcher("Home.jsp").forward(request, response);
+       
        
        
     }

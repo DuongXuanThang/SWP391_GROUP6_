@@ -38,17 +38,19 @@ public class Home extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         DAO dao = new DAO();
         
-       // List<Product> list = dao.getAllProduct();
+        List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
         List<Product> listLast = dao.getlastProducts();
         request.setAttribute("listCate", listC);
         
         request.setAttribute("listLast", listLast);
        String cateID = request.getParameter("cid");
-       List<Product> listCateId= dao.getProductbyCId(cateID);//lay id category
-       request.setAttribute("tag", cateID);
-       request.setAttribute("listP", listCateId);
-       request.getRequestDispatcher("Home.jsp").forward(request, response);
+      
+        request.setAttribute("tag", cateID);
+        request.setAttribute("listP", list);
+         String txtSearch = request.getParameter("txt");
+         request.setAttribute("txt",txtSearch );
+        request.getRequestDispatcher("Home.jsp").forward(request, response);
         
        
     }

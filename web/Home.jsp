@@ -129,8 +129,8 @@
                                     Tất cả sản phẩm
                                     <span class="arrow_carrot-down"></span>
                                 </div>
-                                <input name="txt" value="txtS"  type="text" placeholder="Tìm kiếm sản phẩm">
-                                <button type="submit" class="site-btn">Tìm kiếm</button>
+                                <input name="txt"  type="text" placeholder="Tìm kiếm sản phẩm">
+                                <button type="submit" class="site-btn" href="Search?txt=${txt}">Tìm kiếm</button>
                             </form>
                         </div>
                         <div class="hero__search__phone">
@@ -206,7 +206,7 @@
                         <ul>
                             
                              <c:forEach items="${listCate}" var="o">
-                                <li class="${tag == o.cid ? "actived" : "" }"><a href="Home?cid=${o.cid}">${o.cname}</a></li>
+                                <li class="${tag == o.cid ? "actived" : "" }"><a href="Category?cid=${o.cid}">${o.cname}</a></li>
                             </c:forEach> 
                               
                         </ul>
