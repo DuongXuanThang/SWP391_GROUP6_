@@ -41,6 +41,7 @@ public class SignUp extends HttpServlet {
        String password = request.getParameter("pass");
        String repassword = request.getParameter("repass");
        if(!password.equals(repassword)){
+           request.setAttribute("message", "!Wrong PassWord or RePassWord");
            response.sendRedirect("Login.jsp");
        }else{
            DAO dao = new DAO();
@@ -50,7 +51,7 @@ public class SignUp extends HttpServlet {
                response.sendRedirect("Home");
            }else
            {
-               response.sendRedirect("Login.jsp");
+               
            }
        }
     }

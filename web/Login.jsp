@@ -44,6 +44,7 @@
             </form>
 
             <form action="SignUp" method="post" class="form-signup">
+                <p class="text-danger">${message}</p>
                 <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign up</h1>
                 <input name="user" type="text" id="user-name" class="form-control" placeholder="User name" required="" autofocus="">
                

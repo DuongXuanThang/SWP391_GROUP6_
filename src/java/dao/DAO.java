@@ -169,8 +169,7 @@ public class DAO {
        }
        public Customer CheckAccountSignUp(String username){
             String query = "select * from Customer\n"
-                +"where username = ?\n"
-                    +"and password = ?";
+                +"where username = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -192,7 +191,7 @@ public class DAO {
        }
        public void signup(String fullname, String email,String phone,String username,String pass ){
            String query = "insert into Customer\n"
-                   + "value(?,?,?,?,?)";
+                   + "values(?,?,?,?,?)";
             try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
