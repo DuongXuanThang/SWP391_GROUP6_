@@ -6,13 +6,15 @@
 package dao;
 
 import context.DBContext;
-import entity.Account;
+import entity.Customer;
 import entity.Category;
 import entity.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Collections;
+
 import java.util.List;
 
 /**
@@ -144,23 +146,23 @@ public class DAO {
         return list;
        }
        
-       public Account login(String user,String pass){
+       public Customer login(String user,String pass){
             String query = "select * from Customer\n"
                 +"where username = ?\n"
-                    +"where password = ?";
+                    +"and password = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
-             ps.setString(2, user);
+             ps.setString(2, pass);
             
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Account(rs.getInt(1),
-                        rs.getString(5),
+                return new Customer(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
+                        rs.getString(5),
                         rs.getString(6));
             }
         } catch (Exception e) {
@@ -181,13 +183,15 @@ public class DAO {
         // System.out.println(p1);
        // List<Product> listP = dao.getlastProducts();
        int count = 0;
-//        Account a = dao.login("thang", "123456");
-//        System.out.println(a);
+       Customer a = dao.login("xuanthang", "123456");
+        System.out.println(a);
+        
         for (Product p : listP) {
             System.out.println(p);
-            count ++;
+           // count ++;
         }
-         System.out.println(count);
+        
+         
        
     }
 }

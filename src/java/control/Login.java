@@ -6,7 +6,7 @@
 package control;
 
 import dao.DAO;
-import entity.Account;
+import entity.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -37,11 +37,11 @@ public class Login extends HttpServlet {
        String username = request.getParameter("user");
        String password = request.getParameter("pass");
        DAO dao = new DAO();
-        Account a = dao.login(username, password);
+        Customer a = dao.login(username, password);
         if(a == null){
              request.getRequestDispatcher("Login.jsp").forward(request, response);
         }else{
-            request.getRequestDispatcher("Home.jsp").forward(request, response);
+            request.getRequestDispatcher("Home").forward(request, response);
         }
     }
 

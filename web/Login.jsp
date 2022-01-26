@@ -25,7 +25,7 @@
     </head>
     <body>
         <div id="logreg-forms">
-            <form class="form-signin" action="login" method="post">
+            <form class="form-signin" action="Login" method="post">
                 <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
                 
                 <input name="user"  type="text" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">

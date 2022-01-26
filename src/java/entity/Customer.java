@@ -5,30 +5,31 @@
  */
 package entity;
 
-import java.util.Date;
+
 
 /**
  *
  * @author Duong Xuan Thang
  */
-public class Account {
+public class Customer {
     private int id;
-    private String username;
     private String name;
     private String email;
     private String phone;
+    private String username;
     private String password;
-    private Date created;
 
-    public Account(int id, String username, String name, String email, String phone, String password) {
+    public Customer(int id, String name, String email, String phone, String username, String password) {
         this.id = id;
-        this.username = username;
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.username = username;
         this.password = password;
-        
     }
+   
+
+   
 
     public int getId() {
         return id;
@@ -78,17 +79,11 @@ public class Account {
         this.password = password;
     }
 
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
+   
 
     @Override
     public String toString() {
-        return "Account{" + "id=" + id + ", username=" + username + ", name=" + name + ", email=" + email + ", phone=" + phone + ", password=" + password + '}';
+        return "Account{" + "id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone  + ", username=" + username +", password=" + password + '}';
     }
     
 }
