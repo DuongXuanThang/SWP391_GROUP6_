@@ -175,7 +175,6 @@ public class DAO {
             ps = conn.prepareStatement(query);
             ps.setString(1, username);
            
-            
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Customer(rs.getInt(1),

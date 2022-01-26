@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -36,6 +37,11 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
        String username = request.getParameter("user");
        String password = request.getParameter("pass");
+       
+       
+       HttpSession session = request.getSession();
+       session.setAttribute("un", username);
+       
        DAO dao = new DAO();
         Customer a = dao.login(username, password);
         if(a == null){
@@ -44,6 +50,9 @@ public class Login extends HttpServlet {
              
              
         }else{
+            
+            //request.setAttribute("us", username);
+            
             request.getRequestDispatcher("Home").forward(request, response);
         }
     }

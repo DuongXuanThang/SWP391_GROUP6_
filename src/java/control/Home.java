@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -44,12 +45,16 @@ public class Home extends HttpServlet {
         request.setAttribute("listCate", listC);
         
         request.setAttribute("listLast", listLast);
-       String cateID = request.getParameter("cid");
+        String cateID = request.getParameter("cid");
       
         request.setAttribute("tag", cateID);
         request.setAttribute("listP", list);
         String txtSearch = request.getParameter("txt");
         request.setAttribute("txt",txtSearch );
+        
+        HttpSession session = request.getSession();
+        String username = session.getAttribute("un").toString();
+        request.setAttribute("un", username);
         request.getRequestDispatcher("Home.jsp").forward(request, response);
         
        

@@ -40,7 +40,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> thanngdxse@gmail.com</li>
+                                <li><i class="fa fa-envelope"></i>${sessionScope.us} thanngdxse@gmail.com</li>
                                
                             </ul>
                         </div>
@@ -55,7 +55,7 @@
                             </div>
                             
                             <div class="header__top__right__auth">
-                                <a href="Login.jsp"><i class="fa fa-user"></i> Đăng nhập</a>
+                                <a href="Login.jsp"><i class="fa fa-user"></i>${un}dang nhap </a>
                             </div>
                         </div>
                     </div>
