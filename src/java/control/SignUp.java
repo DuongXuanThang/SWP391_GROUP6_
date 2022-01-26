@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
+@WebServlet(name = "SignUp", urlPatterns = {"/SignUp"})
+public class SignUp extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,17 +35,24 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
        String username = request.getParameter("user");
+       String fullname = request.getParameter("name");
+       String email = request.getParameter("email");
+       String phone = request.getParameter("phone");
        String password = request.getParameter("pass");
-       DAO dao = new DAO();
-        Customer a = dao.login(username, password);
-        if(a == null){
-           request.setAttribute("message", "!Wrong UserName or PassWord");
-           request.getRequestDispatcher("Login.jsp").forward(request, response);
-             
-             
-        }else{
-            request.getRequestDispatcher("Home").forward(request, response);
-        }
+       String repassword = request.getParameter("repass");
+       if(!password.equals(repassword)){
+           response.sendRedirect("Login.jsp");
+       }else{
+           DAO dao = new DAO();
+           Customer c = dao.CheckAccountSignUp(username);
+           if(c == null){
+               dao.signup(fullname, email, phone, username, password);
+               response.sendRedirect("Home");
+           }else
+           {
+               response.sendRedirect("Login.jsp");
+           }
+       }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -146,15 +146,36 @@ public class DAO {
         return list;
        }
        
-       public Customer login(String user,String pass){
+       public Customer login(String username,String pass){
+            String query = "select * from Customer\n"
+                +"where username = ?";
+                    
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Customer(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6));
+            }
+        } catch (Exception e) {
+        }
+           return null;
+       }
+       public Customer CheckAccountSignUp(String username){
             String query = "select * from Customer\n"
                 +"where username = ?\n"
                     +"and password = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setString(1, user);
-             ps.setString(2, pass);
+            ps.setString(1, username);
+           
             
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -169,9 +190,22 @@ public class DAO {
         }
            return null;
        }
-       public int countProduct(int result){
+       public void signup(String fullname, String email,String phone,String username,String pass ){
+           String query = "insert into Customer\n"
+                   + "value(?,?,?,?,?)";
+            try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, fullname);
+            ps.setString(2, email);
+            ps.setString(3, phone);
+            ps.setString(4, username);
+            ps.setString(5, pass);
+            ps.executeUpdate();
+          
+        } catch (Exception e) {
+        }
            
-           return result;
        }
      public static void main(String[] args) {
         DAO dao = new DAO();
