@@ -48,8 +48,8 @@ public class Home extends HttpServlet {
       
         request.setAttribute("tag", cateID);
         request.setAttribute("listP", list);
-         String txtSearch = request.getParameter("txt");
-         request.setAttribute("txt",txtSearch );
+        String txtSearch = request.getParameter("txt");
+        request.setAttribute("txt",txtSearch );
         request.getRequestDispatcher("Home.jsp").forward(request, response);
         
        

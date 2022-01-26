@@ -41,9 +41,12 @@ public class Shopgrid extends HttpServlet {
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
         request.setAttribute("listCate", listC);
+        request.setAttribute("totalP", list.size());
         request.setAttribute("listP", list);
         List<Product> listLast = dao.getlastProducts();
         request.setAttribute("listLast", listLast);
+        
+        
         request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
         }
     

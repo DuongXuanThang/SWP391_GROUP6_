@@ -167,6 +167,10 @@ public class DAO {
         }
            return null;
        }
+       public int countProduct(int result){
+           
+           return result;
+       }
      public static void main(String[] args) {
         DAO dao = new DAO();
         
@@ -176,11 +180,14 @@ public class DAO {
        // Product p1 = dao.getProductbyId("1");
         // System.out.println(p1);
        // List<Product> listP = dao.getlastProducts();
-        Account a = dao.login("thang", "123456");
-        System.out.println(a);
+       int count = 0;
+//        Account a = dao.login("thang", "123456");
+//        System.out.println(a);
         for (Product p : listP) {
             System.out.println(p);
+            count ++;
         }
+         System.out.println(count);
        
     }
 }
