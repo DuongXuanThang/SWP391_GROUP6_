@@ -41,18 +41,22 @@ public class SignUp extends HttpServlet {
        String password = request.getParameter("pass");
        String repassword = request.getParameter("repass");
        if(!password.equals(repassword)){
-           request.setAttribute("message", "!Wrong PassWord or RePassWord");
+           request.setAttribute("message", "!Wrong Password or Repassword");
            request.getRequestDispatcher("Login.jsp").forward(request, response);
        }else{
            DAO dao = new DAO();
            Customer c = dao.CheckAccountSignUp(username);
            if(c == null){
                dao.signup(fullname, email, phone, username, password);
-               response.sendRedirect("Home");
+               response.sendRedirect("Login.jsp");
            }else
            { 
-               request.setAttribute("message2", "!wrong");
-               request.getRequestDispatcher("Login.jsp").forward(request, response);
+               request.setAttribute("message2", "!Wrong Username has been registered");
+               request.setAttribute("fullname",fullname );
+               request.setAttribute("email",email );
+               request.setAttribute("phone",phone );
+               
+               request.getRequestDispatcher("Signup.jsp").forward(request, response);
            }
        }
     }
