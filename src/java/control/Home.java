@@ -52,9 +52,9 @@ public class Home extends HttpServlet {
         String txtSearch = request.getParameter("txt");
         request.setAttribute("txt",txtSearch );
         
-        HttpSession session = request.getSession();
-        String username = session.getAttribute("un").toString();
-        request.setAttribute("un", username);
+//        HttpSession session = request.getSession();
+//        String username = session.getAttribute("un").toString();
+//        request.setAttribute("un", username);
         request.getRequestDispatcher("Home.jsp").forward(request, response);
         
        

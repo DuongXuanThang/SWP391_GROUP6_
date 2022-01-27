@@ -40,7 +40,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i>${sessionScope.us} thanngdxse@gmail.com</li>
+                                <li><i class="fa fa-envelope"></i>thanngdxse@gmail.com</li>
                                
                             </ul>
                         </div>
@@ -50,12 +50,15 @@
                             <div class="header__top__right__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                               
+                                <a href="Login.jsp"><i class="fa fa-user"></i> frofile </a>
+                                 <a href="Login.jsp"><i class="fa fa-user"></i> dang xuat</a>
                             </div>
                             
                             <div class="header__top__right__auth">
-                                <a href="Login.jsp"><i class="fa fa-user"></i>${un}dang nhap </a>
+                                <a href="Login.jsp"><i class="fa fa-user"></i>dang nhap </a>
+                                
+                               
                             </div>
                         </div>
                     </div>

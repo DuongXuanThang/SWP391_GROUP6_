@@ -39,8 +39,8 @@ public class Login extends HttpServlet {
        String password = request.getParameter("pass");
        
        
-       HttpSession session = request.getSession();
-       session.setAttribute("un", username);
+//       HttpSession session = request.getSession();
+//       session.setAttribute("un", username);
        
        DAO dao = new DAO();
         Customer a = dao.login(username, password);

@@ -148,12 +148,15 @@ public class DAO {
        
        public Customer login(String username,String pass){
             String query = "select * from Customer\n"
-                +"where username = ?";
+                +"where username = ?\n"
+                    +"and password =?";
                     
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
             ps.setString(1, username);
+            ps.setString(2, pass);
+            
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Customer(rs.getInt(1),
@@ -205,6 +208,8 @@ public class DAO {
         }
            
        }
+      
+       
      public static void main(String[] args) {
         DAO dao = new DAO();
         
