@@ -39,9 +39,9 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i>thanngdxse@gmail.com</li>
-                               
+                            <ul> <c:if test="${sessionScope.acc != null}">
+                                <li><i class="fa fa-envelope"></i>${sessionScope.acc.email}</li>
+                               </c:if>
                             </ul>
                         </div>
                     </div>
@@ -51,14 +51,17 @@
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                
-                                <a href="Login.jsp"><i class="fa fa-user"></i> frofile </a>
-                                 <a href="Login.jsp"><i class="fa fa-user"></i> dang xuat</a>
+                                <c:if test="${sessionScope.acc != null}">
+                                    <a href="#"><i class="fa fa-user"></i> ${sessionScope.acc.username} </a>
+                                        <a href="Logout"> Đăng xuất</a>
+                                    </c:if>
                             </div>
                             
                             <div class="header__top__right__auth">
-                                <a href="Login.jsp"><i class="fa fa-user"></i>dang nhap </a>
-                                
-                               
+                               <c:if test="${sessionScope.acc == null}">
+                                        <a href="Login.jsp"><i class="fa fa-user"></i> Đăng nhập</a>
+
+                                    </c:if>
                             </div>
                         </div>
                     </div>
