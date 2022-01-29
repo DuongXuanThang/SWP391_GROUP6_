@@ -83,7 +83,7 @@
                                     <ul class="header__menu__dropdown">
 
                                         <li><a href="Cart.jsp">Giỏ hàng</a></li>
-                                        <li><a href="Checkout">Thanh toán</a></li>
+                                        <li><a href="Checkout.jsp">Thanh toán</a></li>
 
                                     </ul>
                                 </li>

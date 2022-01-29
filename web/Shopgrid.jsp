@@ -141,10 +141,10 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
                                 <div class="filter__sort">
-                                    <span>Sort By</span>
+                                    <span>Sắp xếp theo</span>
                                     <select>
-                                        <option value="0">Default</option>
-                                        <option value="0">Default</option>
+                                        <option value="0">Tên sản phẩm</option>
+                                        <option value="0">Giá sản phẩm</option>
                                     </select>
                                 </div>
                             </div>
