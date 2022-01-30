@@ -69,14 +69,14 @@
                                 src="${detail.image}" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
-                            <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                                src="img/product/details/thumb-1.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                src="img/product/details/thumb-2.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-5.jpg"
-                                src="img/product/details/thumb-3.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-4.jpg"
-                                src="img/product/details/thumb-4.jpg" alt="">
+                            <img data-imgbigurl="${detail.image}"
+                                src="${detail.image}" alt="">
+                            <img data-imgbigurl="${detail.image1}"
+                                src="${detail.image1}" alt="">
+                            <img data-imgbigurl="${detail.image2}"
+                                src="${detail.image2}" alt="">
+                            <img data-imgbigurl="${detail.image3}"
+                                src="${detail.image3}" alt="">
                         </div>
                     </div>
                 </div>
