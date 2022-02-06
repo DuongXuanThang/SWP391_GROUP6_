@@ -72,7 +72,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="Home.jsp"><img src="img/lastlogo.png" width="120" height="120" alt=""></a>
+                        <a href="Home"><img src="img/lastlogo.png" width="120" height="120" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
