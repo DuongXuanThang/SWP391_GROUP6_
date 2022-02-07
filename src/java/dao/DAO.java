@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Collections;
+
 
 import java.util.List;
 
@@ -233,7 +233,7 @@ public class DAO {
      public static void main(String[] args) {
         DAO dao = new DAO();
         
-        //List<Category> listC = dao.getAllCategory();
+        List<Category> listC = dao.getAllCategory();
         //List<Product> listP = dao.getAllProduct();
         List<Product> listP = dao.getProductByName("kit");// search
         Product p1 = dao.getProductbyId("1");
@@ -243,8 +243,8 @@ public class DAO {
 //       Customer a = dao.login("xuanthang", "123456");
 //        System.out.println(a);
         
-        for (Product p : listP) {
-            System.out.println(p);
+        for (Category c : listC) {
+            System.out.println(c);
            // count ++;
         }
         

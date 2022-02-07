@@ -233,7 +233,8 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">${o.name}</a></h6>
+                            
+                            <h6><a href="detail?pid=${o.id}">${o.name}</a></h6>
                             <h5>${o.price}</h5>
                         </div>
                     </div>
