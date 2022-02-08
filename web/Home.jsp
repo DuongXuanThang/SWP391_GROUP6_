@@ -4,6 +4,7 @@
     Author     : Duong Xuan Thang
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -235,7 +236,11 @@
                         <div class="featured__item__text">
                             
                             <h6><a href="detail?pid=${o.id}">${o.name}</a></h6>
-                            <h5>${o.price}</h5>
+                             
+                           <fmt:parseNumber var = "i" integerOnly = "true" 
+         type = "number" value = "${o.price}" />
+                            <h5><c:out value = "${i}"/> vnd</h5>
+                             
                         </div>
                     </div>
                    

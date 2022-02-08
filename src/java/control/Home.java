@@ -42,6 +42,7 @@ public class Home extends HttpServlet {
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
         List<Product> listLast = dao.getlastProducts();
+        
         request.setAttribute("listCate", listC);
         
         request.setAttribute("listLast", listLast);
@@ -49,6 +50,7 @@ public class Home extends HttpServlet {
       
         request.setAttribute("tag", cateID);
         request.setAttribute("listP", list);
+        
         String txtSearch = request.getParameter("txt");
         request.setAttribute("txt",txtSearch );
         

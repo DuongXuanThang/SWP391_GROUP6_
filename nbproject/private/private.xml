@@ -6,6 +6,8 @@
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/control/Cart.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/dao/DAO.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/control/Category.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Transaction.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/OrderDetail.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Checkout.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Login.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Header.jsp</file>
@@ -23,11 +25,13 @@
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Category.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Footer.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/context/DBContext.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Order.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/control/Checkout.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Customer.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Cart.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Detail.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/css2/style.css</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/ProflieUser.jsp</file>
         </group>
     </open-files>
 </project-private>
