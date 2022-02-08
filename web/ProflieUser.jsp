@@ -116,9 +116,9 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                            <img src="https://st.quantrimang.com/photos/image/072015/22/avatar.jpg" alt=""/>
                             <div class="file btn btn-lg btn-primary">
-                                Change Photo
+                                Thay đổi hình ảnh
                                 <input type="file" name="file"/>
                             </div>
                         </div>
@@ -126,18 +126,19 @@
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        Kshiti Ghelani
+                                        ${sessionScope.acc.username}
                                     </h5>
-                                    <h6>
-                                        Web Developer and Designer
-                                    </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                                     <h5>
+                                        ${sessionScope.acc.username}
+                                    </h5>
+                                    
+                                    
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Thông tin</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Lịch sử mua hàng</a>
                                 </li>
                             </ul>
                         </div>
@@ -174,8 +175,8 @@
                             <label for="address">Address</label>
                             <textarea class="form-control" type="text" name="address" rows="3"></textarea>
                         </div>
-                        <button type="button" class="btn btn-primary" id="btnUpdateSubmit">Update</button>
-                        <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" style="background-color:green" id="btnUpdateSubmit">Sửa thông tin</button>
+                        <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Đóng</button>
                     </form>
 
 
@@ -189,16 +190,13 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>WORK LINK</p>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
+                            <p>Trang</p>
+                            <a href="Home">Trang chủ</a><br/>
+                            <a href="Shopgrid">Cửa hàng</a><br/>
+                            
+                            <p>Mua hàng</p>
+                            <a href="Cart">Giỏ hàng</a><br/>
+                            <a href="Checkout">Thanh toán</a><br/>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -206,18 +204,18 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>User Id</label>
+                                                <label>Id Khách hàng</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti123</p>
+                                                <p>${sessionScope.acc.id}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Name</label>
+                                                <label>Họ và tên</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
+                                                <p>${sessionScope.acc.name}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -225,25 +223,18 @@
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
+                                                <p>${sessionScope.acc.email}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Phone</label>
+                                                <label>Số điện thoại</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>123 456 7890</p>
+                                                <p>${sessionScope.acc.phone}</p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Profession</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
-                                            </div>
-                                        </div>
+                                        
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
@@ -310,7 +301,7 @@
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Page Script -->
-    <script src="assets/js/scripts.js"></script>
+    
 
 
       
