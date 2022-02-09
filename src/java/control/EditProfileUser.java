@@ -5,8 +5,11 @@
  */
 package control;
 
+import dao.DAO;
+import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Duong Xuan Thang
  */
 @WebServlet(name = "ProfileUser", urlPatterns = {"/ProfileUser"})
-public class ProfileUser extends HttpServlet {
+public class EditProfileUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,18 +35,19 @@ public class ProfileUser extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ProfileUser</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ProfileUser at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        String id = request.getParameter("pid");
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+       
+        String email = request.getParameter("email");
+        
+        
+        DAO dao = new DAO();
+       
+      
+        dao.editCustomer(name, email, phone, id);
+        
+        response.sendRedirect("ProfileUser");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

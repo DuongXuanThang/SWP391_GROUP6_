@@ -145,13 +145,14 @@
                     </div>
                     <div class="col-md-2">
                         <a href="#editEmployeeModal"  class="edit" data-toggle="modal">Sửa thông tin</a>
+                        
                          <div class="modal" id="editEmployeeModal">
         <div class="modal-dialog">
             <div class="modal-content">
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Edit Employee</h4>
+                    <h4 class="modal-title">Sửa thông tin khách hàng</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -159,25 +160,26 @@
                 <div class="modal-body">
                     <form action="update.php" id="edit-form">
                         <input class="form-control" type="hidden" name="id">
+                    </form>
+                       
+                        <form action="ProfileUser" id="edit-form">
+                     <input class="form-control" type="hidden" name="pid" value="${sessionScope.acc.id}">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input class="form-control" type="text" name="email">
+                            <input class="form-control" type="text" name="email" value="${sessionScope.acc.email}">
                         </div>
                         <div class="form-group">
-                            <label for="first_name">First Name</label>
-                            <input class="form-control" type="text" name="first_name">
+                            <label for="first_name">Họ và tên</label>
+                            <input class="form-control" type="text" name="name" >
                         </div>
                         <div class="form-group">
-                            <label for="last_name">Last Name</label>
-                            <input class="form-control" type="text" name="last_name">
+                            <label for="last_name">Điện thoại</label>
+                            <input class="form-control" type="text" name="phone" value="${sessionScope.acc.phone}">
                         </div>
-                        <div class="form-group">
-                            <label for="address">Address</label>
-                            <textarea class="form-control" type="text" name="address" rows="3"></textarea>
-                        </div>
-                        <button type="button" class="btn btn-primary" style="background-color:green" id="btnUpdateSubmit">Sửa thông tin</button>
+                        
+                        <button type="button" class="btn btn-primary" href="ProfileUser.jsp">Sửa thông tin</button>
                         <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Đóng</button>
-                    </form>
+                        </form>
 
 
                 </div>
