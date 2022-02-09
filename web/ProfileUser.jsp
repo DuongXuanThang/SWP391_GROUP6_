@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <a href="EditProfileUser.jsp?id=${detail.id}"  class="edit" >Sửa thông tin</a>
+                        <a href="EditProfileUser?id=${detail.id}" >Sửa thông tin</a>
                </div>
                 </div>
           
@@ -171,6 +171,7 @@
                                                 <p>${detail.id}</p>
                                             </div>
                                         </div>
+                                           
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Họ và tên</label>

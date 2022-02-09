@@ -46,7 +46,7 @@ public class EditProfileUser extends HttpServlet {
         request.setAttribute("detail", p);
         
         dao.editCustomer(name, email, phone, id);
-        
+        response.sendRedirect("EditProfileUser");
         
     }
 
