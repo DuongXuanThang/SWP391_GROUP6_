@@ -126,10 +126,10 @@
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        ${sessionScope.acc.username}
+                                        ${detail.username}
                                     </h5>
                                      <h5>
-                                        ${sessionScope.acc.username}
+                                      
                                     </h5>
                                     
                                     
@@ -144,51 +144,10 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <a href="#editEmployeeModal"  class="edit" data-toggle="modal">Sửa thông tin</a>
-                        
-                         <div class="modal" id="editEmployeeModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Sửa thông tin khách hàng</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <a href="EditProfileUser.jsp?id=${detail.id}"  class="edit" >Sửa thông tin</a>
+               </div>
                 </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form action="update.php" id="edit-form">
-                        <input class="form-control" type="hidden" name="id">
-                    </form>
-                       
-                        <form action="ProfileUser" id="edit-form">
-                     <input class="form-control" type="hidden" name="pid" value="${sessionScope.acc.id}">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input class="form-control" type="text" name="email" value="${sessionScope.acc.email}">
-                        </div>
-                        <div class="form-group">
-                            <label for="first_name">Họ và tên</label>
-                            <input class="form-control" type="text" name="name" >
-                        </div>
-                        <div class="form-group">
-                            <label for="last_name">Điện thoại</label>
-                            <input class="form-control" type="text" name="phone" value="${sessionScope.acc.phone}">
-                        </div>
-                        
-                        <button type="button" class="btn btn-primary" href="ProfileUser.jsp">Sửa thông tin</button>
-                        <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Đóng</button>
-                        </form>
-
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-                    </div>
-                </div>
+          
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
@@ -206,10 +165,10 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Id Khách hàng</label>
+                                                <label>Mã Khách hàng</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>${sessionScope.acc.id}</p>
+                                                <p>${detail.id}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -217,7 +176,7 @@
                                                 <label>Họ và tên</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>${sessionScope.acc.name}</p>
+                                                <p>${detail.name}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -225,7 +184,7 @@
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>${sessionScope.acc.email}</p>
+                                                <p>${detail.email}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -233,7 +192,7 @@
                                                 <label>Số điện thoại</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>${sessionScope.acc.phone}</p>
+                                                <p>${detail.phone}</p>
                                             </div>
                                         </div>
                                         

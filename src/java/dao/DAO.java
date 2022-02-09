@@ -117,7 +117,28 @@ public class DAO {
         }
         return list;
     }
+ public Customer getCustomerbyId(String id) {
 
+        String query = "select * from Customer\n"
+                + "where id=?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Customer(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6));
+                        
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
     public Product getProductbyId(String id) {
 
         String query = "select * from product\n"
@@ -255,6 +276,7 @@ public class DAO {
         } catch (Exception e) {
         }
     }
+     
 
     public static void main(String[] args) {
         DAO dao = new DAO();
@@ -262,8 +284,9 @@ public class DAO {
         List<Category> listC = dao.getAllCategory();
         //List<Product> listP = dao.getAllProduct();
         List<Product> listP = dao.getProductByName("kit");// search
-        Product p1 = dao.getProductbyId("1");
-        // System.out.println(p1);
+        dao.editCustomer("xuanthang12345566", "03623064239", "thangdx@", "1");
+        Customer p1 = dao.getCustomerbyId("1");
+         System.out.println(p1);
         // List<Product> listP = dao.getlastProducts();
 //       int count = 0;
 //       Customer a = dao.login("xuanthang", "123456");
@@ -273,5 +296,6 @@ public class DAO {
 //            System.out.println(c);
 //           // count ++;
 //        }
+        // dao.editCustomer("xuạnthang1234", "thanggdx@fpt","0362306429", "1");
     }
 }

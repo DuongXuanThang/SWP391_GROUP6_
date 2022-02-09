@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "EditProfileUser", urlPatterns = {"/EditProfileUser"})
-public class EditProfileUser extends HttpServlet {
+@WebServlet(name = "LoadInforUser", urlPatterns = {"/LoadInforUser"})
+public class LoadInforUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,16 +37,14 @@ public class EditProfileUser extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("id");
-        String name = request.getParameter("name");
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
+        
         DAO dao = new DAO();
+       
         Customer p = dao.getCustomerbyId(id);
         
         request.setAttribute("detail", p);
         
-        dao.editCustomer(name, email, phone, id);
-        
+        request.getRequestDispatcher("ProfileUser.jsp").forward(request, response);
         
     }
 

@@ -53,7 +53,7 @@
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                
                                 <c:if test="${sessionScope.acc != null}">
-                                    <a href="ProflieUser.jsp"><i class="fa fa-user"></i> ${sessionScope.acc.username} </a>
+                                    <a href="LoadInforUser?id=${sessionScope.acc.id}"><i class="fa fa-user"></i> ${sessionScope.acc.username} </a>
                                         <a href="Logout"> Đăng xuất</a>
                                     </c:if>
                             </div>
