@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <a href="EditProfileUser?id=${detail.id}" >Sửa thông tin</a>
+                        <a href="LoadInfor2?id=${detail.id}" >Sửa thông tin</a>
                </div>
                 </div>
           

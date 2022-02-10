@@ -3,7 +3,7 @@
     Created on : Feb 9, 2022, 11:15:10 PM
     Author     : Duong Xuan Thang
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -37,14 +37,18 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Thông tin chi tiết</h2>
-                    <form method="POST" action="EditProfileUser">
+                    <form method="POST" action="EditUser">
+                        
+                         <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="id" value="${detail.id}" name="id" >
+                        </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Họ và tên" name="name" value="${detail.name}">
+                            <input class="input--style-1" type="text" placeholder="Họ và tên" value="${detail.name}" name="name" >
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1 js-datepicker" type="text" placeholder="Email" name="email">
+                                    <input class="input--style-1 js-datepicker" type="text" placeholder="Email" name="email" value="${detail.email}">
                                     <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                 </div>
                             </div>
@@ -76,12 +80,12 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="Số điện thoại" name="phone">
+                                    <input class="input--style-1" type="text" placeholder="Số điện thoại" name="phone" value="${detail.phone}">
                                 </div>
                             </div>
                         </div>
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit">Sửa thông tin</button>
+                            <button  class="btn btn--radius btn--green" type="submit">Sửa thông tin</button>
                         </div>
                     </form>
                 </div>

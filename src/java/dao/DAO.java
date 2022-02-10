@@ -117,14 +117,14 @@ public class DAO {
         }
         return list;
     }
- public Customer getCustomerbyId(String id) {
+ public Customer getCustomerbyId(int id) {
 
         String query = "select * from Customer\n"
                 + "where id=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setString(1, id);
+            ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Customer(rs.getInt(1),
@@ -285,8 +285,8 @@ public class DAO {
         //List<Product> listP = dao.getAllProduct();
         List<Product> listP = dao.getProductByName("kit");// search
         dao.editCustomer("xuanthang12345566", "03623064239", "thangdx@", "1");
-        Customer p1 = dao.getCustomerbyId("1");
-         System.out.println(p1);
+        //Customer p1 = dao.getCustomerbyId("1");
+        // System.out.println(p1);
         // List<Product> listP = dao.getlastProducts();
 //       int count = 0;
 //       Customer a = dao.login("xuanthang", "123456");

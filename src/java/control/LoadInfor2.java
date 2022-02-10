@@ -7,22 +7,21 @@ package control;
 
 import dao.DAO;
 import entity.Customer;
-import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "EditProfileUser", urlPatterns = {"/EditProfileUser"})
-public class EditProfileUser extends HttpServlet {
+@WebServlet(name = "LoadInfor2", urlPatterns = {"/LoadInfor2"})
+public class LoadInfor2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,18 +35,18 @@ public class EditProfileUser extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String id = request.getParameter("id");
-        String name = request.getParameter("name");
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
+       HttpSession session = request.getSession();
+       
+        Customer a = (Customer) session.getAttribute("acc");
+        int id = a.getId();
+        
         DAO dao = new DAO();
+       
         Customer p = dao.getCustomerbyId(id);
         
         request.setAttribute("detail", p);
-        
-        dao.editCustomer(name, email, phone, id);
-        response.sendRedirect("EditProfileUser");
-        
+       
+        request.getRequestDispatcher("EditProfileUser.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
