@@ -39,7 +39,7 @@ public class EditUser extends HttpServlet {
         String email =request.getParameter("email");
         DAO dao = new DAO();
         dao.editCustomer(name, phone, email, id);
-        response.sendRedirect("Home");
+        response.sendRedirect("LoadInfor2");
         
     }
 

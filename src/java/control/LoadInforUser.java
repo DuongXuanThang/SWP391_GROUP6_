@@ -45,7 +45,7 @@ public class LoadInforUser extends HttpServlet {
         Customer p = dao.getCustomerbyId(id);
         
         request.setAttribute("detail", p);
-       
+        request.setAttribute("id", id);
         request.getRequestDispatcher("ProfileUser.jsp").forward(request, response);
         
     }
