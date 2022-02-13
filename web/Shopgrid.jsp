@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -78,7 +79,7 @@
                             </ul>
                         </div>
                         <div class="sidebar__item">
-                            <h4>Price</h4>
+                            <h4>Khoảng giá</h4>
                             <div class="price-range-wrap">
                                 <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
                                     data-min="10" data-max="540">
@@ -102,27 +103,31 @@
                                 <div class="latest-product__slider owl-carousel">
                                     <div class="latest-prdouct__slider__item">
                                         <c:forEach items="${listLast}" var="o">
-                                             <a href="#" class="latest-product__item">
+                                             <a href="detail?pid=${o.id}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="${o.image}" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <span>${o.price}</span>
+                                                <fmt:parseNumber var = "i" integerOnly = "true" 
+         type = "number" value = "${o.price}" />
+                            <span><c:out value = "${i}"/> vnd</span>
                                             </div>
                                         </a>
                                         </c:forEach>
                                          </div>
                                     <div class="latest-prdouct__slider__item">
                                         <c:forEach items="${listLast}" var="o">
-                                             <a href="#" class="latest-product__item">
+                                             <a href="detail?pid=${o.id}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="${o.image}" alt="">
                                             </div>
                                         
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <span>${o.price}</span>
+                                               <fmt:parseNumber var = "i" integerOnly = "true" 
+         type = "number" value = "${o.price}" />
+                            <span><c:out value = "${i}"/> vnd</span>
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -174,7 +179,9 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="detail?pid=${o.id}">${o.name}</a></h6>
-                                    <h5>${o.price}</h5>
+                                    <fmt:parseNumber var = "i" integerOnly = "true" 
+         type = "number" value = "${o.price}" />
+                            <h5><c:out value = "${i}"/> vnd</h5>
                                 </div>
                             </div>
                         </div>

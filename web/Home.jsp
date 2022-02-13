@@ -49,9 +49,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                               
+   
                                 <c:if test="${sessionScope.acc != null}">
                                     <a href="LoadInforUser?id=${sessionScope.acc.id}"><i class="fa fa-user"></i> ${sessionScope.acc.username} </a>
                                         <a href="Logout"> Đăng xuất</a>
@@ -73,7 +71,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="Home"><img src="img/lastlogo.png" width="120" height="120" alt=""></a>
+                        <a href="Home"><img src="img/SAFETY SHOP.png" width="120" height="120" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -145,8 +143,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>0362306429</h5>
+                                    <span>Hỗ trợ 24/7</span>
                             </div>
                         </div>
                     </div>
@@ -155,7 +153,7 @@
                             <span><h2>Glumet</h2></span>
                             <h2>Feel better<br />Live longer</h2>
                             <p>Chăm sóc sức khỏe – chia sẻ niềm vui</p>
-                            <a href="Shopgrid.jsp" class="primary-btn">Mua ngay!</a>
+                            <a href="Shopgrid" class="primary-btn">Mua ngay!</a>
                         </div>
                     </div>
                 </div>
@@ -228,9 +226,8 @@
                         <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${o.image}">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                               
+                                <li><a href="detail?pid=${o.id}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -259,12 +256,12 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="banner__pic">
-                        <img src="img/banner/banner-1.jpg" alt="">
+                        <a href="Shopgrid"> <img href="Shopgrid.jsp" src="img/banner/1.png" width="500px" height="150px"  alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="banner__pic">
-                        <img src="img/banner/banner-2.jpg" alt="">
+                        <a href="Shopgrid"><img  src="img/banner/2.png" width="500px" height="150px" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -283,13 +280,15 @@
                                     <div class="latest-prdouct__slider__item">
                                         
                                         <c:forEach items="${listLast}" var="o">
-                                             <a href="#" class="latest-product__item">
+                                            <a href="detail?pid=${o.id}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="${o.image}" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <span>${o.price}</span>
+                                                <fmt:parseNumber var = "i" integerOnly = "true" 
+         type = "number" value = "${o.price}" />
+                            <span><c:out value = "${i}"/> vnd</span>
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -298,13 +297,16 @@
                                     </div>
                                     <div class="latest-prdouct__slider__item">
                                          <c:forEach items="${listLast}" var="o">
-                                             <a href="#" class="latest-product__item">
+                                             <a href="detail?pid=${o.id}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="${o.image}" alt="">
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <span>${o.price}</span>
+                                                 <fmt:parseNumber var = "i" integerOnly = "true" 
+         type = "number" value = "${o.price}" />
+                            <span><c:out value = "${i}"/> vnd</span>
+                                                
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -314,7 +316,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Top Rated Products</h4>
+                        <h4>Top đánh giá</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
@@ -379,7 +381,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Review Products</h4>
+                        <h4>Top phản hồi</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">

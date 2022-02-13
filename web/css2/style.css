@@ -617,15 +617,14 @@ ol {
 
 .hero__categories ul {
 	border: 1px solid #ebebeb;
-	padding-left: 40px;
-	padding-top: 10px;
+	
 	padding-bottom: 12px;
 }
 
 .hero__categories ul li {
 	list-style: none;
-        background-color: yellowgreen;
-       
+        background: #7fad39;
+        
 }
 
 .hero__categories ul li a {
@@ -633,7 +632,7 @@ ol {
 	color: #1c1c1c;
 	line-height: 39px;
 	display: block;
-        
+        background: #7fad39;
 }
 
 

@@ -38,7 +38,9 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="header__top__left">
                                 <ul>
-                                    <li><i class="fa fa-envelope"></i>${sessionScope.acc.email}</li>
+                                   <c:if test="${sessionScope.acc != null}">
+                                <li><i class="fa fa-envelope"></i>${sessionScope.acc.email}</li>
+                               </c:if>
 
                                 </ul>
                             </div>
@@ -46,8 +48,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="header__top__right">
                                 <div class="header__top__right__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                   
                                     <c:if test="${sessionScope.acc != null}">
                                     <a href="LoadInforUser?id=${sessionScope.acc.id}"><i class="fa fa-user"></i> ${sessionScope.acc.username} </a>
                                         <a href="Logout"> Đăng xuất</a>
@@ -70,7 +71,7 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="header__logo">
-                            <a href="Home"><img src="img/lastlogo.png" width="120" height="120" alt=""></a>
+                            <a href="Home"><img src="img/SAFETY SHOP.png" width="120" height="120" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -129,8 +130,8 @@
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <div class="hero__search__phone__text">
-                                    <h5>+65 11.188.888</h5>
-                                    <span>support 24/7 time</span>
+                                    <h5>0362306429</h5>
+                                    <span>Hỗ trợ 24/7</span>
                                 </div>
                             </div>
                         </div>
