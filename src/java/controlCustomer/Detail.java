@@ -42,6 +42,7 @@ public class Detail extends HttpServlet {
        
         Product p = dao.getProductbyId(id);
         List<Category> listC = dao.getAllCategory();
+        List<Product> listP = dao.getProductbyCId(p.getCategoryID());
         request.setAttribute("listCate", listC);
         request.setAttribute("detail", p);
         
