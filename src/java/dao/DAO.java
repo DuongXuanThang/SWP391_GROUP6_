@@ -43,7 +43,8 @@ public class DAO {
                         rs.getString(10),
                         rs.getString(11),
                         rs.getString(12),
-                        rs.getString(13)));
+                        rs.getString(13),
+                        rs.getString(2)));
             }
         } catch (Exception e) {
         }
@@ -85,7 +86,8 @@ public class DAO {
                         rs.getString(10),
                         rs.getString(11),
                         rs.getString(12),
-                        rs.getString(13)));
+                        rs.getString(13),
+                        rs.getString(2)));
             }
         } catch (Exception e) {
         }
@@ -111,13 +113,15 @@ public class DAO {
                         rs.getString(10),
                         rs.getString(11),
                         rs.getString(12),
-                        rs.getString(13)));
+                        rs.getString(13),
+                        rs.getString(2)));
             }
         } catch (Exception e) {
         }
         return list;
     }
- public Customer getCustomerbyId(int id) {
+
+    public Customer getCustomerbyId(int id) {
 
         String query = "select * from Customer\n"
                 + "where id=?";
@@ -133,12 +137,13 @@ public class DAO {
                         rs.getString(4),
                         rs.getString(5),
                         rs.getString(6));
-                        
+
             }
         } catch (Exception e) {
         }
         return null;
     }
+
     public Product getProductbyId(String id) {
 
         String query = "select * from product\n"
@@ -158,7 +163,8 @@ public class DAO {
                         rs.getString(10),
                         rs.getString(11),
                         rs.getString(12),
-                        rs.getString(13));
+                        rs.getString(13),
+                        rs.getString(2));
             }
         } catch (Exception e) {
         }
@@ -185,7 +191,8 @@ public class DAO {
                         rs.getString(10),
                         rs.getString(11),
                         rs.getString(12),
-                        rs.getString(13)));
+                        rs.getString(13),
+                        rs.getString(2)));
             }
         } catch (Exception e) {
         }
@@ -276,7 +283,6 @@ public class DAO {
         } catch (Exception e) {
         }
     }
-     
 
     public static void main(String[] args) {
         DAO dao = new DAO();
