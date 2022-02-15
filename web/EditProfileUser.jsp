@@ -34,55 +34,33 @@
        <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
         <div class="wrapper wrapper--w680">
             <div class="card card-1">
-                <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Thông tin chi tiết</h2>
                     <form method="POST" action="EditUser">
                         
                          <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="id" value="${detail.id}" name="id" >
+                            <label>Mã Khách hàng</label>
+                            <input class="input--style-1" type="text"  value="${detail.id}" name="id" >
                         </div>
                         <div class="input-group">
-                            
-                            <input class="input--style-1" type="text" placeholder="Họ và tên" value="${detail.name}" name="name" >
+                            <label>Họ và tên</label>
+                            <input class="input--style-1" type="text" value="${detail.name}" name="name" >
                         </div>
+                                <div class="input-group">
+                                     <label>Email</label>
+                                    <input class="input--style-1" type="text"  name="email" value="${detail.email}">
+                                </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1 js-datepicker" type="text" placeholder="Email" name="email" value="${detail.email}">
-                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender">
-                                            <option disabled="disabled" selected="selected">GENDER</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                            <option>Other</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                               
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="Số điện thoại" name="phone" value="${detail.phone}">
+                                    <label>Số điện thoại</label>
+                                    <input class="input--style-1" type="text" name="phone" value="${detail.phone}">
                                 </div>
                             </div>
                         </div>
                         <div class="p-t-20">
-                            <button  class="btn btn--radius btn--green" type="submit">Sửa thông tin</button>
-                            <a href="LoadInforUser?id=${detail.id}" class="btn btn--radius btn--green" type="submit"><i class="fas fa-arrow-left"> Quay lại</a>
+                            <button  class="btn btn--radius btn--green" type="submit"><i class="fa fa-edit"></i>  Sửa thông tin</button>
+                            <button>  <a href="LoadInforUser?id=${detail.id}" class="btn btn--radius btn--green " style="background-color:#2c6ed5;" type="submit" ><i class="fa fa-arrow-circle-o-left"></i> Quay lại</a></button>
                         </div>
                     </form>
                 </div>

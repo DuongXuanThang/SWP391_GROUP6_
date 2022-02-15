@@ -170,6 +170,8 @@ h6 {
 
 .p-t-20 {
   padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .p-b-100 {
@@ -213,7 +215,9 @@ h6 {
 
 .btn--green {
   background: #57b846;
+  text-decoration: none;
 }
+
 
 .btn--green:hover {
   background: #4dae3c;
