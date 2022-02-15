@@ -25,7 +25,7 @@ public class DBContext {
     }   
     /*Insert your other code right after this comment*/
     /*Change/update information of your database connection, DO NOT change name of instance variables in this class*/
-    private final String serverName = "DESKTOP-EIATKCH\\SQLEXPRESS";
+    private final String serverName = "localhost";
     private final String dbName = "SWP391_G6";
     private final String portNumber = "1433";
     private final String instance="";//LEAVE THIS ONE EMPTY IF YOUR SQL IS A SINGLE INSTANCE
