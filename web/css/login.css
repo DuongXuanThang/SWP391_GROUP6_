@@ -58,7 +58,11 @@ body {
 #logreg-forms a{
     display: block;
     padding-top:10px;
-    color:lightseagreen;
+    color: black;
+    text-decoration: none;
+}
+#logreg-forms a:hover{
+    color: black;
 }
 
 #logreg-form .lines{

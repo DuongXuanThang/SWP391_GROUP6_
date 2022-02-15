@@ -58,7 +58,7 @@
                                 <div class="header__top__right__auth">
                                     <c:if test="${sessionScope.acc == null}">
                                         <a href="Login.jsp"><i class="fa fa-user"></i> Đăng nhập</a>
-
+                                        <a href="Signup.jsp"><i class="fas fa-user-plus"></i> Đăng kí</a>
                                     </c:if>
 
                                 </div>

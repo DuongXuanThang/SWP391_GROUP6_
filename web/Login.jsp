@@ -21,26 +21,27 @@
         <link href="css/login.css" rel="stylesheet" type="text/css"/>
         
         <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
-        <title>Login Form</title>
+        <title>Đăng Nhập</title>
     </head>
     <body>
         <div id="logreg-forms">
             <form class="form-signin" action="Login" method="post">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Đăng Nhập</h1>
                
                     <p class="text-danger">${message}</p>  
                
-                <input name="user"  type="text" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
-                <input name="pass"  type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                <input name="user"  type="text" id="inputEmail" class="form-control" placeholder="Tên đăng nhập" required="" autofocus="">
+                <input name="pass"  type="password" id="inputPassword" class="form-control" placeholder="Mật Khẩu" required="">
 
                 <div class="form-group form-check">
                     <input name="remember" value="1" type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                    <label class="form-check-label" for="exampleCheck1">Nhớ mật khẩu</label>
+                    
                 </div>
 
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</button>
                 <hr>
-                <button class="btn btn-primary btn-block" type="button" id="btn-signup"><a href="Signup.jsp"><i class="fas fa-user-plus"></i> Sign up New Account</a></button>
+                <button class="btn btn-primary btn-block"  type="button"  id="btn-signup"><a href="Signup.jsp"><i class="fas fa-user-plus"></i>  Đăng kí tài khoản </a></button>
             </form>
 
            

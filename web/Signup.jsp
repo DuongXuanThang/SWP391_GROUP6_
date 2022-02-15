@@ -21,7 +21,7 @@
         <link href="css/login.css" rel="stylesheet" type="text/css"/>
         
         <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
-        <title>Login Form</title>
+        <title> Đăng kí tài khoản</title>
     </head>
     <body>
         <div id="logreg-forms">
@@ -29,44 +29,24 @@
 <form action="SignUp" method="post" class="form-signup" style="display: block;">
            
                 <p class="text-danger">${message2}</p>
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign up</h1>
-                <input name="user"  type="text" id="user-name" class="form-control" placeholder="User name" required="" autofocus="">
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Đăng kí</h1>
+                <input name="user"  type="text" id="user-name" class="form-control" placeholder="Tên đăng nhập" required="" autofocus="">
                
                 <input name="email" value="${email}" type="text" id="user-repeatpass" class="form-control" placeholder="Email" required autofocus="">
-                 <input name="phone" value="${phone}" type="text" id="user-repeatpass" class="form-control" placeholder="Phone" required autofocus="">
-                  <input name="name" value="${fullname}" type="text" id="user-repeatpass" class="form-control" placeholder="FullName" required autofocus="">
-                  <input name="pass" type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
-                <input name="repass" type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+                 <input name="phone" value="${phone}" type="text" id="user-repeatpass" class="form-control" placeholder="Số điện thoại" required autofocus="">
+                  <input name="name" value="${fullname}" type="text" id="user-repeatpass" class="form-control" placeholder="Tên đầy đủ" required autofocus="">
+                  <input name="pass" type="password" id="user-pass" class="form-control" placeholder="Mật khẩu" required autofocus="">
+                <input name="repass" type="password" id="user-repeatpass" class="form-control" placeholder="Nhập lại mật khẩu" required autofocus="">
 
                 <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Đăng kí</button>
-               
+               <button class="btn btn-primary btn-block"  type="button"  id="btn-signup"><a href="Home"><i class="fas fa-arrow-left "></i>  Quay lại</a></button>
             </form>
             <br>
 
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script>
-            function toggleResetPswd(e) {
-                e.preventDefault();
-                $('#logreg-forms .form-signin').toggle() // display:block or none
-                $('#logreg-forms .form-reset').toggle() // display:block or none
-            }
-
-            function toggleSignUp(e) {
-                e.preventDefault();
-                $('#logreg-forms .form-signin').toggle(); // display:block or none
-                $('#logreg-forms .form-signup').toggle(); // display:block or none
-            }
-
-            $(() => {
-                // Login Register Form
-                $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
-                $('#logreg-forms #cancel_reset').click(toggleResetPswd);
-                $('#logreg-forms #btn-signup').click(toggleSignUp);
-                $('#logreg-forms #cancel_signup').click(toggleSignUp);
-            })
-        </script>
+     
     </body>
 </html>
 

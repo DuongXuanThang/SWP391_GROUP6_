@@ -44,7 +44,7 @@ public class Login extends HttpServlet {
        DAO dao = new DAO();
         Customer a = dao.login(username, password);
         if(a == null){
-           request.setAttribute("message", "!Wrong Username or Password");
+           request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu");
            request.getRequestDispatcher("Login.jsp").forward(request, response);
              
              

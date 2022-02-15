@@ -43,6 +43,7 @@
                             <input class="input--style-1" type="text" placeholder="id" value="${detail.id}" name="id" >
                         </div>
                         <div class="input-group">
+                            
                             <input class="input--style-1" type="text" placeholder="Họ và tên" value="${detail.name}" name="name" >
                         </div>
                         <div class="row row-space">
@@ -68,12 +69,7 @@
                         </div>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="class">
-                                    <option disabled="disabled" selected="selected">CLASS</option>
-                                    <option>Class 1</option>
-                                    <option>Class 2</option>
-                                    <option>Class 3</option>
-                                </select>
+                               
                                 <div class="select-dropdown"></div>
                             </div>
                         </div>
@@ -86,7 +82,7 @@
                         </div>
                         <div class="p-t-20">
                             <button  class="btn btn--radius btn--green" type="submit">Sửa thông tin</button>
-                            <a href="LoadInforUser?id=${detail.id}" class="btn btn--radius btn--green" type="submit">-> Quay lại</a>
+                            <a href="LoadInforUser?id=${detail.id}" class="btn btn--radius btn--green" type="submit"><i class="fas fa-arrow-left"> Quay lại</a>
                         </div>
                     </form>
                 </div>

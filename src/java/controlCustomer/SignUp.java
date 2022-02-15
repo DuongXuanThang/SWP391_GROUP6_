@@ -51,7 +51,7 @@ public class SignUp extends HttpServlet {
                response.sendRedirect("Login.jsp");
            }else
            { 
-               request.setAttribute("message2", "!Wrong Username has been registered");
+               request.setAttribute("message2", "!Tên đăng nhập đã được đăng kí");
                request.setAttribute("fullname",fullname );
                request.setAttribute("email",email );
                request.setAttribute("phone",phone );

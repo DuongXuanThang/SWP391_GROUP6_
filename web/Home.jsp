@@ -54,12 +54,14 @@
                                     <a href="LoadInforUser?id=${sessionScope.acc.id}"><i class="fa fa-user"></i> ${sessionScope.acc.username} </a>
                                         <a href="Logout"> Đăng xuất</a>
                                     </c:if>
+                                    <c:if test="${sessionScope.acc == null}">
+                                         <a href="Signup.jsp"><i class="fa fa-user-plus"></i> Đăng kí</a>
+                                         </c:if>
                             </div>
                             
                             <div class="header__top__right__auth">
                                <c:if test="${sessionScope.acc == null}">
-                                        <a href="Login.jsp"><i class="fa fa-user"></i> Đăng nhập</a>
-
+                                        <a href="Login.jsp"><i class="fa fa-user"></i> Đăng nhập</a>        
                                     </c:if>
                             </div>
                         </div>
