@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package control;
+package controlCustomer;
 
 import dao.DAO;
-import entity.Customer;
+import entity.Category;
+import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "SignUp", urlPatterns = {"/SignUp"})
-public class SignUp extends HttpServlet {
+@WebServlet(name = "Detail", urlPatterns = {"/detail"})
+public class Detail extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,31 +36,17 @@ public class SignUp extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       String username = request.getParameter("user");
-       String fullname = request.getParameter("name");
-       String email = request.getParameter("email");
-       String phone = request.getParameter("phone");
-       String password = request.getParameter("pass");
-       String repassword = request.getParameter("repass");
-       if(!password.equals(repassword)){
-           request.setAttribute("message", "!Wrong Password or Repassword");
-           request.getRequestDispatcher("Login.jsp").forward(request, response);
-       }else{
-           DAO dao = new DAO();
-           Customer c = dao.CheckAccountSignUp(username);
-           if(c == null){
-               dao.signup(fullname, email, phone, username, password);
-               response.sendRedirect("Login.jsp");
-           }else
-           { 
-               request.setAttribute("message2", "!Wrong Username has been registered");
-               request.setAttribute("fullname",fullname );
-               request.setAttribute("email",email );
-               request.setAttribute("phone",phone );
-               
-               request.getRequestDispatcher("Signup.jsp").forward(request, response);
-           }
-       }
+        String id = request.getParameter("pid");
+        
+        DAO dao = new DAO();
+       
+        Product p = dao.getProductbyId(id);
+        List<Category> listC = dao.getAllCategory();
+        request.setAttribute("listCate", listC);
+        request.setAttribute("detail", p);
+        
+        request.getRequestDispatcher("Detail.jsp").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

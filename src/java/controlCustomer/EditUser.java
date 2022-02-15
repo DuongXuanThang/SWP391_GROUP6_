@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package control;
+package controlCustomer;
 
 import dao.DAO;
 import entity.Customer;
@@ -20,8 +20,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "LoadInfor2", urlPatterns = {"/LoadInfor2"})
-public class LoadInfor2 extends HttpServlet {
+@WebServlet(name = "EditUser", urlPatterns = {"/EditUser"})
+public class EditUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,18 +35,17 @@ public class LoadInfor2 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       HttpSession session = request.getSession();
-       
-        Customer a = (Customer) session.getAttribute("acc");
-        int id = a.getId();
-        
+        String id = request.getParameter("id");
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        String email =request.getParameter("email");
         DAO dao = new DAO();
-       
-        Customer p = dao.getCustomerbyId(id);
+        dao.editCustomer(name, phone, email, id);
+        Customer a = dao.getCustomerbyId(Integer.parseInt(id));
+        HttpSession session = request.getSession();
+        session.setAttribute("acc", a);
+        response.sendRedirect("LoadInfor2");
         
-        request.setAttribute("detail", p);
-       
-        request.getRequestDispatcher("EditProfileUser.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

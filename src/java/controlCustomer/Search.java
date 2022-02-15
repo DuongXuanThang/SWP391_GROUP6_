@@ -3,10 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package control;
+package controlCustomer;
 
+import dao.DAO;
+import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "Checkout", urlPatterns = {"/Checkout"})
-public class Checkout extends HttpServlet {
+@WebServlet(name = "Search", urlPatterns = {"/search"})
+public class Search extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,19 +34,24 @@ public class Checkout extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Checkout</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Checkout at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+       response.setContentType("text/html;charset=UTF-8");
+       request.setCharacterEncoding("UTF-8");
+       String txtSearch = request.getParameter("txt"); // lay txt trên thanh search
+       DAO dao = new DAO();
+       List<Product> list = dao.getAllProduct();
+        List<entity.Category> listC = dao.getAllCategory();
+        request.setAttribute("listCate", listC);
+        request.setAttribute("listP", list);
+        List<Product> listLast = dao.getlastProducts();
+        
+       List<Product> listS = dao.getProductByName(txtSearch);
+       request.setAttribute("listLast", listLast);
+       request.setAttribute("listP", listS);
+       request.setAttribute("txtS", txtSearch);
+       request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
+       
+       
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

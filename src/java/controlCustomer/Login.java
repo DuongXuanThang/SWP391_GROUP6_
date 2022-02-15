@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package control;
+package controlCustomer;
 
+import dao.DAO;
+import entity.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,8 +20,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "Logout", urlPatterns = {"/Logout"})
-public class Logout extends HttpServlet {
+@WebServlet(name = "Login", urlPatterns = {"/Login"})
+public class Login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,9 +35,26 @@ public class Logout extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession();
-        session.removeAttribute("acc");
-        response.sendRedirect("Home");
+       String username = request.getParameter("user");
+       String password = request.getParameter("pass");
+       
+       
+       
+       
+       DAO dao = new DAO();
+        Customer a = dao.login(username, password);
+        if(a == null){
+           request.setAttribute("message", "!Wrong Username or Password");
+           request.getRequestDispatcher("Login.jsp").forward(request, response);
+             
+             
+        }else{
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", a);
+            //request.setAttribute("us", username);
+            
+            request.getRequestDispatcher("Home").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

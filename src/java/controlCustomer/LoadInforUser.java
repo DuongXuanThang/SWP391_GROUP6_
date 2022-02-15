@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package control;
+package controlCustomer;
 
 import dao.DAO;
-import entity.Category;
+import entity.Customer;
 import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,13 +16,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "Detail", urlPatterns = {"/detail"})
-public class Detail extends HttpServlet {
+@WebServlet(name = "LoadInforUser", urlPatterns = {"/LoadInforUser"})
+public class LoadInforUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,16 +37,16 @@ public class Detail extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String id = request.getParameter("pid");
-        
+      
+        HttpSession session = request.getSession();
         DAO dao = new DAO();
-       
-        Product p = dao.getProductbyId(id);
-        List<Category> listC = dao.getAllCategory();
-        request.setAttribute("listCate", listC);
-        request.setAttribute("detail", p);
+        Customer a = (Customer) session.getAttribute("acc");
+        int id = a.getId();
+        Customer p = dao.getCustomerbyId(id);
         
-        request.getRequestDispatcher("Detail.jsp").forward(request, response);
+        request.setAttribute("detail", p);
+        request.setAttribute("id", id);
+        request.getRequestDispatcher("ProfileUser.jsp").forward(request, response);
         
     }
 
