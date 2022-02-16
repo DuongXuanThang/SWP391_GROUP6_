@@ -28,7 +28,6 @@
   transition: all 0.4s ease;
   font-size: 14px;
   font-weight: 700;
-  color: white;
 }
 
 .btn--radius {
@@ -39,7 +38,8 @@
 
 .btn--green {
   background: #57b846;
- 
+  text-decoration: none;
+  color: white;
 }
 
 .emp-profile{
@@ -78,8 +78,25 @@
 .profile-head h6{
     color: #0062cc;
 }
-
-
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+.proile-rating{
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+.proile-rating span{
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
 .profile-head .nav-tabs{
     margin-bottom:5%;
 }
@@ -226,7 +243,7 @@
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Bootstrap JS -->
-    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Page Script -->
     
 
