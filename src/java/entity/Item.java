@@ -9,26 +9,21 @@ package entity;
  *
  * @author Duong Xuan Thang
  */
-public class OrderDetail {
-    private int oid,pid;
+public class Item {
+    private Product product;
     private int quantity;
     private double price;
-    public  OrderDetail(){}
-
-    public int getOid() {
-        return oid;
+    
+    public Item(){
+        
     }
 
-    public void setOid(int oid) {
-        this.oid = oid;
+    public Product getProduct() {
+        return product;
     }
 
-    public int getPid() {
-        return pid;
-    }
-
-    public void setPid(int pid) {
-        this.pid = pid;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public int getQuantity() {
@@ -49,7 +44,7 @@ public class OrderDetail {
 
     @Override
     public String toString() {
-        return "OrderDetail{" + "oid=" + oid + ", pid=" + pid + ", quantity=" + quantity + ", price=" + price + '}';
+        return "Item{" + "product=" + product + ", quantity=" + quantity + ", price=" + price + '}';
     }
     
 }

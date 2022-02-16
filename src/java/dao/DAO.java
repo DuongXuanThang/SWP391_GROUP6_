@@ -6,12 +6,15 @@
 package dao;
 
 import context.DBContext;
+import entity.Cart;
 import entity.Customer;
 import entity.Category;
+import entity.Item;
 import entity.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -282,6 +285,40 @@ public class DAO {
 
         } catch (Exception e) {
         }
+    }
+    public void addOrder(Customer u, Cart cart){
+        LocalDate curDate = java.time.LocalDate.now(); // lay ngay hien tai
+        String date = curDate.toString();
+        try {
+            //add vao bang order
+            String sql="insert into [order] values(?,?,?)";
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, date);
+            ps.setInt(2, u.getId());
+            ps.setDouble(3,cart.getTotalMoney());
+            ps.executeUpdate();
+            
+            //lay id cua Order vua add
+            String sql1 = "select top 1 id from [Order] order by id desc";
+            PreparedStatement st1 = conn.prepareStatement(sql);
+            ResultSet rs = st1.executeQuery();
+            // add vao bang OrderDetail
+            if(rs.next()){
+                int oid = rs.getInt(1);
+                for (Item i : cart.getItems()) {
+                    String sql2 = "insert into [OrderDetail] values(?,?,?,?)";
+                    PreparedStatement st2 = conn.prepareStatement(sql2);
+                    st2.setInt(1, oid);
+                    st2.setInt(2, i.getProduct().getId());
+                    st2.setInt(3,i.getQuantity());
+                    st2.setDouble(4, i.getPrice());
+                    st2.executeUpdate();
+                }
+            }
+        } catch (Exception e) {
+        }
+        
     }
 
     public static void main(String[] args) {

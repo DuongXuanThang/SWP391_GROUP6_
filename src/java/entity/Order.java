@@ -5,7 +5,6 @@
  */
 package entity;
 
-import java.util.List;
 
 /**
  *
@@ -13,16 +12,11 @@ import java.util.List;
  */
 public class Order {
     private int id;
-
-    private List<Product> product;
-    private List<Transaction> trans;
-    private int quantity;
-
-    public Order(int id, List<Product> product, List<Transaction> trans, int quantity) {
-        this.id = id;
-        this.product = product;
-        this.trans = trans;
-        this.quantity = quantity;
+    private String date;
+    private int cusid;
+    private double totalmoney;
+    public Order(){
+        
     }
 
     public int getId() {
@@ -33,35 +27,36 @@ public class Order {
         this.id = id;
     }
 
-    public List<Product> getProduct() {
-        return product;
+    public String getDate() {
+        return date;
     }
 
-    public void setProduct(List<Product> product) {
-        this.product = product;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public List<Transaction> getTrans() {
-        return trans;
+    public int getCusid() {
+        return cusid;
     }
 
-    public void setTrans(List<Transaction> trans) {
-        this.trans = trans;
+    public void setCusid(int cusid) {
+        this.cusid = cusid;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public double getTotalmoney() {
+        return totalmoney;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setTotalmoney(double totalmoney) {
+        this.totalmoney = totalmoney;
     }
 
     @Override
     public String toString() {
-        return "Order{" + "id=" + id + ", product=" + product + ", trans=" + trans + ", quantity=" + quantity + '}';
+        return "Order{" + "id=" + id + ", date=" + date + ", cusid=" + cusid + ", totalmoney=" + totalmoney + '}';
     }
     
+   
     
 }
 
