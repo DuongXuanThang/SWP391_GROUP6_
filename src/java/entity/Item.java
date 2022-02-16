@@ -18,6 +18,13 @@ public class Item {
         
     }
 
+    public Item(Product product, int quantity, double price) {
+        this.product = product;
+        this.quantity = quantity;
+        this.price = price;
+    }
+    
+
     public Product getProduct() {
         return product;
     }

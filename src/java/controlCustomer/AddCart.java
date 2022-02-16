@@ -5,13 +5,19 @@
  */
 package controlCustomer;
 
+import dao.DAO;
+import entity.Cart;
+import entity.Item;
+import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,7 +38,36 @@ public class AddCart extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("Cart.jsp").forward(request, response);
+         HttpSession session = request.getSession(true);
+        Cart cart  = null;
+        Object o = session.getAttribute("cart");
+        // co roi
+        if(o!=null){
+            cart = (Cart) o;
+            
+        }else{
+            cart = new Cart();
+        }
+        String tnum = request.getParameter("num");
+        String tid = request.getParameter("id");
+        int num;
+        try {
+             num =  Integer.parseInt(tnum);
+            
+            DAO dao = new DAO();
+            Product p = dao.getProductbyId(tid);
+            double price = p.getPrice()*1.2;
+            Item t = new Item(p,num,price);
+            cart.addItem(t);
+        } catch (Exception e) {
+            num =1;
+        }
+        List<Item> list = cart.getItems();
+        session.setAttribute("cart", cart);
+        session.setAttribute("size", list.size());
+      
+        request.getRequestDispatcher("Detail.jsp").forward(request, response);
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -61,7 +96,7 @@ public class AddCart extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+           processRequest(request, response);
     }
 
     /**
