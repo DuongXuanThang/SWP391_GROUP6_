@@ -38,37 +38,7 @@ public class AddCart extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String tnum = request.getParameter("num");
-        String id = request.getParameter("pid");
-        response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession(true);
-        Cart cart ;
-        Object o = session.getAttribute("cart");
-        // co roi
-        if(o!=null){
-            cart = (Cart) o;
-            
-        }else{
-            cart = new Cart();
-        }
-        
-        
-        int num = 1;
-        DAO dao = new DAO();
-        Product p = dao.getProductbyId(id);
-        try {
-            double price = p.getPrice()*1.2;
-            Item t = new Item(p,num,price);
-            cart.addItem(t);
-        } catch (Exception e) {
-            num =1;
-        }
-        List<Item> list = cart.getItems();
-        session.setAttribute("cart", cart);
-        session.setAttribute("size", list.size());
-        request.setAttribute("detail", p);
-        
-        request.getRequestDispatcher("Detail.jsp").forward(request, response);
+      
         
        
     }
@@ -99,7 +69,39 @@ public class AddCart extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-           processRequest(request, response);
+        String id = request.getParameter("pid");
+        String tnum = request.getParameter("num");
+       
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession(true);
+        Cart cart ;
+        Object o = session.getAttribute("cart");
+        // co roi
+        if(o!=null){
+            cart = (Cart) o;
+            
+        }else{
+            cart = new Cart();
+        }
+        
+        
+        int num = Integer.parseInt(tnum);
+        DAO dao = new DAO();
+        Product p = dao.getProductbyId(id);
+        try {
+            double price = p.getPrice()*1.2;
+            Item t = new Item(p,num,price);
+            cart.addItem(t);
+        } catch (Exception e) {
+            num =1;
+        }
+        List<Item> list = cart.getItems();
+        session.setAttribute("cart", cart);
+        session.setAttribute("size", list.size());
+        request.setAttribute("detail", p);
+        
+        request.getRequestDispatcher("Detail.jsp").forward(request, response);
+        
     }
 
     /**

@@ -1726,6 +1726,7 @@ background-color: #7fad39 ;
 	padding: 16px 28px 14px;
 	margin-right: 6px;
 	margin-bottom: 5px;
+        border: none;
 }
 
 .product__details__text .heart-icon {
@@ -1913,7 +1914,7 @@ background-color: #7fad39 ;
 }
 
 .shoping__cart__table table thead th.shoping__product {
-	text-align: left;
+	text-align: center;
 }
 
 .shoping__cart__table table tbody tr td {

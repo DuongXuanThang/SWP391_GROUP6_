@@ -4,6 +4,7 @@
     Author     : Duong Xuan Thang
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -69,7 +70,7 @@
                                     <th>Giá</th>
                                     <th>Số lượng</th>
                                     <th>Thành tiền</th>
-                                    <th></th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -81,24 +82,28 @@
                                 <tr>
                                     <td>${t}</td>
                                     <td class="shoping__cart__item">
-                                        <img src="${i.product.image}" alt="">
+                                        <img src="${i.product.image}" width="250" height="250" alt="">
                                         <h5>${i.product.name}</h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                       ${i.product.price}
+                                        <fmt:formatNumber pattern="##.#" value="${i.product.price}"/>
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <input type="text" readonly value="1">
+                                                <input type="text" readonly value=" ${i.quantity}">
                                             </div>
                                         </div>
                                     </td>
                                     <td class="shoping__cart__total">
-                                        $110.00
+                                       <fmt:formatNumber pattern="##.#" value="${i.quantity*i.price}"/>
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <form action="process" method="post">
+                                            <input type="hidden" name="id" value="${i.product.id}"/>
+                                            <input type="submit" value="Hủy mua"/>
+                                            
+                                        </form>
                                     </td>
                                 </tr>
                                 </c:forEach>

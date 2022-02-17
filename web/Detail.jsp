@@ -59,7 +59,7 @@
             <!-- Breadcrumb Section End -->
 
             <!-- Product Details Section Begin -->
-            <form >
+            <form name="f" method="post">
             <section class="product-details spad">
                 <div class="container">
                     <div class="row">
@@ -93,9 +93,8 @@
                                 <i class="fa fa-star-half-o"></i>
                                 <span>(18 reviews)</span>
                             </div>
-                            <fmt:parseNumber var = "i" integerOnly = "true" 
-                                             type = "number" value = "${detail.price}" />
-                            <div class="product__details__price"><c:out value = "${i}"/> vnd</div>
+                         
+                            <div class="product__details__price"><fmt:formatNumber pattern="##.#" value="${detail.price}"/> vnd</div>
 
                             <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
                                 vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
@@ -109,8 +108,7 @@
                                    </div>
                                 </div>
                             </div>
-                            <a type="submit" href="AddCart?pid=${detail.id}" class="primary-btn">Thêm vào giỏ hàng</a>
-                            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                            <input  class="primary-btn" type="submit" onclick="AddCart('${detail.id}')" value="Thêm vào giỏ hàng"/>
                             <ul>
                                 <li><b>Availability</b> <span>In Stock</span></li>
                                 <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
@@ -313,3 +311,10 @@
     </body>
 
 </html>
+<script type="text/javascript">
+  function AddCart(id){
+      document.f.action = "AddCart?pid=" + id;
+      document.f.submit();
+  }  
+</script>
+    

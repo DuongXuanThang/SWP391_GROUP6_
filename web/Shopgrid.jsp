@@ -177,9 +177,8 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="detail?pid=${o.id}">${o.name}</a></h6>
-                                    <fmt:parseNumber var = "i" integerOnly = "true" 
-         type = "number" value = "${o.price}" />
-                            <h5><c:out value = "${i}"/> vnd</h5>
+                                    
+                            <h5><fmt:formatNumber pattern="##.#" value="${o.price}"/> vnd</h5>
                                 </div>
                             </div>
                         </div>
