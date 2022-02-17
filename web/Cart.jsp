@@ -89,18 +89,16 @@
                                         <fmt:formatNumber pattern="##.#" value="${i.product.price}"/>
                                     </td>
                                     <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
+                                        <button><a href="process?num=-1&pid=${i.product.id}">-</a></button>
                                                 <input type="text" readonly value=" ${i.quantity}">
-                                            </div>
-                                        </div>
+                                         <button><a href="process?num=1&pid=${i.product.id}">+</a></button>
                                     </td>
                                     <td class="shoping__cart__total">
                                        <fmt:formatNumber pattern="##.#" value="${i.quantity*i.price}"/>
                                     </td>
                                     <td class="shoping__cart__item__close">
                                         <form action="process" method="post">
-                                            <input type="hidden" name="id" value="${i.product.id}"/>
+                                            <input type="hidden" name="pid" value="${i.product.id}"/>
                                             <input type="submit" value="Hủy mua"/>
                                             
                                         </form>
@@ -129,9 +127,10 @@
                     <div class="shoping__checkout">
                         <h5>Tổng giỏ hàng</h5>
                         <ul>
-                            <li>Subtotal <span>$454.98</span></li>
-                            <li>Total <span>$454.98</span></li>
+                            <li>Tổng phụ <span>$454.98</span></li>
+                            <li>Toàn bộ <span>$454.98</span></li>
                         </ul>
+                        
                         <a href="Checkout.jsp" class="primary-btn">Tiếp tục thanh toán</a>
                     </div>
                 </div>

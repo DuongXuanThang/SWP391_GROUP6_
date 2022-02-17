@@ -5,7 +5,6 @@
  */
 package controlCustomer;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import dao.DAO;
 import entity.Cart;
 import entity.Item;
@@ -24,8 +23,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "AddCart", urlPatterns = {"/AddCart"})
-public class AddCart extends HttpServlet {
+@WebServlet(name = "process", urlPatterns = {"/process"})
+public class process extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,9 +37,19 @@ public class AddCart extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
-        
-       
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet process</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet process at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -55,7 +64,37 @@ public class AddCart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession(true);
+        Cart cart ;
+        Object o = session.getAttribute("cart");
+        // co roi
+        if(o!=null){
+            cart = (Cart) o;
+            
+        }else{
+            cart = new Cart();
+        }
+        String tnum = request.getParameter("num").trim();
+        String tid = request.getParameter("pid");
+        int id, num;
+        try {
+            id=Integer.parseInt(tid);
+            num=Integer.parseInt(tnum);
+            if((num==-1)&& (cart.getQuantityById(id)<=1)){
+            cart.removeItem(id);
+        }else{
+                DAO dao= new DAO();
+                Product p = dao.getProductbyId(tid);
+                Item t = new Item(p,num,p.getPrice());
+                cart.addItem(t);
+            }
+            
+        } catch (Exception e) {
+        }
+        List<Item> list = cart.getItems();
+        session.setAttribute("cart", cart);
+        session.setAttribute("size", list.size());
+        request.getRequestDispatcher("Cart.jsp").forward(request, response);
     }
 
     /**
@@ -69,11 +108,7 @@ public class AddCart extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String id = request.getParameter("pid");
-        String tnum = request.getParameter("num");
-       
-        response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession(true);
+       HttpSession session = request.getSession(true);
         Cart cart ;
         Object o = session.getAttribute("cart");
         // co roi
@@ -83,25 +118,13 @@ public class AddCart extends HttpServlet {
         }else{
             cart = new Cart();
         }
-        
-        
-        int num = Integer.parseInt(tnum);
-        DAO dao = new DAO();
-        Product p = dao.getProductbyId(id);
-        try {
-           // double price = p.getPrice()*1.2;
-            Item t = new Item(p,num,p.getPrice());
-            cart.addItem(t);
-        } catch (Exception e) {
-            num =1;
-        }
+       String id = request.getParameter("pid");
+       int pid = Integer.parseInt(id);
+       cart.removeItem(pid);
         List<Item> list = cart.getItems();
         session.setAttribute("cart", cart);
         session.setAttribute("size", list.size());
-        request.setAttribute("detail", p);
-        
-        request.getRequestDispatcher("Detail.jsp").forward(request, response);
-        
+         request.getRequestDispatcher("Cart.jsp").forward(request, response);
     }
 
     /**
