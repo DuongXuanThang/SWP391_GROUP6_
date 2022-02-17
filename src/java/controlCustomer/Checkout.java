@@ -5,6 +5,9 @@
  */
 package controlCustomer;
 
+import dao.DAO;
+import entity.Cart;
+import entity.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -72,7 +76,30 @@ public class Checkout extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession(true);
+        Cart cart= null ;
+        Object o = session.getAttribute("cart");
+        // co roi
+        if(o!=null){
+            cart = (Cart) o;
+            
+        }else{
+            cart = new Cart();
+        }
+        Customer acc = null;
+        Object c = session.getAttribute("acc");
+        if(c!=null){
+            acc = (Customer) c;
+            DAO dao = new DAO();
+            dao.addOrder(acc, cart);
+            session.removeAttribute("cart");
+            session.setAttribute("size", 0);
+            session.removeAttribute("totalMoney");
+            response.sendRedirect("Home");
+            
+        }else{
+            response.sendRedirect("Login.jsp");
+        }
     }
 
     /**

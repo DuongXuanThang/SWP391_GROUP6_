@@ -287,9 +287,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <fmt:parseNumber var = "i" integerOnly = "true" 
-         type = "number" value = "${o.price}" />
-                            <span><c:out value = "${i}"/> vnd</span>
+                                               <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -304,9 +302,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                 <fmt:parseNumber var = "i" integerOnly = "true" 
-         type = "number" value = "${o.price}" />
-                            <span><c:out value = "${i}"/> vnd</span>
+                                                 <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
                                                 
                                             </div>
                                         </a>
@@ -328,9 +324,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <fmt:parseNumber var = "i" integerOnly = "true" 
-         type = "number" value = "${o.price}" />
-                            <span><c:out value = "${i}"/> vnd</span>
+                                                <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -345,9 +339,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                 <fmt:parseNumber var = "i" integerOnly = "true" 
-         type = "number" value = "${o.price}" />
-                            <span><c:out value = "${i}"/> vnd</span>
+                                                 <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
                                                 
                                             </div>
                                         </a>
@@ -369,9 +361,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <fmt:parseNumber var = "i" integerOnly = "true" 
-         type = "number" value = "${o.price}" />
-                            <span><c:out value = "${i}"/> vnd</span>
+                                                <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -386,9 +376,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                 <fmt:parseNumber var = "i" integerOnly = "true" 
-         type = "number" value = "${o.price}" />
-                            <span><c:out value = "${i}"/> vnd</span>
+                                                <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
                                                 
                                             </div>
                                         </a>

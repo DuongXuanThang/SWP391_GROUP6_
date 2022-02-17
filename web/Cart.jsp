@@ -89,7 +89,7 @@
                                         <fmt:formatNumber pattern="##.#" value="${i.product.price}"/> vnd
                                     </td>
                                     <td class="shoping__cart__quantity">
-                                        <div class="pro-qty">
+                                        <div class="pro-qty1">
                                         <button ><a href="process?num=-1&pid=${i.product.id}">-</a></button>
                                         <input  type="text" readonly value=" ${i.quantity}">
                                          <button ><a href="process?num=1&pid=${i.product.id}">+</a></button>

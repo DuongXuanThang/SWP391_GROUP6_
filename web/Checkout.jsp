@@ -64,7 +64,7 @@
             </div>
             <div class="checkout__form">
                 <h4>Chi tiết hóa đơn</h4>
-                <form action="#">
+                <form action="Checkout" method="post">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
@@ -118,6 +118,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="checkout__order">
                                 <h4>Đơn hàng của bạn</h4>
+                                
                                 <div class="checkout__order__products">Sản phẩm <span>Giá</span></div>
                                 <c:set var="o" value="${sessionScope.cart}" />
                                 <ul>
@@ -127,8 +128,9 @@
                                 </ul>
                                 <div class="checkout__order__subtotal">Subtotal <span><fmt:formatNumber pattern="##.#" value="${totalMoney}"/> </span></div>
                                 <div class="checkout__order__total">Total <span><fmt:formatNumber pattern="##.#" value="${totalMoney}"/> </span></div>
-                             
+                                
                                 <button type="submit" class="site-btn">Thanh toán</button>
+                                
                             </div>
                         </div>
                     </div>
