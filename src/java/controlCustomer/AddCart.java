@@ -5,6 +5,7 @@
  */
 package controlCustomer;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import dao.DAO;
 import entity.Cart;
 import entity.Item;
@@ -37,9 +38,11 @@ public class AddCart extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String tnum = request.getParameter("num");
+        String id = request.getParameter("pid");
         response.setContentType("text/html;charset=UTF-8");
-         HttpSession session = request.getSession(true);
-        Cart cart  = null;
+        HttpSession session = request.getSession(true);
+        Cart cart ;
         Object o = session.getAttribute("cart");
         // co roi
         if(o!=null){
@@ -48,14 +51,12 @@ public class AddCart extends HttpServlet {
         }else{
             cart = new Cart();
         }
-        String tnum = request.getParameter("num");
-        String tid = request.getParameter("id");
-        int num;
+        
+        
+        int num = 1;
+        DAO dao = new DAO();
+        Product p = dao.getProductbyId(id);
         try {
-             num =  Integer.parseInt(tnum);
-            
-            DAO dao = new DAO();
-            Product p = dao.getProductbyId(tid);
             double price = p.getPrice()*1.2;
             Item t = new Item(p,num,price);
             cart.addItem(t);
@@ -65,8 +66,10 @@ public class AddCart extends HttpServlet {
         List<Item> list = cart.getItems();
         session.setAttribute("cart", cart);
         session.setAttribute("size", list.size());
-      
+        request.setAttribute("detail", p);
+        
         request.getRequestDispatcher("Detail.jsp").forward(request, response);
+        
        
     }
 

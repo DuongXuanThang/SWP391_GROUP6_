@@ -302,7 +302,7 @@ public class DAO {
             //lay id cua Order vua add
             String sql1 = "select top 1 id from [Order] order by id desc";
             PreparedStatement st1 = conn.prepareStatement(sql);
-            ResultSet rs = st1.executeQuery();
+            rs = st1.executeQuery();
             // add vao bang OrderDetail
             if(rs.next()){
                 int oid = rs.getInt(1);

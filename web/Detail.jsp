@@ -59,6 +59,7 @@
             <!-- Breadcrumb Section End -->
 
             <!-- Product Details Section Begin -->
+            <form >
             <section class="product-details spad">
                 <div class="container">
                     <div class="row">
@@ -100,13 +101,15 @@
                                 vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
                                 quam vehicula elementum sed sit amet dui. Proin eget tortor risus.</p>
                             <div class="product__details__quantity">
-                                <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" name="num" value="1">
-                                    </div>
+                                <div>
+                                   <div class="quantity">
+                                <div class="pro-qty">
+                                    <input name="num" type="text" value="1">
+                                     </div> 
+                                   </div>
                                 </div>
                             </div>
-                            <a href="AddCart?id=${detail.id}" class="primary-btn">Thêm vào giỏ hàng</a>
+                            <a type="submit" href="AddCart?pid=${detail.id}" class="primary-btn">Thêm vào giỏ hàng</a>
                             <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                             <ul>
                                 <li><b>Availability</b> <span>In Stock</span></li>
@@ -196,6 +199,7 @@
                 </div>
             </div>
         </section>
+            </form>
         <!-- Product Details Section End -->
 
         <!-- Related Product Section Begin -->
