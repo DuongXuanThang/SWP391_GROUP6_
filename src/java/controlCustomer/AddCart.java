@@ -74,7 +74,7 @@ public class AddCart extends HttpServlet {
        
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
-        Cart cart ;
+        Cart cart= null ;
         Object o = session.getAttribute("cart");
         // co roi
         if(o!=null){
@@ -86,20 +86,24 @@ public class AddCart extends HttpServlet {
         
         
         int num = Integer.parseInt(tnum);
+        
         DAO dao = new DAO();
         Product p = dao.getProductbyId(id);
         try {
            // double price = p.getPrice()*1.2;
             Item t = new Item(p,num,p.getPrice());
             cart.addItem(t);
+            
         } catch (Exception e) {
             num =1;
         }
         List<Item> list = cart.getItems();
+        
+       
         session.setAttribute("cart", cart);
         session.setAttribute("size", list.size());
         request.setAttribute("detail", p);
-        
+        session.setAttribute("totalMoney", cart.getTotalMoney());
         request.getRequestDispatcher("Detail.jsp").forward(request, response);
         
     }

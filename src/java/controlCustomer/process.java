@@ -65,7 +65,7 @@ public class process extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
-        Cart cart ;
+        Cart cart =null ;
         Object o = session.getAttribute("cart");
         // co roi
         if(o!=null){
@@ -82,6 +82,7 @@ public class process extends HttpServlet {
             num=Integer.parseInt(tnum);
             if((num==-1)&& (cart.getQuantityById(id)<=1)){
             cart.removeItem(id);
+            //session.setAttribute("totalMoney", cart.getTotalMoney());
         }else{
                 DAO dao= new DAO();
                 Product p = dao.getProductbyId(tid);
@@ -92,8 +93,10 @@ public class process extends HttpServlet {
         } catch (Exception e) {
         }
         List<Item> list = cart.getItems();
+       
         session.setAttribute("cart", cart);
         session.setAttribute("size", list.size());
+        session.setAttribute("totalMoney", cart.getTotalMoney());
         request.getRequestDispatcher("Cart.jsp").forward(request, response);
     }
 
@@ -109,7 +112,7 @@ public class process extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        HttpSession session = request.getSession(true);
-        Cart cart ;
+        Cart cart = null ;
         Object o = session.getAttribute("cart");
         // co roi
         if(o!=null){
@@ -124,7 +127,8 @@ public class process extends HttpServlet {
         List<Item> list = cart.getItems();
         session.setAttribute("cart", cart);
         session.setAttribute("size", list.size());
-         request.getRequestDispatcher("Cart.jsp").forward(request, response);
+        session.setAttribute("totalMoney", cart.getTotalMoney());
+        request.getRequestDispatcher("Cart.jsp").forward(request, response);
     }
 
     /**

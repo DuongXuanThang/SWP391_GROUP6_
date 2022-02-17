@@ -86,12 +86,14 @@
                                         <h5>${i.product.name}</h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        <fmt:formatNumber pattern="##.#" value="${i.product.price}"/>
+                                        <fmt:formatNumber pattern="##.#" value="${i.product.price}"/> vnd
                                     </td>
                                     <td class="shoping__cart__quantity">
-                                        <button><a href="process?num=-1&pid=${i.product.id}">-</a></button>
-                                                <input type="text" readonly value=" ${i.quantity}">
-                                         <button><a href="process?num=1&pid=${i.product.id}">+</a></button>
+                                        <div class="pro-qty">
+                                        <button ><a href="process?num=-1&pid=${i.product.id}">-</a></button>
+                                        <input  type="text" readonly value=" ${i.quantity}">
+                                         <button ><a href="process?num=1&pid=${i.product.id}">+</a></button>
+                                        </div>
                                     </td>
                                     <td class="shoping__cart__total">
                                        <fmt:formatNumber pattern="##.#" value="${i.quantity*i.price}"/>
@@ -127,11 +129,12 @@
                     <div class="shoping__checkout">
                         <h5>Tổng giỏ hàng</h5>
                         <ul>
-                            <li>Tổng phụ <span>$454.98</span></li>
-                            <li>Toàn bộ <span>$454.98</span></li>
+                            <li>Tổng thu <span> <fmt:formatNumber pattern="##.#" value="${sessionScope.totalMoney}"/> </span></li>
+                            <li>Phí ship<span>0</span></li>
+                            <li>Toàn bộ <span><fmt:formatNumber pattern="##.#" value="${sessionScope.totalMoney}"/> </span></li>
                         </ul>
                         
-                        <a href="Checkout.jsp" class="primary-btn">Tiếp tục thanh toán</a>
+                        <a href="" class="primary-btn">Tiếp tục thanh toán</a>
                     </div>
                 </div>
             </div>

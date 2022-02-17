@@ -42,7 +42,7 @@ public class Category extends HttpServlet {
         request.setAttribute("listP",list);
         List<entity.Category> listC = dao.getAllCategory();
         request.setAttribute("listCate", listC);
-         request.setAttribute("totalP", list.size());
+        request.setAttribute("totalP", list.size());
         request.setAttribute("tag", cateID);
        
         List<Product> listLast = dao.getlastProducts();
