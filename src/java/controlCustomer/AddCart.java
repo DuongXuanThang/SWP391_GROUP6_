@@ -81,6 +81,7 @@ public class AddCart extends HttpServlet {
             cart = (Cart) o;
             
         }else{
+            //chua co
             cart = new Cart();
         }
         
@@ -93,7 +94,7 @@ public class AddCart extends HttpServlet {
            // double price = p.getPrice()*1.2;
             Item t = new Item(p,num,p.getPrice());
             cart.addItem(t);
-            
+            //add vao gio thanh cong
         } catch (Exception e) {
             num =1;
         }

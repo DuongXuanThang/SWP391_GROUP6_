@@ -40,7 +40,8 @@ public class EditUser extends HttpServlet {
         String phone = request.getParameter("phone");
         String email =request.getParameter("email");
         DAO dao = new DAO();
-        dao.editCustomer(name, phone, email, id);
+        dao.editCustomer(name, phone, email, id);//sua thanh cong
+        
         Customer a = dao.getCustomerbyId(Integer.parseInt(id));
         HttpSession session = request.getSession();
         session.setAttribute("acc", a);

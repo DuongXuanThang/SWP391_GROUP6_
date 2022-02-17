@@ -45,7 +45,7 @@ public class Search extends HttpServlet {
         List<Product> listLast = dao.getlastProducts();
         
        List<Product> listS = dao.getProductByName(txtSearch);
-       request.setAttribute("totalP", listS.size());
+       request.setAttribute("totalP", listS.size()); // so san pham tim kiem duoc
        request.setAttribute("listLast", listLast);
        request.setAttribute("listP", listS);
        request.setAttribute("txtS", txtSearch);

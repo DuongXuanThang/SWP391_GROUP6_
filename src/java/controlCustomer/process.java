@@ -87,7 +87,7 @@ public class process extends HttpServlet {
                 DAO dao= new DAO();
                 Product p = dao.getProductbyId(tid);
                 Item t = new Item(p,num,p.getPrice());
-                cart.addItem(t);
+                cart.addItem(t);// da them san pham vao gio hang
             }
             
         } catch (Exception e) {
@@ -123,7 +123,7 @@ public class process extends HttpServlet {
         }
        String id = request.getParameter("pid");
        int pid = Integer.parseInt(id);
-       cart.removeItem(pid);
+       cart.removeItem(pid);// da xoa san pham khoi gio hang
         List<Item> list = cart.getItems();
         session.setAttribute("cart", cart);
         session.setAttribute("size", list.size());

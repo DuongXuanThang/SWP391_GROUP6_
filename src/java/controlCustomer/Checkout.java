@@ -92,13 +92,14 @@ public class Checkout extends HttpServlet {
             acc = (Customer) c;
             DAO dao = new DAO();
             dao.addOrder(acc, cart);
+            // thanh toan thanh cong
             session.removeAttribute("cart");
             session.setAttribute("size", 0);
             session.removeAttribute("totalMoney");
             response.sendRedirect("Home");
             
         }else{
-            response.sendRedirect("Login.jsp");
+            response.sendRedirect("Login.jsp");// yeu cau dang nhap moi thanh toan
         }
     }
 

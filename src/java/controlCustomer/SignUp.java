@@ -41,7 +41,7 @@ public class SignUp extends HttpServlet {
        String password = request.getParameter("pass");
        String repassword = request.getParameter("repass");
        if(!password.equals(repassword)){
-           request.setAttribute("message", "!Wrong Password or Repassword");
+           request.setAttribute("message", "Mật khẩu không trùng khớp");
            request.getRequestDispatcher("Login.jsp").forward(request, response);
        }else{
            DAO dao = new DAO();
@@ -51,7 +51,7 @@ public class SignUp extends HttpServlet {
                response.sendRedirect("Login.jsp");
            }else
            { 
-               request.setAttribute("message2", "!Tên đăng nhập đã được đăng kí");
+               request.setAttribute("message2", "Tên đăng nhập đã tồn tại");
                request.setAttribute("fullname",fullname );
                request.setAttribute("email",email );
                request.setAttribute("phone",phone );
