@@ -44,7 +44,7 @@ public class Cart {
     }
     //them vao gio
     public void addItem(Item t){
-        // da co san pham trong gio
+        // da co san pham trong gio + them so luong
         if(getItemById(t.getProduct().getId())!= null){
             Item i = getItemById(t.getProduct().getId());
             i.setQuantity(i.getQuantity()+t.getQuantity());

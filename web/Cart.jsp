@@ -101,7 +101,7 @@
                                     <td class="shoping__cart__item__close">
                                         <form action="process" method="post">
                                             <input type="hidden" name="pid" value="${i.product.id}"/>
-                                            <input type="submit" value="Hủy mua"/>
+                                            <input width="250" height="250" type="submit" value="Hủy mua"/>
                                             
                                         </form>
                                     </td>
