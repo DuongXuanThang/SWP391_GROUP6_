@@ -42,8 +42,8 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="footer__widget">
                             <h6>About Us</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.
-                            </p>
+                            <p>Safety Shop là một cửa hàng trực tuyến chuyên buôn bán các loại vật dụng y tế phòng chống covid-19 và một số loại thuốc không kê đơn. Chúng tôi đã được cấp phép bởi bộ y tế và nhập hàng từ các nguồn uy tín </p>
+
                         </div>
                     </div>
                 </div>
