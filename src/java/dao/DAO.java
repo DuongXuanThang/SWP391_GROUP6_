@@ -318,8 +318,28 @@ public class DAO {
             }
         } catch (Exception e) {
         }
+      
         
     }
+      public int totalPage(){
+            
+            int total = 0;
+            String query = "select count (*) from Product";
+            try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+                while (rs.next()) {                    
+                    int totalP = rs.getInt(1);
+                    total = totalP/9; // 1 trang 9 san pham
+                    if(total %9 !=0){
+                       total++; 
+                    }
+                }
+          } catch (Exception e) {
+          }
+            return total;
+        }
 
     public static void main(String[] args) {
         DAO dao = new DAO();
@@ -328,6 +348,8 @@ public class DAO {
         //List<Product> listP = dao.getAllProduct();
         List<Product> listP = dao.getProductByName("kit");// search
         dao.editCustomer("xuanthang12345566", "03623064239", "thangdx@", "1");
+        
+        System.out.println(dao.totalPage());
         //Customer p1 = dao.getCustomerbyId("1");
         // System.out.println(p1);
         // List<Product> listP = dao.getlastProducts();

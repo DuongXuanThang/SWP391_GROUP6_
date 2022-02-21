@@ -40,8 +40,10 @@ public class Shopgrid extends HttpServlet {
         DAO dao = new DAO();
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
+        int totalPage = dao.totalPage();
         request.setAttribute("listCate", listC);
         request.setAttribute("totalP", list.size());
+        request.setAttribute("totalPage", totalPage);
         
         request.setAttribute("listP", list);
         List<Product> listLast = dao.getlastProducts();
