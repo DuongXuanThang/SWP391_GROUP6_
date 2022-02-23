@@ -340,16 +340,45 @@ public class DAO {
           }
             return total;
         }
+      public List<Product> paging(int index){
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product\n"
+                + "order by id\n"
+                 + "OFFSET ? ROWS FETCH NEXT 9 ROWS ONLY";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, index *9-9);
+
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(3),
+                        rs.getString(8),
+                        rs.getFloat(4),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(2)));
+            }
+            return list;
+        } catch (Exception e) {
+        }
+        return null;
+      }
 
     public static void main(String[] args) {
         DAO dao = new DAO();
 
         List<Category> listC = dao.getAllCategory();
-        //List<Product> listP = dao.getAllProduct();
-        List<Product> listP = dao.getProductByName("kit");// search
+        List<Product> listP = dao.paging(1);
+       // List<Product> listP = dao.getProductByName("kit");// search
         dao.editCustomer("xuanthang12345566", "03623064239", "thangdx@", "1");
         
-        System.out.println(dao.totalPage());
+        
         //Customer p1 = dao.getCustomerbyId("1");
         // System.out.println(p1);
         // List<Product> listP = dao.getlastProducts();
@@ -357,10 +386,10 @@ public class DAO {
 //       Customer a = dao.login("xuanthang", "123456");
 //        System.out.println(a);
 
-//        for (Category c : listC) {
-//            System.out.println(c);
-//           // count ++;
-//        }
+        for (Product c : listP) {
+            System.out.println(c);
+           // count ++;
+        }
         // dao.editCustomer("xuạnthang1234", "thanggdx@fpt","0362306429", "1");
     }
 }

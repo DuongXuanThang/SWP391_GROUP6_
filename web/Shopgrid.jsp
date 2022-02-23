@@ -183,7 +183,7 @@
                     </div>
                     <div class="product__pagination">
                         <c:forEach begin="1" end="${totalPage}"  var="i">
-                        <a href="#">${i}</a>
+                        <a href="Paging?index=${i}">${i}</a>
                         </c:forEach>
                         <a href="#"><i class="fa fa-long-arrow-right"></i></a>
                     </div>
