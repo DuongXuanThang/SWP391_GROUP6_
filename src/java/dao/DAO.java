@@ -331,8 +331,8 @@ public class DAO {
             rs = ps.executeQuery();
                 while (rs.next()) {                    
                     int totalP = rs.getInt(1);
-                    total = totalP/9; // 1 trang 9 san pham
-                    if(total %9 !=0){
+                    total = totalP/6; // 1 trang 9 san pham
+                    if(total %6 !=0){
                        total++; 
                     }
                 }
@@ -344,11 +344,11 @@ public class DAO {
         List<Product> list = new ArrayList<>();
         String query = "select * from product\n"
                 + "order by id\n"
-                 + "OFFSET ? ROWS FETCH NEXT 9 ROWS ONLY";
+                 + "OFFSET ? ROWS FETCH NEXT 6 ROWS ONLY";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setInt(1, index *9-9);
+            ps.setInt(1, index *6-6);
 
             rs = ps.executeQuery();
             while (rs.next()) {

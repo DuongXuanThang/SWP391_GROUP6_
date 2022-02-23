@@ -181,9 +181,10 @@
                         </div>
                     </c:forEach>
                     </div>
-                    <div class="product__pagination">
+                    <div class="product__pagination ">
+                        <a href="#"><i class="fa fa-long-arrow-left"></i></a>
                         <c:forEach begin="1" end="${totalPage}"  var="i">
-                        <a href="Paging?index=${i}">${i}</a>
+                            <a href="Paging?index=${i}">${i}</a> 
                         </c:forEach>
                         <a href="#"><i class="fa fa-long-arrow-right"></i></a>
                     </div>
@@ -207,7 +208,19 @@
     <script src="js2/owl.carousel.min.js"></script>
     <script src="js2/main.js"></script>
 
+ <script>
  
+jQuery(function($) {
+   var path = window.location.href;
+ 
+   $('.product__pagination a').each(function() {
+      if (this.href === path) {
+         $(this).addClass('activepage');
+      }
+   });
+});
+ 
+</script>
 
 </body>
 

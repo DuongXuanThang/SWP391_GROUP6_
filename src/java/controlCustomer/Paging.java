@@ -36,16 +36,23 @@ public class Paging extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String txt = request.getParameter("index");
-        int index = 0;
+        DAO dao = new DAO();
+         int index = 0; // defaul == 1 class active?
         if(txt == null){
             index = 1;
         }else{
             index = Integer.parseInt(txt);
         }
-        
-        DAO dao = new DAO();
         List<Product> list = dao.paging(index);
+        List<entity.Category> listC = dao.getAllCategory();
+        
+        int totalPage = dao.totalPage();
+        request.setAttribute("listCate", listC);
+        request.setAttribute("totalP", list.size());
         request.setAttribute("listP", list);
+        request.setAttribute("totalPage", totalPage);
+        List<Product> listLast = dao.getlastProducts();
+        request.setAttribute("listLast", listLast); // san pham moi
         request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
         
     }

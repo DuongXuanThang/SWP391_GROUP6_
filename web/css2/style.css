@@ -1660,6 +1660,11 @@ background-color: #7fad39 ;
 	border-color: #7fad39;
 	color: #ffffff;
 }
+.activepage{
+        background: #7fad39;
+	border-color: #7fad39;
+	color: #ffffff;
+}
 
 .product__pagination a:last-child,
 .blog__pagination a:last-child {
