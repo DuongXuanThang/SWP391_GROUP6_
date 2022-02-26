@@ -18,6 +18,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import java.util.List;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  *
@@ -369,6 +377,7 @@ public class DAO {
         }
         return null;
       }
+      
 
     public static void main(String[] args) {
         DAO dao = new DAO();
@@ -391,5 +400,6 @@ public class DAO {
            // count ++;
         }
         // dao.editCustomer("xuạnthang1234", "thanggdx@fpt","0362306429", "1");
+     
     }
 }
