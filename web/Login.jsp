@@ -33,10 +33,10 @@
                 <input name="user"  type="text" id="inputEmail" class="form-control" placeholder="Tên đăng nhập" required="" autofocus="">
                 <input name="pass"  type="password" id="inputPassword" class="form-control" placeholder="Mật Khẩu" required="">
 
-                <div class="form-group form-check">
+                <div class="form-group form-check" style="display: flex; justify-content: space-between">
                     <input name="remember" value="1" type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Nhớ mật khẩu</label>
-                    
+                    <a style="padding-top: 2px; color: #9999ff" href="sendEmail.jsp">Quên mật khẩu</a>
                 </div>
 
                 <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</button>

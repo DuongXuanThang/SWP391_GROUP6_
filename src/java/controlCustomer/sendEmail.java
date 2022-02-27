@@ -79,7 +79,7 @@ public class sendEmail extends HttpServlet {
         subject = request.getParameter("subject");
         msg = request.getParameter("message");
 
-        final String username = "thangdxse04839@fpt.edu.vn";//your email id
+        final String username = "xt588178@gmail.com";//your email id
         final String password = "hoilamgi123";// your password
         Properties props = new Properties();
         props.put("mail.smtp.auth", true);
@@ -96,19 +96,21 @@ public class sendEmail extends HttpServlet {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(email));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(username));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
             MimeBodyPart textPart = new MimeBodyPart();
             Multipart multipart = new MimeMultipart();
-            String final_Text = "Name: " + name + "    " + "Email: " + email + "    " + "Subject: " + subject + "    " + "Mesaage: " + msg;
+            String final_Text = "Mật khẩu mới" + name + "12345    " + "Email: " + email;
             textPart.setText(final_Text);
             message.setSubject(subject);
             multipart.addBodyPart(textPart);
             message.setContent(multipart);
-            message.setSubject("Contact Details");
+            message.setSubject("Mật khẩu mới");
             //out.println("Sending");
             Transport.send(message);
-            out.println("<center><h2 style='color:green;'>Email Sent Successfully.</h2>");
-            out.println("Thank you " + name + ", your message has been submitted to us.</center>");
+            out.println("<center><h2 style='color:green;'>Mật khẩu mới gửi thành công</h2>");
+            out.println("Vui lòng kiểm tra" + email + " để cập nhật thông tin</center>");
+            
+            
         } catch (Exception e) {
             out.println(e);
         }
