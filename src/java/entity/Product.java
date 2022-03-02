@@ -21,12 +21,12 @@ public class Product {
     private String image2;
     private String image3;
     private String information;
-    private String categoryID;
+    private int categoryID;
 
     public Product() {
     }
 
-    public Product(int id, String name, String image, float price, String title, String description, String image1, String image2, String image3, String information, String categoryID) {
+    public Product(int id, String name, String image, float price, String title, String description, String image1, String image2, String image3, String information, int categoryID) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -130,11 +130,11 @@ public class Product {
         this.description = description;
     }
 
-    public String getCategoryID() {
+    public int getCategoryID() {
         return categoryID;
     }
 
-    public void setCategoryID(String categoryID) {
+    public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
 

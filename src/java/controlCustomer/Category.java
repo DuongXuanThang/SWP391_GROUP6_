@@ -36,7 +36,7 @@ public class Category extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String cateID = request.getParameter("cid");
+        int cateID =Integer.parseInt(request.getParameter("cid")) ;
         DAO dao = new DAO();
         List<Product> list= dao.getProductbyCId(cateID);//lay id category
         request.setAttribute("listP",list);

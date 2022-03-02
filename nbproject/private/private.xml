@@ -3,44 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/EditUser.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Category.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/dao/DAO.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Item.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Cart.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Transaction.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/AddCart.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/OrderDetail.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Search.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Checkout.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Login.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Header.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Home.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/css/login.css</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/LoadInfor2.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Signup.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Shopgrid.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Home.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Shopgrid.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Product.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Logout.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/css/style.css</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/SignUp.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/EditProfileUser.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/LoadInforUser.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Category.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Login.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Footer.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/process.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/context/DBContext.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Order.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Customer.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/ProfileUser.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Cart.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Detail.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Detail.jsp</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/css2/style.css</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Checkout.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/src/java/controlAdmin/LoginAdmin.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/src/java/dao/DAO.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Home.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/src/java/entity/Product.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/web/DashBoard.jsp</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Category.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/web/AdminLogin.jsp</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/web/Detail.jsp</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/src/java/dao/DAOAdmin.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Detail.java</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/web/admin/DashBoard.jsp</file>
+            <file>file:/C:/Users/ADMIN/Desktop/New%20folder%20(3)/SWP391_GROUP6_SafetyShop/web/ManageProduct.jsp</file>
         </group>
     </open-files>
 </project-private>

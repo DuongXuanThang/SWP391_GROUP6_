@@ -5,25 +5,24 @@
  */
 package controlAdmin;
 
-import dao.DAO;
 import dao.DAOAdmin;
-import entity.Admin;
-import entity.Customer;
+import entity.Category;
+import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Duong Xuan Thang
+ * @author ADMIN
  */
-@WebServlet(name = "LoginAdmin", urlPatterns = {"/LoginAdmin"})
-public class LoginAdmin extends HttpServlet {
+@WebServlet(name = "ManageProduct", urlPatterns = {"/ManageProduct"})
+public class ManageProduct extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,21 +36,14 @@ public class LoginAdmin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String username = request.getParameter("user");
-        String password = request.getParameter("pass");
-
-        DAOAdmin dao = new DAOAdmin();
-        Admin a = dao.login(username, password);
-        if (a == null) {
-            request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu");
-            request.getRequestDispatcher("AdminLogin.jsp").forward(request, response);
-
-        } else {
-            HttpSession session = request.getSession();
-            session.setAttribute("acc", a);
-            //request.setAttribute("us", username);
-
-            request.getRequestDispatcher("DashBoard.jsp").forward(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            DAOAdmin dao = new DAOAdmin();
+            List<Product> list = dao.getAllProduct();
+        List<Category> listC = dao.getAllCategory();
+        request.setAttribute("listCate", listC);
+        request.setAttribute("listP", list);
+        request.getRequestDispatcher("ManageProduct.jsp").forward(request, response);
         }
     }
 

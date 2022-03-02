@@ -3,7 +3,8 @@
     Created on : Feb 15, 2022, 10:20:50 AM
     Author     : Duong Xuan Thang
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="../forAdmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+    <link href="forAdmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
     <!-- Custom fonts for this template-->
    
     <link
@@ -23,7 +24,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../forAdmin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="forAdmin/css/sb-admin-2.min.css" rel="stylesheet">
     </head>
     <body>
         <!-- Page Wrapper -->
@@ -33,7 +34,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Dashboard.jap">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -69,8 +70,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản lí sản phẩm:</h6>
-                        <a class="collapse-item" href="buttons.html">Loại sản phẩm</a>
-                        <a class="collapse-item" href="cards.html">Sản phẩm</a>
+                        <a class="collapse-item" href="CategoryList.jsp">Loại sản phẩm</a>
+                        <a class="collapse-item" href="ManageProduct.jsp">Sản phẩm</a>
                     </div>
                 </div>
             </li>
@@ -215,26 +216,12 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-<!--                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
-                            </a>
-                             Dropdown - User Information 
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                               
-                              
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>-->
+                                    <c:if test="${sessionScope.acc != null}">
+                                    <a href="LoadInforUser?id=${sessionScope.acc.id}"><i class="fa fa-user"></i> ${sessionScope.acc.username} </a>
+                                        <a href="Logout"> Đăng xuất</a>
+                                    </c:if>
                                     <c:if test="${sessionScope.acc == null}">
-                                        <a href="../AdminLogin.jsp"><i class="fa fa-user"></i>Login</a>        
+                                        <a href="AdminLogin.jsp"><i class="fa fa-user"></i>Đăng Nhập</a>        
                                     </c:if>
                                 </a>
                             </div>
@@ -377,9 +364,9 @@
                         </div>
 
                         <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
+<!--                        <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
+                                 Card Header - Dropdown 
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
@@ -398,7 +385,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Card Body -->
+                                 Card Body 
                                 <div class="card-body">
                                     <div class="chart-pie pt-4 pb-2">
                                         <canvas id="myPieChart"></canvas>
@@ -416,7 +403,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
 
                     <!-- Content Row -->
@@ -469,20 +456,20 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../forAdmin/vendor/jquery/jquery.min.js"></script>
-    <script src="../forAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="forAdmin/vendor/jquery/jquery.min.js"></script>
+    <script src="forAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../forAdmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="forAdmin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../forAdmin/js/sb-admin-2.min.js"></script>
+    <script src="forAdmin/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../forAdmin/vendor/chart.js/Chart.min.js"></script>
+    <script src="forAdmin/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../forAdmin/js/demo/chart-area-demo.js"></script>
-    <script src="../forAdmin/js/demo/chart-pie-demo.js"></script>
+    <script src="forAdmin/js/demo/chart-area-demo.js"></script>
+    <script src="forAdmin/js/demo/chart-pie-demo.js"></script>
     </body>
 </html>

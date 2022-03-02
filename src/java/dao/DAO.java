@@ -55,7 +55,7 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(2)));
+                        rs.getInt(2)));
             }
         } catch (Exception e) {
         }
@@ -78,14 +78,14 @@ public class DAO {
         return list;
     }
 
-    public List<Product> getProductbyCId(String cid) {
+    public List<Product> getProductbyCId(int cid) {
         List<Product> list = new ArrayList<>();
         String query = "select * from product\n"
                 + "where cate_ID=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setString(1, cid);
+            ps.setInt(1, cid);
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Product(rs.getInt(1),
@@ -98,7 +98,7 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(2)));
+                        rs.getInt(2)));
             }
         } catch (Exception e) {
         }
@@ -125,7 +125,7 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(2)));
+                        rs.getInt(2)));
             }
         } catch (Exception e) {
         }
@@ -175,7 +175,7 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(2));
+                        rs.getInt(2));
             }
         } catch (Exception e) {
         }
@@ -203,7 +203,7 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(2)));
+                        rs.getInt(2)));
             }
         } catch (Exception e) {
         }
@@ -370,7 +370,7 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getString(2)));
+                        rs.getInt(2)));
             }
             return list;
         } catch (Exception e) {

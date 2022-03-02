@@ -36,16 +36,16 @@ public class Detail extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String id = request.getParameter("pid");
+        int id = Integer.parseInt(request.getParameter("pid"));
         
         DAO dao = new DAO();
        
-        Product p = dao.getProductbyId(id);
+        Product p = dao.getProductbyId(String.valueOf(id));
         List<Category> listC = dao.getAllCategory();
         List<Product> listP = dao.getProductbyCId(p.getCategoryID());
         request.setAttribute("listCate", listC);
         request.setAttribute("detail", p);
-        
+        request.setAttribute("listP",listP);
         request.getRequestDispatcher("Detail.jsp").forward(request, response);
         
     }
