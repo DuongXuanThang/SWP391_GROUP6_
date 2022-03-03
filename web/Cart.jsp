@@ -91,7 +91,7 @@
                                     <td class="shoping__cart__quantity">
                                         <div class="pro-qty1">
                                         <button ><a href="process?num=-1&pid=${i.product.id}">-</a></button>
-                                        <input  type="text" readonly value=" ${i.quantity}">
+                                        <input style="text-align: center"  type="text" readonly value=" ${i.quantity}">
                                          <button ><a href="process?num=1&pid=${i.product.id}">+</a></button>
                                         </div>
                                     </td>
@@ -101,7 +101,7 @@
                                     <td class="shoping__cart__item__close">
                                         <form action="process" method="post">
                                             <input type="hidden" name="pid" value="${i.product.id}"/>
-                                            <input width="250" height="250" type="submit" value="Hủy mua"/>
+                                            <input  style="background-color: #DF4B3B" width="250" height="250" type="submit" value="Hủy mua"/>
                                             
                                         </form>
                                     </td>

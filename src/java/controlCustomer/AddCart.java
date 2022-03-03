@@ -99,7 +99,7 @@ public class AddCart extends HttpServlet {
             num =1;
         }
         List<Item> list = cart.getItems();
-        
+         request.setAttribute("mesage", "Thêm sản phẩm váo giỏ hàng thành công");
        
         session.setAttribute("cart", cart);
         session.setAttribute("size", list.size());

@@ -80,7 +80,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="Home">Trang chủ</a></li>
-                            <li><a href="Shopgrid">Cửa hàng</a></li>
+                            <li><a href="Paging?index=1">Cửa hàng</a></li>
                             <li><a href="#">Trang</a>
                                 <ul class="header__menu__dropdown">
                                     
@@ -237,7 +237,7 @@
                             <h6><a href="detail?pid=${o.id}">${o.name}</a></h6>
                              
                           
-                            <h5><fmt:formatNumber pattern="##.#" value="${o.price}"/> vnd</h5>
+                            <h5><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> vnd</h5>
                              
                         </div>
                     </div>
@@ -287,7 +287,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                               <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
+                                               <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -302,7 +302,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                 <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
+                                                 <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
                                                 
                                             </div>
                                         </a>
@@ -324,7 +324,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
+                                                <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -339,7 +339,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                 <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
+                                                 <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
                                                 
                                             </div>
                                         </a>
@@ -361,7 +361,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
+                                                <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -376,7 +376,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
+                                                <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
                                                 
                                             </div>
                                         </a>

@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="css2/owl.carousel.min.css" type="text/css">
         <link rel="stylesheet" href="css2/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css2/style.css" type="text/css">
+        
     </head>
 
     <body>
@@ -57,7 +58,12 @@
                 </div>
             </section>
             <!-- Breadcrumb Section End -->
-
+             <c:if test="${mesage != null}" >
+            <div id="success" style="text-align: center" class="alert alert-success ">
+           
+                <strong><i class="fa fa-check" aria-hidden="true"></i>  ${mesage}</strong> 
+                </c:if>
+</div>
             <!-- Product Details Section Begin -->
             <form name="f" method="post">
                 <section class="product-details spad">
@@ -108,7 +114,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input  class="primary-btn" type="submit" onclick="AddCart('${detail.id}')" value="Thêm vào giỏ hàng"/>
+                                <input  class="primary-btn" type="submit" onclick="AddCart('${detail.id}')"  data-type="success" value="Thêm vào giỏ hàng"/>
                                 <ul>
                                     <li><b>Availability</b> <span>In Stock</span></li>
                                     <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
@@ -281,6 +287,7 @@
         <!-- Footer Section End -->
 
         <!-- Js Plugins -->
+       
         <script src="js2/jquery-3.3.1.min.js"></script>
         <script src="js2/bootstrap.min.js"></script>
         <script src="js2/jquery.nice-select.min.js"></script>
