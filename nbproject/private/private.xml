@@ -3,6 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/EditUser.java</file>
+=======
+>>>>>>> b94b50df743f9a708613430d1b290835d1c6e323
+>>>>>>> Stashed changes
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Admin.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/private/private.properties</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Category.java</file>
@@ -12,18 +19,52 @@
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Cart.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/AddCart.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/OrderDetail.java</file>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Search.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/AdminLogin.jsp</file>
+=======
+>>>>>>> b94b50df743f9a708613430d1b290835d1c6e323
+>>>>>>> Stashed changes
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Checkout.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Login.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Home.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/project.properties</file>
+<<<<<<< Updated upstream
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/sass/_footer.scss</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/css/login.css</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Home.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/ant-deploy.xml</file>
+=======
+<<<<<<< HEAD
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Header.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/ManageProduct.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/sass/_footer.scss</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/css/login.css</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/admin/LoginAdmin.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Home.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/ant-deploy.xml</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/admin/DashBoard.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Shopgrid.jsp</file>
+=======
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/sass/_footer.scss</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/css/login.css</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Home.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/ant-deploy.xml</file>
+>>>>>>> b94b50df743f9a708613430d1b290835d1c6e323
+>>>>>>> Stashed changes
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/css/style.css</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/sendEmail.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlAdmin/ManageProduct.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Category.java</file>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Login.java</file>
+=======
+>>>>>>> b94b50df743f9a708613430d1b290835d1c6e323
+>>>>>>> Stashed changes
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/process.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/context/DBContext.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Order.java</file>
@@ -33,9 +74,22 @@
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Cart.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/css2/style.css</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Detail.jsp</file>
+<<<<<<< Updated upstream
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/build-impl.xml</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/private/private.xml</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Checkout.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/private/private.xml</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/DashBoard.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Checkout.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/CategoryList.jsp</file>
+=======
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/build-impl.xml</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/private/private.xml</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Checkout.java</file>
+>>>>>>> b94b50df743f9a708613430d1b290835d1c6e323
+>>>>>>> Stashed changes
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlAdmin/LoginAdmin.java</file>
         </group>
     </open-files>

@@ -37,7 +37,7 @@ public class Paging extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String txt = request.getParameter("index");
         DAO dao = new DAO();
-         int index = 0; // defaul == 1 class active?
+         int index = 0; 
         if(txt == null){
             index = 1;
         }else{
