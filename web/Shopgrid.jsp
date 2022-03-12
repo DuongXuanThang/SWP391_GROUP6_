@@ -78,24 +78,25 @@
                                 
                             </ul>
                         </div>
+                        <form action="SearchPrice" method="">
                         <div class="sidebar__item">
                             <h4>Khoảng giá</h4>
                             <div class="price-range-wrap">
                                 <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                    data-min="10" data-max="540">
+                                    data-min="100000" data-max="300000">
                                     <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                                     <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                     <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                 </div>
                                 <div class="range-slider">
                                     <div class="price-input">
-                                        <input type="text" id="minamount">
-                                        <input type="text" id="maxamount">
+                                        <input type="text" name ="min" id="minamount">
+                                        <input type="text" name="max" id="maxamount">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+                        </form>
                       
                         <div class="sidebar__item">
                             <div class="latest-product__text">
@@ -109,7 +110,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                               <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
+                                               <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> vnd</span> 
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -123,7 +124,7 @@
                                         
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                              <span><fmt:formatNumber pattern="##.#" value="${o.price}"/></span> 
+                                              <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
                             <span><c:out value = "${i}"/> vnd</span>
                                             </div>
                                         </a>
@@ -175,19 +176,29 @@
                                 <div class="product__item__text">
                                     <h6><a href="detail?pid=${o.id}">${o.name}</a></h6>
                                     
-                            <h5><fmt:formatNumber pattern="##.#" value="${o.price}"/> vnd</h5>
+                            <h5><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> vnd</h5>
                                 </div>
                             </div>
                         </div>
                     </c:forEach>
                     </div>
+                <c:if test="${totalP != 0}">
+                                     
+                                       
                     <div class="product__pagination ">
-                        <a href="#"><i class="fa fa-long-arrow-left"></i></a>
+                       
                         <c:forEach begin="1" end="${totalPage}"  var="i">
                             <a href="Paging?index=${i}">${i}</a> 
                         </c:forEach>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                        
                     </div>
+                </c:if>
+                                 <c:if test="${totalP == 0}">
+                                     
+                                     <h5>Không có sản phẩm nào</h5>             
+                   
+                </c:if>
+                                
                 </div>
             </div>
         </div>

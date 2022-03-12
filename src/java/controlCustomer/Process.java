@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
  * @author Duong Xuan Thang
  */
 @WebServlet(name = "process", urlPatterns = {"/process"})
-public class process extends HttpServlet {
+public class Process extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

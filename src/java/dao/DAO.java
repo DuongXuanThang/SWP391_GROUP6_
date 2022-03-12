@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -209,6 +210,35 @@ public class DAO {
         }
         return list;
     }
+    public List<Product> getProductByPrice(String min,String max) {
+        List<Product> list = new ArrayList<>();
+        String query = "select * from product\n"
+                + "where price >= ? and price <= ? ";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, min);
+            ps.setString(2, max);
+
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(3),
+                        rs.getString(8),
+                        rs.getFloat(4),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getInt(2)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+    
 
     public Customer login(String username, String pass) {
         String query = "select * from Customer\n"
@@ -294,69 +324,71 @@ public class DAO {
         } catch (Exception e) {
         }
     }
-    public void addOrder(Customer u, Cart cart){
+
+    public void addOrder(Customer u, Cart cart) {
         LocalDate curDate = java.time.LocalDate.now(); // lay ngay hien tai
         String date = curDate.toString();
         try {
             //add vao bang order
-            String sql="insert into [order] values(?,?,?)";
+            String sql = "insert into [order] values(?,?,?)";
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(sql);
             ps.setString(1, date);
             ps.setInt(2, u.getId());
-            ps.setDouble(3,cart.getTotalMoney());
+            ps.setDouble(3, cart.getTotalMoney());
             ps.executeUpdate();
-            
+
             //lay id cua Order vua add
             String sql1 = "select top 1 id from [Order] order by id desc";
             PreparedStatement st1 = conn.prepareStatement(sql1);
             rs = st1.executeQuery();
             // add vao bang OrderDetail
-            if(rs.next()){
+            if (rs.next()) {
                 int oid = rs.getInt(1);
                 for (Item i : cart.getItems()) {
                     String sql2 = "insert into [OrderDetail] values(?,?,?,?)";
                     PreparedStatement st2 = conn.prepareStatement(sql2);
                     st2.setInt(1, oid);
                     st2.setInt(2, i.getProduct().getId());
-                    st2.setInt(3,i.getQuantity());
+                    st2.setInt(3, i.getQuantity());
                     st2.setDouble(4, i.getPrice());
                     st2.executeUpdate();
                 }
             }
         } catch (Exception e) {
         }
-      
-        
+
     }
-      public int totalPage(){
-            
-            int total = 0;
-            String query = "select count (*) from Product";
-            try {
+
+    public int totalPage() {
+
+        int total = 0;
+        String query = "select count (*) from Product";
+        try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
-                while (rs.next()) {                    
-                    int totalP = rs.getInt(1);
-                    total = totalP/6; // 1 trang 9 san pham
-                    if(total %6 !=0){
-                       total++; 
-                    }
+            while (rs.next()) {
+                int totalP = rs.getInt(1);
+                total = totalP / 6; // 1 trang 9 san pham
+                if (total % 6 != 0) {
+                    total++;
                 }
-          } catch (Exception e) {
-          }
-            return total;
+            }
+        } catch (Exception e) {
         }
-      public List<Product> paging(int index){
+        return total;
+    }
+
+    public List<Product> paging(int index) {
         List<Product> list = new ArrayList<>();
         String query = "select * from product\n"
                 + "order by id\n"
-                 + "OFFSET ? ROWS FETCH NEXT 6 ROWS ONLY";
+                + "OFFSET ? ROWS FETCH NEXT 6 ROWS ONLY";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setInt(1, index *6-6);
+            ps.setInt(1, index * 6 - 6);
 
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -376,30 +408,31 @@ public class DAO {
         } catch (Exception e) {
         }
         return null;
-      }
-      
+    }
 
     public static void main(String[] args) {
         DAO dao = new DAO();
 
         List<Category> listC = dao.getAllCategory();
-        List<Product> listP = dao.paging(1);
-       // List<Product> listP = dao.getProductByName("kit");// search
+        List<Product> listP = dao.getProductByPrice("160000", "20000000");
+        // List<Product> listP = dao.getProductByName("kit");// search
         dao.editCustomer("xuanthang12345566", "03623064239", "thangdx@", "1");
-        
-        
+
         //Customer p1 = dao.getCustomerbyId("1");
         // System.out.println(p1);
         // List<Product> listP = dao.getlastProducts();
 //       int count = 0;
 //       Customer a = dao.login("xuanthang", "123456");
 //        System.out.println(a);
-
         for (Product c : listP) {
             System.out.println(c);
-           // count ++;
+            // count ++;
         }
         // dao.editCustomer("xuạnthang1234", "thanggdx@fpt","0362306429", "1");
-     
+        Random rd = new Random();
+        int number = 10000 + rd.nextInt(99999);
+        System.out.println(number);
+        
+        
     }
 }

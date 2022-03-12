@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Duong Xuan Thang
  */
 @WebServlet(name = "sendEmail", urlPatterns = {"/sendEmail"})
-public class sendEmail extends HttpServlet {
+public class SendEmail extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -71,6 +71,7 @@ public class sendEmail extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       
        String name, subject, email, msg;
        PrintWriter out = response.getWriter();
         response.setContentType("text/html");
@@ -95,6 +96,7 @@ public class sendEmail extends HttpServlet {
                 });
         try {
             Message message = new MimeMessage(session);
+           // message.setHeader("Content-Type", "text/plain; charset=UTF-8");
             message.setFrom(new InternetAddress(email));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
             MimeBodyPart textPart = new MimeBodyPart();
@@ -107,6 +109,7 @@ public class sendEmail extends HttpServlet {
             message.setSubject("Mật khẩu mới");
             //out.println("Sending");
             Transport.send(message);
+           
             out.println("<center><h2 style='color:green;'>Mật khẩu mới gửi thành công</h2>");
             out.println("Vui lòng kiểm tra" + email + " để cập nhật thông tin</center>");
             
