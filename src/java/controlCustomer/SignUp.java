@@ -47,7 +47,7 @@ public class SignUp extends HttpServlet {
            DAO dao = new DAO();
            Customer c = dao.CheckAccountSignUp(username);
            if(c == null){
-               dao.signup(fullname, email, phone, username, password);
+               dao.signupNewUser(fullname, email, phone, username, password);
                response.sendRedirect("Login.jsp");
            }else
            { 

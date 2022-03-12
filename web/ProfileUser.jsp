@@ -171,7 +171,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <button  class="btn btn--radius btn--green" ><a style="color:white;" href="LoadInfor2?id=${detail.id}"><i class="fa fa-edit"></i>  Sửa thông tin</a></button>
+                        <button  class="btn btn--radius btn--green" ><a style="color:white;" href="LoadInforUpdate?id=${detail.id}"><i class="fa fa-edit"></i>  Sửa thông tin</a></button>
                </div>
                 </div>
           

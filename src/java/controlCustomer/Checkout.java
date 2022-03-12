@@ -96,7 +96,8 @@ public class Checkout extends HttpServlet {
             session.removeAttribute("cart");
             session.setAttribute("size", 0);
             session.removeAttribute("totalMoney");
-            response.sendRedirect("Home");
+            
+            response.sendRedirect("Shopgrid");
             
         }else{
             response.sendRedirect("Login.jsp");// yeu cau dang nhap moi thanh toan

@@ -44,10 +44,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Checkout</h2>
+                        <h2>Đặt Hàng</h2>
                         <div class="breadcrumb__option">
                             <a href="Home">Trang chủ</a>
-                            <span>Thanh toán</span>
+                            <span>Đặt Hàng</span>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
         </div>
     </section>
     <!-- Breadcrumb Section End -->
-
+ 
     <!-- Checkout Section Begin -->
     <section class="checkout spad">
         <div class="container">
@@ -123,14 +123,32 @@
                                 <c:set var="o" value="${sessionScope.cart}" />
                                 <ul>
                                     <c:forEach items="${o.items}" var="i">
-                                    <li>${i.product.name}<span><fmt:formatNumber pattern="##.#" value="${i.product.price}"/></span></li>
+                                    <li>${i.product.name}<span><fmt:formatNumber pattern="#,##0.###" value="${i.product.price}"/> VND</span></li>
                                     </c:forEach>
                                 </ul>
-                                <div class="checkout__order__subtotal">Subtotal <span><fmt:formatNumber pattern="##.#" value="${totalMoney}"/> </span></div>
-                                <div class="checkout__order__total">Total <span><fmt:formatNumber pattern="##.#" value="${totalMoney}"/> </span></div>
+                                <div class="checkout__order__subtotal">Phụ phí <span><fmt:formatNumber pattern="#,##0.###" value="${totalMoney}"/> VND</span></div>
+                                <div class="checkout__order__total">Tổng tiền <span><fmt:formatNumber pattern="#,##0.###" value="${totalMoney}"/> VND</span></div>
                                 
-                                <button type="submit" class="site-btn">Thanh toán</button>
-                                
+                                <button  class="site-btn" data-toggle="modal" data-target="#exampleModalCenter">Đặt Hàng</button>
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Bạn muốn đặt sản phẩm này?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Đồng ý</button>
+      </div>
+    </div>
+  </div>
+</div>
                             </div>
                         </div>
                     </div>

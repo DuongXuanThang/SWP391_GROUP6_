@@ -45,7 +45,7 @@ public class Category extends HttpServlet {
         request.setAttribute("totalP", list.size());// so luong san pham load tren man hinh
         request.setAttribute("tag", cateID);
        
-        List<Product> listLast = dao.getlastProducts();
+        List<Product> listLast = dao.getLastProducts();
         request.setAttribute("listLast", listLast);
        request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
        

@@ -5,9 +5,12 @@
  */
 package controlCustomer;
 
+import dao.DAO;
+import entity.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Properties;
+import java.util.Random;
 import javax.mail.Message;
 import javax.mail.Multipart;
 import javax.mail.PasswordAuthentication;
@@ -22,6 +25,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -79,7 +83,7 @@ public class SendEmail extends HttpServlet {
         email = request.getParameter("email");
         subject = request.getParameter("subject");
         msg = request.getParameter("message");
-
+       
         final String username = "xt588178@gmail.com";//your email id
         final String password = "hoilamgi123";// your password
         Properties props = new Properties();
@@ -95,23 +99,29 @@ public class SendEmail extends HttpServlet {
                     }
                 });
         try {
+        Random rd = new Random();
+        int number = 10000 + rd.nextInt(99999);
+        
             Message message = new MimeMessage(session);
            // message.setHeader("Content-Type", "text/plain; charset=UTF-8");
             message.setFrom(new InternetAddress(email));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
             MimeBodyPart textPart = new MimeBodyPart();
             Multipart multipart = new MimeMultipart();
-            String final_Text = "Mật khẩu mới" + name + "12345    " + "Email: " + email;
+            String final_Text = "New passwword: " + number + " " + "Email: " + email;
             textPart.setText(final_Text);
             message.setSubject(subject);
             multipart.addBodyPart(textPart);
             message.setContent(multipart);
-            message.setSubject("Mật khẩu mới");
+            message.setSubject("Request new password");
             //out.println("Sending");
             Transport.send(message);
+            DAO dao = new DAO();
+            dao.updatePasswordByEmail(String.valueOf(number), email);
+            
            
-            out.println("<center><h2 style='color:green;'>Mật khẩu mới gửi thành công</h2>");
-            out.println("Vui lòng kiểm tra" + email + " để cập nhật thông tin</center>");
+            out.println("<center><h2 style='color:green;'>Send email succesful!</h2>");
+            out.println("Please check your email: " + email + "  for new passwword</center>");
             
             
         } catch (Exception e) {

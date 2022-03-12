@@ -41,7 +41,7 @@ public class Home extends HttpServlet {
         
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
-        List<Product> listLast = dao.getlastProducts();
+        List<Product> listLast = dao.getLastProducts();
         
         request.setAttribute("listCate", listC);
         

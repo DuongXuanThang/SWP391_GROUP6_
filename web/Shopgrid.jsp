@@ -176,7 +176,7 @@
                                 <div class="product__item__text">
                                     <h6><a href="detail?pid=${o.id}">${o.name}</a></h6>
                                     
-                            <h5><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> vnd</h5>
+                            <h5><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> VND</h5>
                                 </div>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
                 </c:if>
                                  <c:if test="${totalP == 0}">
                                      
-                                     <h5>Không có sản phẩm nào</h5>             
+                                     <h5 class="newstyle">Không có sản phẩm </h5>             
                    
                 </c:if>
                                 

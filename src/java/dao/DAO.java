@@ -38,7 +38,7 @@ public class DAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-    public List<Product> getAllProduct() {
+    public List<Product> getAllProduct() { //list tất cả các sản phẩm
         List<Product> list = new ArrayList<>();
         String query = "select * from product";
         try {
@@ -63,7 +63,7 @@ public class DAO {
         return list;
     }
 
-    public List<Category> getAllCategory() {
+    public List<Category> getAllCategory() { //list tất cả các loại sản phẩm
         List<Category> list = new ArrayList<>();
         String query = "select * from Category";
         try {
@@ -79,7 +79,7 @@ public class DAO {
         return list;
     }
 
-    public List<Product> getProductbyCId(int cid) {
+    public List<Product> getProductbyCId(int cid) {  //lấy list sản phẩm theo cid của loại sản phẩm
         List<Product> list = new ArrayList<>();
         String query = "select * from product\n"
                 + "where cate_ID=?";
@@ -106,7 +106,7 @@ public class DAO {
         return list;
     }
 
-    public List<Product> getlastProducts() {
+    public List<Product> getLastProducts() { // lấy ra top 3 sản phẩm mới nhất
         List<Product> list = new ArrayList<>();
         String query = "select top 3 * from product\n"
                 + "order by id desc";
@@ -133,7 +133,7 @@ public class DAO {
         return list;
     }
 
-    public Customer getCustomerbyId(int id) {
+    public Customer getCustomerbyId(int id) { 
 
         String query = "select * from Customer\n"
                 + "where id=?";
@@ -210,7 +210,8 @@ public class DAO {
         }
         return list;
     }
-    public List<Product> getProductByPrice(String min,String max) {
+
+    public List<Product> getProductByPrice(String min, String max) {
         List<Product> list = new ArrayList<>();
         String query = "select * from product\n"
                 + "where price >= ? and price <= ? ";
@@ -238,9 +239,8 @@ public class DAO {
         }
         return list;
     }
-    
 
-    public Customer login(String username, String pass) {
+    public Customer loginByUsername(String username, String pass) {
         String query = "select * from Customer\n"
                 + "where username = ?\n"
                 + "and password =?";
@@ -287,7 +287,7 @@ public class DAO {
         return null;
     }
 
-    public void signup(String fullname, String email, String phone, String username, String pass) {
+    public void signupNewUser(String fullname, String email, String phone, String username, String pass) {
         String query = "insert into Customer\n"
                 + "values(?,?,?,?,?)";
         try {
@@ -410,6 +410,22 @@ public class DAO {
         return null;
     }
 
+    public void updatePasswordByEmail(String number,String email) {
+        String query = "update Customer\n"
+                + "set [password] = ?\n"
+                + "where [email]=?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, number);
+            ps.setString(2, email);
+
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+        }
+    }
+
     public static void main(String[] args) {
         DAO dao = new DAO();
 
@@ -432,7 +448,6 @@ public class DAO {
         Random rd = new Random();
         int number = 10000 + rd.nextInt(99999);
         System.out.println(number);
-        
-        
+
     }
 }

@@ -42,7 +42,7 @@ public class Search extends HttpServlet {
         List<entity.Category> listC = dao.getAllCategory();
         request.setAttribute("listCate", listC);
         request.setAttribute("listP", list);
-        List<Product> listLast = dao.getlastProducts();
+        List<Product> listLast = dao.getLastProducts();
         
        List<Product> listS = dao.getProductByName(txtSearch);
        request.setAttribute("totalP", listS.size()); // so san pham tim kiem duoc

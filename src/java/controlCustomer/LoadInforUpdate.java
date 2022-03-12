@@ -20,8 +20,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "LoadInfor2", urlPatterns = {"/LoadInfor2"})
-public class LoadInfor2 extends HttpServlet {
+@WebServlet(name = "LoadInforUpdate", urlPatterns = {"/LoadInforUpdate"})
+public class LoadInforUpdate extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

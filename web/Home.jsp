@@ -100,7 +100,9 @@
                            
                             <li><a href="Cart.jsp"><i class="fa fa-shopping-bag"></i> <span>${size}</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                      <c:if test="${size != 0}" >
+                            <div class="header__cart__price">Tổng tiền: <span><fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></div>
+                             </c:if>
                     </div>
                 </div>
             </div>
@@ -237,7 +239,7 @@
                             <h6><a href="detail?pid=${o.id}">${o.name}</a></h6>
                              
                           
-                            <h5><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> vnd</h5>
+                            <h5><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> VND</h5>
                              
                         </div>
                     </div>

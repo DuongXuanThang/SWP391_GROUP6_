@@ -73,20 +73,28 @@
                                     
                                 </tr>
                             </thead>
+                        
                             <tbody>
+                                
                             <c:set var="o" value="${sessionScope.cart}" />
                             <c:set var="t" value="0" />
+                            <c:if test="${sessionScope.size == 0}" >
+            <div id="success" style="text-align: center" class="alert alert-danger ">
+           
+                <strong><i  aria-hidden="true"></i>  Giỏ hàng chưa có sản phẩm </strong> 
+                </c:if>
                             <c:forEach items="${o.items}" var="i">
                               <c:set var="t" value="${t+1}" />
                             
                                 <tr>
+                                    
                                     <td>${t}</td>
                                     <td class="shoping__cart__item">
                                         <img src="${i.product.image}" width="250" height="250" alt="">
                                         <h5>${i.product.name}</h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        <fmt:formatNumber pattern="##.#" value="${i.product.price}"/> vnd
+                                        <fmt:formatNumber pattern="#,##0.###" value="${i.product.price}"/> VND
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="pro-qty1">
@@ -96,7 +104,7 @@
                                         </div>
                                     </td>
                                     <td class="shoping__cart__total">
-                                       <fmt:formatNumber pattern="##.#" value="${i.quantity*i.price}"/>
+                                       <fmt:formatNumber pattern="#,##0.###" value="${i.quantity*i.price}"/> VND
                                     </td>
                                     <td class="shoping__cart__item__close">
                                         <form action="process" method="post">
@@ -116,7 +124,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shoping__cart__btns">
-                        <a href="Shopgrid" class="primary-btn cart-btn">Tiếp tục mua </a>
+                        <a href="Shopgrid" class="primary-btn cart-btn" style="background-color: #7fad39; color: black">Tiếp tục mua  <i class="fa fa-arrow-right"></i> </a>
                         
                     </div>
                 </div>
@@ -127,14 +135,14 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="shoping__checkout">
-                        <h5>Tổng giỏ hàng</h5>
+                        <h5>Giỏ Hàng Của Bạn</h5>
                         <ul>
-                            <li>Tổng thu <span> <fmt:formatNumber pattern="##.#" value="${sessionScope.totalMoney}"/> </span></li>
-                            <li>Phí ship<span>0</span></li>
-                            <li>Toàn bộ <span><fmt:formatNumber pattern="##.#" value="${sessionScope.totalMoney}"/> </span></li>
+                            <li>Tổng thu <span> <fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></li>
+                            <li>Phụ phí<span>0</span></li>
+                            <li>Toàn bộ <span><fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></li>
                         </ul>
                         
-                        <a href="" class="primary-btn">Tiếp tục thanh toán</a>
+                        <a href="Checkout.jsp" class="primary-btn">Tiếp tục thanh toán</a>
                     </div>
                 </div>
             </div>

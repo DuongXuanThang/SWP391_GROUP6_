@@ -51,7 +51,7 @@ public class Paging extends HttpServlet {
         request.setAttribute("totalP", list.size());
         request.setAttribute("listP", list);
         request.setAttribute("totalPage", totalPage);
-        List<Product> listLast = dao.getlastProducts();
+        List<Product> listLast = dao.getLastProducts();
         request.setAttribute("listLast", listLast); // san pham moi
         request.getRequestDispatcher("Shopgrid.jsp").forward(request, response);
         
