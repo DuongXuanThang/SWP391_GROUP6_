@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -98,14 +99,14 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="header__cart">
-                            <ul>
-                                <c:set var="size" value="${sessionScope.size}" />
-                                <li><a href="Cart.jsp"><i class="fa fa-shopping-bag"></i> <span>${size}</span></a></li>
-                            </ul>
-                             <c:if test="${size != 0}" >
+                        <ul>
+                           
+                            <li><a href="Cart.jsp"><i class="fa fa-shopping-bag"></i> <span>${sessionScope.size}</span></a></li>
+                        </ul>
+                      
                             <div class="header__cart__price">Tổng tiền: <span><fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></div>
-                             </c:if>
-                        </div>
+                             
+                    </div>
                     </div>
                 </div>
                 <div class="humberger__open">

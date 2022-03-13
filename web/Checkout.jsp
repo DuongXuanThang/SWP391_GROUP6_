@@ -112,7 +112,7 @@
                             <div class="checkout__input">
                                 <p>Ghi chú đơn hàng<span>*</span></p>
                                 <input type="text"
-                                    placeholder="Notes about your order, e.g. special notes for delivery.">
+                                    placeholder="Ghi chú địa điểm muốn nhận hàng">
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -126,7 +126,7 @@
                                     <li>${i.product.name}<span><fmt:formatNumber pattern="#,##0.###" value="${i.product.price}"/> VND</span></li>
                                     </c:forEach>
                                 </ul>
-                                <div class="checkout__order__subtotal">Phụ phí <span><fmt:formatNumber pattern="#,##0.###" value="${totalMoney}"/> VND</span></div>
+                                <div class="checkout__order__subtotal">Phụ phí <span><fmt:formatNumber pattern="#,##0.###" value="0"/> VND</span></div>
                                 <div class="checkout__order__total">Tổng tiền <span><fmt:formatNumber pattern="#,##0.###" value="${totalMoney}"/> VND</span></div>
                                 
                                 <button  class="site-btn" data-toggle="modal" data-target="#exampleModalCenter">Đặt Hàng</button>

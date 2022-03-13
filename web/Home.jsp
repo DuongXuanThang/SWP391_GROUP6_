@@ -98,11 +98,11 @@
                     <div class="header__cart">
                         <ul>
                            
-                            <li><a href="Cart.jsp"><i class="fa fa-shopping-bag"></i> <span>${size}</span></a></li>
+                            <li><a href="Cart.jsp"><i class="fa fa-shopping-bag"></i> <span>${sessionScope.size}</span></a></li>
                         </ul>
-                      <c:if test="${size != 0}" >
+                      
                             <div class="header__cart__price">Tổng tiền: <span><fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></div>
-                             </c:if>
+                             
                     </div>
                 </div>
             </div>
@@ -315,7 +315,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Top đánh giá</h4>
+                        <h4>Top bán chạy</h4>
                          <div class="latest-product__slider owl-carousel">
                                     <div class="latest-prdouct__slider__item">
                                         

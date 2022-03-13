@@ -56,7 +56,8 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getInt(2)));
+                        rs.getInt(2),
+                        rs.getInt(16)));
             }
         } catch (Exception e) {
         }
@@ -99,7 +100,8 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getInt(2)));
+                        rs.getInt(2),
+                        rs.getInt(16)));
             }
         } catch (Exception e) {
         }
@@ -126,7 +128,8 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getInt(2)));
+                        rs.getInt(2),
+                        rs.getInt(16)));
             }
         } catch (Exception e) {
         }
@@ -176,7 +179,8 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getInt(2));
+                        rs.getInt(2),
+                        rs.getInt(16));
             }
         } catch (Exception e) {
         }
@@ -204,7 +208,8 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getInt(2)));
+                        rs.getInt(2),
+                        rs.getInt(16)));
             }
         } catch (Exception e) {
         }
@@ -233,7 +238,8 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getInt(2)));
+                        rs.getInt(2),
+                        rs.getInt(16)));
             }
         } catch (Exception e) {
         }
@@ -402,7 +408,8 @@ public class DAO {
                         rs.getString(11),
                         rs.getString(12),
                         rs.getString(13),
-                        rs.getInt(2)));
+                        rs.getInt(2),
+                        rs.getInt(16)));
             }
             return list;
         } catch (Exception e) {
@@ -430,7 +437,7 @@ public class DAO {
         DAO dao = new DAO();
 
         List<Category> listC = dao.getAllCategory();
-        List<Product> listP = dao.getProductByPrice("160000", "20000000");
+        List<Product> listP = dao.getAllProduct();
         // List<Product> listP = dao.getProductByName("kit");// search
         dao.editCustomer("xuanthang12345566", "03623064239", "thangdx@", "1");
 

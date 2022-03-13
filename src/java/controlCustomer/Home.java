@@ -38,28 +38,27 @@ public class Home extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         DAO dao = new DAO();
-        
+
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
         List<Product> listLast = dao.getLastProducts();
-        
+
         request.setAttribute("listCate", listC);
-        
+
         request.setAttribute("listLast", listLast);
         String cateID = request.getParameter("cid");
-      
+
         request.setAttribute("tag", cateID);
         request.setAttribute("listP", list);
-        
+
         String txtSearch = request.getParameter("txt");
-        request.setAttribute("txt",txtSearch );
-        
+        request.setAttribute("txt", txtSearch);
+
 //        HttpSession session = request.getSession();
 //        String username = session.getAttribute("un").toString();
 //        request.setAttribute("un", username);
         request.getRequestDispatcher("Home.jsp").forward(request, response);
-        
-       
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
