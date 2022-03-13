@@ -98,10 +98,10 @@
                     <div class="header__cart">
                         <ul>
                            
-                            <li><a href="Cart.jsp"><i class="fa fa-shopping-bag"></i> <span>${sessionScope.size}</span></a></li>
+                            <li><a href="Cart.jsp"> <i class="fa fa-shopping-bag"></i> <c:if test="${sessionScope.size != null}" ><span>${sessionScope.size}</span></c:if></a></li>
                         </ul>
                       
-                            <div class="header__cart__price">Tổng tiền: <span><fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></div>
+                            <c:if test="${sessionScope.size != null}" >   <div class="header__cart__price">Tổng tiền: <span><fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></div></c:if>
                              
                     </div>
                 </div>
@@ -289,7 +289,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                               <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
+                                               <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> VND</span> 
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -304,7 +304,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                 <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
+                                                 <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> VND</span> 
                                                 
                                             </div>
                                         </a>
@@ -326,7 +326,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
+                                                <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> VND</span> 
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -341,7 +341,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                 <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
+                                                 <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> VND</span> 
                                                 
                                             </div>
                                         </a>
@@ -363,7 +363,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
+                                                <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> VND</span> 
                                             </div>
                                         </a>
                                         </c:forEach>
@@ -378,7 +378,7 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>${o.name}</h6>
-                                                <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/></span> 
+                                                <span><fmt:formatNumber pattern="#,##0.###" value="${o.price}"/> VND</span> 
                                                 
                                             </div>
                                         </a>

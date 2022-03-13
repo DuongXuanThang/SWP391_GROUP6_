@@ -13,7 +13,7 @@ public class Product {
     private int id;
     private String name;
     private String image;
-  
+    
     private float price;
     private String title;
     private String description;
@@ -23,11 +23,12 @@ public class Product {
     private String information;
     private int categoryID;
     private int quantity;
+    private String review;
 
     public Product() {
     }
 
-    public Product(int id, String name, String image, float price, String title, String description, String image1, String image2, String image3, String information, int categoryID,int quantity) {
+    public Product(int id, String name, String image, float price, String title, String description, String image1, String image2, String image3, String information, int categoryID,int quantity,String review) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -40,6 +41,7 @@ public class Product {
         this.information = information;
         this.categoryID = categoryID;
         this.quantity = quantity;
+        this.review = review;
     }
 
 
@@ -148,10 +150,20 @@ public class Product {
         this.quantity = quantity;
     }
 
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
+
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", title=" + title + ", description=" + description + ", image1=" + image1 + ", image2=" + image2 + ", image3=" + image3 + ", information=" + information + ", categoryID=" + categoryID + ", quantity=" + quantity + '}';
+        return "Product{" + "id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", title=" + title + ", description=" + description + ", image1=" + image1 + ", image2=" + image2 + ", image3=" + image3 + ", information=" + information + ", categoryID=" + categoryID + ", quantity=" + quantity + ", review=" + review + '}';
     }
+
+   
 
     
 

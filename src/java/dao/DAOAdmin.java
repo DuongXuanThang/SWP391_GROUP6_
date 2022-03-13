@@ -87,7 +87,8 @@ public class DAOAdmin {
                         rs.getString(12),
                         rs.getString(13),
                         rs.getInt(2),
-                        rs.getInt(16)));
+                        rs.getInt(16),
+                        rs.getString(14)));
             }
         } catch (Exception e) {
         }
@@ -154,7 +155,8 @@ public class DAOAdmin {
                         rs.getString(12),
                         rs.getString(13),
                         rs.getInt(2),
-                        rs.getInt(16));
+                        rs.getInt(16),
+                        rs.getString(14));
             }
         } catch (Exception e) {
         }
@@ -210,7 +212,7 @@ public class DAOAdmin {
 
         Admin a = dao.login("admin", "123456");
         System.out.println(a);
-        Product p = new Product(99, "test3", "test3", 0, "test3", "test3", "test3", "test3", "test3", "test3", 1,23);
+        Product p = new Product(99, "test3", "test3", 0, "test3", "test3", "test3", "test3", "test3", "test3", 1,23,"aa");
         Product q = dao.getProductbyId(21);
 
 //        dao.addProduct(p);

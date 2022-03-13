@@ -78,7 +78,7 @@
                                 
                             <c:set var="o" value="${sessionScope.cart}" />
                             <c:set var="t" value="0" />
-                            <c:if test="${sessionScope.size == 0}" >
+                            <c:if test="${sessionScope.size == null}" >
             <div id="success" style="text-align: center" class="alert alert-danger ">
            
                 <strong><i  aria-hidden="true"></i>  Giỏ hàng chưa có sản phẩm </strong> 

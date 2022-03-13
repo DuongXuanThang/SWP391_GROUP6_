@@ -110,12 +110,13 @@
                                 </div>
                                 <input  class="primary-btn" type="submit" onclick="AddCart('${detail.id}')"  data-type="success" value="Thêm vào giỏ hàng"/>
                                 <ul>
-                                    <li><b>Tình trạng</b> <span>Còn hàng</span></li>
+                                    <li><b>Tình trạng:</b> <span>Còn hàng</span></li>
                                     <li><b>Vận chuyển</b> <span>24h <samp>  (Miễn phí)  </samp></span></li>
-                                    <li><b>Cân nặng</b> <span>0.5 kg</span></li>
+                                    <li><b>Nguồn góc sản xuất:</b> <span>${detail.information}</span></li>
                                     <li><b>Số lượng:</b>
                                         <span>${detail.quantity}</span>
                                     </li>
+                                    <li><b>Hướng dẫn sử dụng:</b> <span><a href="https://www.youtube.com/watch?v=kMIOZS03774">Hướng dẫn sử dụng của bộ y tế</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -132,14 +133,10 @@
                                     <div class="tab-pane active" id="home" aria-labelledby="home-tab" role="tabpanel">
                                         <div class="product__details__tab__desc">
                                             <h6>Thông tin sản phẩm</h6>
-                                            <p>${detail.information}:
-                                                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
-                                                vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
-                                                quam vehicula elementum sed sit amet dui. Proin eget tortor risus.</p>
-                                            <p>${detail.information}
-                                                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
-                                                vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
-                                                quam vehicula elementum sed sit amet dui. Proin eget tortor risus.</p>
+                                            <p>${detail.name}:
+                                              ${detail.title}</p>
+                                            <p>${detail.name}:
+                                               ${detail.review}</p>
                                         </div>
                                     </div>
                                  

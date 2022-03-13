@@ -101,10 +101,10 @@
                         <div class="header__cart">
                         <ul>
                            
-                            <li><a href="Cart.jsp"><i class="fa fa-shopping-bag"></i> <span>${sessionScope.size}</span></a></li>
+                            <li><a href="Cart.jsp"> <i class="fa fa-shopping-bag"></i> <c:if test="${sessionScope.size != null}" ><span>${sessionScope.size}</span></c:if></a></li>
                         </ul>
                       
-                            <div class="header__cart__price">Tổng tiền: <span><fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></div>
+                            <c:if test="${sessionScope.size != null}" >   <div class="header__cart__price">Tổng tiền: <span><fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></div></c:if> 
                              
                     </div>
                     </div>
