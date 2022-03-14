@@ -83,7 +83,7 @@
 
                             <ul>
                                 <li ><a href="Home">Trang chủ</a></li>
-                                <li class="activeStatus"><a href="Shopgrid">Cửa hàng</a></li>
+                               <li><a href="Paging?index=1">Cửa hàng</a></li>
                                 <li><a href="#">Trang</a>
                                     <ul class="header__menu__dropdown">
 
@@ -93,7 +93,7 @@
                                     </ul>
                                 </li>
 
-                                <li id="3"><a href="#">Liên hệ</a></li>
+                                <li id="3"><a href="Contact.jsp">Liên hệ</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -104,7 +104,7 @@
                             <li><a href="Cart.jsp"> <i class="fa fa-shopping-bag"></i> <c:if test="${sessionScope.size != null}" ><span>${sessionScope.size}</span></c:if></a></li>
                         </ul>
                       
-                            <c:if test="${sessionScope.size != null}" >   <div class="header__cart__price">Tổng tiền: <span><fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></div></c:if> 
+                            <c:if test="${sessionScope.size != null || sessionScope.size != 0 }" >   <div class="header__cart__price">Tổng tiền: <span><fmt:formatNumber pattern="#,##0.###" value="${sessionScope.totalMoney}"/> VND</span></div></c:if> 
                              
                     </div>
                     </div>

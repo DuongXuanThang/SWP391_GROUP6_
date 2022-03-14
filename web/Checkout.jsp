@@ -55,7 +55,11 @@
         </div>
     </section>
     <!-- Breadcrumb Section End -->
- 
+    <c:if test="${sessionScope.size == null || sessionScope.size == 0}" >
+        <div id="success" style="text-align: center" class="alert alert-danger ">
+           
+            <strong><i  aria-hidden="true"></i>  Giỏ hàng chưa có sản phẩm </strong> </div>
+                </c:if>
     <!-- Checkout Section Begin -->
     <section class="checkout spad">
         <div class="container">
@@ -129,7 +133,7 @@
                                 <div class="checkout__order__subtotal">Phụ phí <span><fmt:formatNumber pattern="#,##0.###" value="${totalMoney}"/> VND</span></div>
                                 <div class="checkout__order__total">Tổng tiền <span><fmt:formatNumber pattern="#,##0.###" value="${totalMoney}"/> VND</span></div>
                                 
-                                <button type="submit" class="site-btn" >Đặt Hàng</button>
+                                <button onclick="CheckOut" type="submit" class="site-btn" >Đặt Hàng</button>
                                 
                             </div>
                         </div>
@@ -154,7 +158,19 @@
     <script src="js2/owl.carousel.min.js"></script>
     <script src="js2/main.js"></script>
 
- 
+ <script type="text/javascript">
+
+         function CheckOut()  {
+
+              var result = confirm("Do you want to continue?");
+
+              if(result)  {
+                  alert("OK Next lesson!");
+              } else {
+                  alert("Bye!");
+              }
+         }
+
 
 </body>
 

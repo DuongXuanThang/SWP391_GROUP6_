@@ -6,23 +6,31 @@
 package controlCustomer;
 
 import dao.DAO;
-import entity.Cart;
-import entity.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Properties;
+import java.util.Random;
+import javax.mail.Message;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Duong Xuan Thang
  */
-@WebServlet(name = "Checkout", urlPatterns = {"/Checkout"})
-public class Checkout extends HttpServlet {
+@WebServlet(name = "SenMailCustomer", urlPatterns = {"/SenMailCustomer"})
+public class SenMailCustomer extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +49,10 @@ public class Checkout extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Checkout</title>");            
+            out.println("<title>Servlet SenMailCustomer</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Checkout at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SenMailCustomer at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -76,32 +84,54 @@ public class Checkout extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-        Cart cart= null ;
-        Object o = session.getAttribute("cart");
-        // co roi
-        if(o!=null){
-            cart = (Cart) o;
+       String name, subject, email, msg;
+       PrintWriter out = response.getWriter();
+        response.setContentType("text/html");
+        name = request.getParameter("name");
+        email = request.getParameter("email");
+        subject = request.getParameter("subject");
+        msg = request.getParameter("message");
+       
+        final String username = "xt588178@gmail.com";//your email id
+        final String password = "hoilamgi123";// your password
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", true);
+        props.put("mail.smtp.starttls.enable", true);
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+        try {
+      
+        
+            Message message = new MimeMessage(session);
+           // message.setHeader("Content-Type", "text/plain; charset=UTF-8");
+            message.setFrom(new InternetAddress(email));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(username));
+            MimeBodyPart textPart = new MimeBodyPart();
+            Multipart multipart = new MimeMultipart();
+            String final_Text = "Email: " + email;
+            textPart.setText(final_Text);
+            message.setSubject(subject);
+            multipart.addBodyPart(textPart);
+            message.setContent(multipart);
+            message.setSubject("Feedback message");
+            //out.println("Sending");
+            Transport.send(message);
+           
             
-        }else{
-            cart = new Cart();
-        }
-        Customer acc = null;
-        Object c = session.getAttribute("acc");
-        if(c!=null){
-            acc = (Customer) c;
-            DAO dao = new DAO();
-            dao.addOrder(acc, cart);
+           
+            out.println("<center><h2 style='color:green;'>Send Mesage successful!</h2>");
+            out.println("Thank you!!! We will contact you soon</center>");
             
-            // thanh toan thanh cong
-            session.removeAttribute("cart");
-            session.setAttribute("size", 0);
-            session.removeAttribute("totalMoney");
             
-            response.sendRedirect("Shopgrid");
-            
-        }else{
-            response.sendRedirect("Login.jsp");// yeu cau dang nhap moi thanh toan
+        } catch (Exception e) {
+            out.println(e);
         }
     }
 

@@ -63,6 +63,11 @@
            
                 <strong><i class="fa fa-check" aria-hidden="true"></i>  ${mesage}</strong> 
                 </c:if>
+                <c:if test="${mesage1 != null}" >
+            <div id="success" style="text-align: center" class="alert alert-danger ">
+           
+                <strong><i class="fa fa-close" aria-hidden="true"></i>  ${mesage1}</strong> 
+                </c:if>
 </div>
             <!-- Product Details Section Begin -->
             <form name="f" method="post">
@@ -112,7 +117,7 @@
                                 <ul>
                                     <li><b>Tình trạng:</b> <span>Còn hàng</span></li>
                                     <li><b>Vận chuyển</b> <span>24h <samp>  (Miễn phí)  </samp></span></li>
-                                    <li><b>Nguồn góc sản xuất:</b> <span>${detail.information}</span></li>
+                                    <li><b>Nguồn gốc sản xuất:</b> <span>${detail.information}</span></li>
                                     <li><b>Số lượng:</b>
                                         <span>${detail.quantity}</span>
                                     </li>
@@ -205,16 +210,17 @@
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="${listP.get(4).getImage()}">
+                          
+                                <div class="product__item__pic set-bg" data-setbg="${listP.get(4).getImage()}">
                                 <ul class="product__item__pic__hover">
-                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                  
+                                    <li><a href="detail?pid=${listP.get(4).getId()}"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
+                            
                             <div class="product__item__text">
-                                <h6><a href="#">${listP.get(4).getName()}</a></h6>
-                                <h5><fmt:formatNumber pattern="#,##0.###" value="${listP.get(4).getPrice()}"/>VND</h5>
+                                <h6><a href="detail?pid=${listP.get(4).getId()}">${listP.get(4).getName()}</a></h6>
+                                <h5><fmt:formatNumber pattern="#,##0.###" value="${listP.get(4).getPrice()}"/> VND</h5>
                             </div>
                         </div>
                     </div>

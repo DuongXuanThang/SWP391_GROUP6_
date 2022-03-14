@@ -90,6 +90,15 @@ public class AddCart extends HttpServlet {
         
         DAO dao = new DAO();
         Product p = dao.getProductbyId(id);
+        if(num > p.getQuantity()){
+             request.setAttribute("mesage1", "Thêm sản phẩm không thành công! Số lượng đặt hàng quá giới hạn");
+              session.setAttribute("cart", cart);
+        //session.setAttribute("size", list.size());
+        request.setAttribute("detail", p);
+        session.setAttribute("totalMoney", cart.getTotalMoney());
+        request.getRequestDispatcher("Detail.jsp").forward(request, response);
+             request.getRequestDispatcher("Detail.jsp").forward(request, response);
+        }else{
         try {
            // double price = p.getPrice()*1.2;
             Item t = new Item(p,num,p.getPrice());
@@ -106,7 +115,7 @@ public class AddCart extends HttpServlet {
         request.setAttribute("detail", p);
         session.setAttribute("totalMoney", cart.getTotalMoney());
         request.getRequestDispatcher("Detail.jsp").forward(request, response);
-        
+        }
     }
 
     /**
