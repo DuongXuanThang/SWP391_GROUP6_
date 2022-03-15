@@ -6,7 +6,7 @@
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/SendEmail.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Admin.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Category.java</file>
-            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/sendEmail.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/dao/DAOAdmin.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Item.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/AddCart.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/OrderDetail.java</file>
@@ -15,19 +15,27 @@
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Login.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Home.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/project.properties</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/LoadInforUpdate.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/ManageProduct.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/sass/_footer.scss</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Process.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/admin/LoginAdmin.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Shopgrid.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/ant-deploy.xml</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Logout.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/SignUp.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/LoadInforUser.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/EditProfileUser.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Category.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Login.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Footer.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/context/DBContext.java</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/SenMailCustomer.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Paging.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Cart.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/EditUser.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/nbproject/private/private.properties</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/SendEmail.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/dao/DAO.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Cart.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlCustomer/Search.java</file>
@@ -38,7 +46,9 @@
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Home.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/admin/DashBoard.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Shopgrid.jsp</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Product.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/css/style.css</file>
+            <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/web/Contact.jsp</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/controlAdmin/ManageProduct.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Order.java</file>
             <file>file:/D:/SWP391/SWP391_GROUP6_SafetyShop/src/java/entity/Customer.java</file>
