@@ -6,11 +6,9 @@
 package controlAdmin;
 
 import dao.DAOAdmin;
-import entity.Category;
 import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ADMIN
  */
-@WebServlet(name = "ManageProduct", urlPatterns = {"/ManageProduct"})
-public class ManageProduct extends HttpServlet {
+@WebServlet(name = "EditProduct", urlPatterns = {"/EditProduct"})
+public class EditProduct extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,16 +34,7 @@ public class ManageProduct extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            DAOAdmin dao = new DAOAdmin();
-            List<Product> list = dao.getAllProduct();
-            request.setAttribute("listP", list);
-            List<Category> listC = dao.getAllCategory();
-            request.setAttribute("listCate", listC);
-            request.getRequestDispatcher("ManageProduct.jsp").forward(request, response);
-
-        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -74,7 +63,27 @@ public class ManageProduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            String pid = request.getParameter("id");
+            String name = request.getParameter("name");
+            String image = request.getParameter("image");
+            String price = request.getParameter("price");
+            String title = request.getParameter("title");
+            String description = request.getParameter("description");
+            String image1 = request.getParameter("image1");
+            String image2 = request.getParameter("image2");
+            String image3 = request.getParameter("image3");
+            String information = request.getParameter("information");
+            String quantity = request.getParameter("quantity");
+            String review = request.getParameter("review");
+            String category = request.getParameter("category");
+            DAOAdmin dao = new DAOAdmin();
+            Product p = new Product(96, name, image, Float.parseFloat(price), title, description, image1, image2, image3, information, 2, 1, review);
+            dao.editProduct(p, pid);
+            System.out.println("ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+            response.sendRedirect("ManageProduct");
+        }
     }
 
     /**

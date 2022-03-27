@@ -7,7 +7,6 @@ package controlAdmin;
 
 import dao.DAOAdmin;
 import entity.Category;
-import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -21,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ADMIN
  */
-@WebServlet(name = "ManageProduct", urlPatterns = {"/ManageProduct"})
-public class ManageProduct extends HttpServlet {
+@WebServlet(name = "ListCategory", urlPatterns = {"/ListCategory"})
+public class ListCategory extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,13 +37,10 @@ public class ManageProduct extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            DAOAdmin dao = new DAOAdmin();
-            List<Product> list = dao.getAllProduct();
-            request.setAttribute("listP", list);
+                        DAOAdmin dao = new DAOAdmin();
             List<Category> listC = dao.getAllCategory();
             request.setAttribute("listCate", listC);
-            request.getRequestDispatcher("ManageProduct.jsp").forward(request, response);
-
+                        request.getRequestDispatcher("CategoryList.jsp").forward(request, response);
         }
     }
 

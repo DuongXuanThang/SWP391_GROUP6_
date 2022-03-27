@@ -6,11 +6,8 @@
 package controlAdmin;
 
 import dao.DAOAdmin;
-import entity.Category;
-import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ADMIN
  */
-@WebServlet(name = "ManageProduct", urlPatterns = {"/ManageProduct"})
-public class ManageProduct extends HttpServlet {
+@WebServlet(name = "DeleteProduct", urlPatterns = {"/DeleteProduct"})
+public class DeleteProduct extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,12 +36,9 @@ public class ManageProduct extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             DAOAdmin dao = new DAOAdmin();
-            List<Product> list = dao.getAllProduct();
-            request.setAttribute("listP", list);
-            List<Category> listC = dao.getAllCategory();
-            request.setAttribute("listCate", listC);
-            request.getRequestDispatcher("ManageProduct.jsp").forward(request, response);
-
+            String pid = request.getParameter("pid");
+            dao.deleteProduct(pid);
+            response.sendRedirect("ManageProduct");
         }
     }
 

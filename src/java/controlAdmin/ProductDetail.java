@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ADMIN
  */
-@WebServlet(name = "ManageProduct", urlPatterns = {"/ManageProduct"})
-public class ManageProduct extends HttpServlet {
+@WebServlet(name = "ProductDetail", urlPatterns = {"/ProductDetail"})
+public class ProductDetail extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,13 +38,13 @@ public class ManageProduct extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            String id = request.getParameter("proid");
             DAOAdmin dao = new DAOAdmin();
-            List<Product> list = dao.getAllProduct();
-            request.setAttribute("listP", list);
-            List<Category> listC = dao.getAllCategory();
+            Product p = dao.getProductbyId(id);
+            request.setAttribute("detail", p);
+                        List<Category> listC = dao.getAllCategory();
             request.setAttribute("listCate", listC);
-            request.getRequestDispatcher("ManageProduct.jsp").forward(request, response);
-
+             request.getRequestDispatcher("ProductDetail.jsp").forward(request, response);
         }
     }
 

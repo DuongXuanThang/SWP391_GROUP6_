@@ -460,9 +460,9 @@ public class DAO {
             // count ++;
         }
         // dao.editCustomer("xuạnthang1234", "thanggdx@fpt","0362306429", "1");
-        Random rd = new Random();
-        int number = 10000 + rd.nextInt(99999);
-        System.out.println(number);
+//        Random rd = new Random();
+//        int number = 10000 + rd.nextInt(99999);
+//        System.out.println(number);
 
     }
 }

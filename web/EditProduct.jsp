@@ -314,6 +314,7 @@
                             </div>
                         </div>
                         
+                                                
                         <!-- DataTable  -->
                         <div class="card shadow mb-4">
 
@@ -350,8 +351,7 @@
                                                     <td>${o.categoryID}</td>
                                                     <td>${o.price}</td>
                                                     <td>${o.quantity}</td>
-                                                    
-                                                    <td><a href="ProductDetail?proid=${o.id}" class="btn btn-warning">Edit</a></td>
+                                                    <td><a href="#editProductModal"  class="btn btn-warning" data-toggle="modal"> <span>Edit</span></a></td>
                                                     <td><a href="DeleteProduct?pid=${o.id}" class="btn btn-danger">Delete</a></td>
                                                 </tr>
                                             </c:forEach>

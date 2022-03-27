@@ -98,7 +98,7 @@ public class DAOAdmin {
     public void addProduct(Product p) {
         LocalDate curDate = java.time.LocalDate.now(); // lay ngay hien tai
         String date = curDate.toString();
-        String sql = "insert into [Product] values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into [Product] values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(sql);
@@ -111,37 +111,38 @@ public class DAOAdmin {
             ps.setString(7, p.getImage());
             ps.setString(9, p.getImage1());
             ps.setString(8, date);
-            ps.setString(13, "");
+            ps.setString(13, p.getReview());
             ps.setFloat(14, 0);
             ps.setString(10, p.getImage2());
             ps.setString(11, p.getImage3());
             ps.setString(12, p.getInformation());
+            ps.setInt(15, p.getQuantity());
             ps.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(DAOAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void deleteProduct(int id) {
+    public void deleteProduct(String id) {
         String sql = "delete from [Product] where id = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setString(1, id);
             ps.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(DAOAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public Product getProductbyId(int id) {
+    public Product getProductbyId(String id) {
 
         String query = "select * from product\n"
                 + "where id=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
-            ps.setInt(1, id);
+            ps.setString(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Product(rs.getInt(1),
@@ -163,7 +164,7 @@ public class DAOAdmin {
         return null;
     }
 
-    public void editProduct(Product p, int id) {
+    public void editProduct(Product p, String id) {
         LocalDate curDate = java.time.LocalDate.now(); // lay ngay hien tai
         String date = curDate.toString();
         String sql = "UPDATE [Product]\n"
@@ -181,6 +182,7 @@ public class DAOAdmin {
                 + "      ,[information] = ?\n"
                 + "      ,[review] = ?\n"
                 + "      ,[starview] = ?\n"
+                + "      ,[quantity] = ?\n"
                 + " WHERE id=?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -194,12 +196,13 @@ public class DAOAdmin {
             ps.setString(7, p.getImage());
             ps.setString(9, p.getImage1());
             ps.setString(8, date);
-            ps.setString(13, "");
+            ps.setString(13, p.getReview());
             ps.setFloat(14, 0);
             ps.setString(10, p.getImage2());
             ps.setString(11, p.getImage3());
             ps.setString(12, p.getInformation());
-            ps.setInt(15, id);
+            ps.setInt(15, p.getQuantity());
+            ps.setString(16,id);
             ps.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(DAOAdmin.class.getName()).log(Level.SEVERE, null, ex);
@@ -209,15 +212,11 @@ public class DAOAdmin {
 
     public static void main(String[] args) {
         DAOAdmin dao = new DAOAdmin();
-
-        Admin a = dao.login("admin", "123456");
-        System.out.println(a);
-        Product p = new Product(99, "test3", "test3", 0, "test3", "test3", "test3", "test3", "test3", "test3", 1,23,"aa");
-        Product q = dao.getProductbyId(21);
-
-//        dao.addProduct(p);
-        dao.editProduct(p, q.getId());
-//        System.out.println(p);
-//        dao.deleteProduct(20);
+        Product p = new Product(0, "asd", "asd", 0, "asd", "asd", "asd", "asd", "asd", "asd", 1, 10, "asd");
+        dao.editProduct(p, "14");
+        List<Product> listP = dao.getAllProduct();
+        for (Product product : listP) {
+            System.out.println(product);
+        }
     }
 }

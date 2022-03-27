@@ -34,7 +34,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Dashboard.jap">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="DashBoard">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -48,7 +48,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="DashBoard.jsp">
+                <a class="nav-link" href="DashBoard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Trang chủ</span></a>
             </li>
@@ -70,8 +70,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản lí sản phẩm:</h6>
-                        <a class="collapse-item" href="CategoryList.jsp">Loại sản phẩm</a>
-                        <a class="collapse-item" href="ManageProduct.jsp">Sản phẩm</a>
+                        <a class="collapse-item" href="ListCategory">Loại sản phẩm</a>
+                        <a class="collapse-item" href="ManageProduct">Sản phẩm</a>
                     </div>
                 </div>
             </li>
@@ -110,7 +110,7 @@
                    
                     <span>Báo Cáo</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+<!--                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
                         <a class="collapse-item" href="login.html">Login</a>
@@ -121,22 +121,22 @@
                         <a class="collapse-item" href="404.html">404 Page</a>
                         <a class="collapse-item" href="blank.html">Blank Page</a>
                     </div>
-                </div>
+                </div>-->
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+<!--            <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Biểu Đồ</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
+             Nav Item - Tables 
             <li class="nav-item">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Bảng</span></a>
-            </li>
+            </li>-->
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -166,7 +166,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
+<!--                    <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
@@ -177,7 +177,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form>-->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -218,7 +218,7 @@
                         <li class="nav-item dropdown no-arrow">
                                     <c:if test="${sessionScope.acc != null}">
                                     <a href="LoadInforUser?id=${sessionScope.acc.id}"><i class="fa fa-user"></i> ${sessionScope.acc.username} </a>
-                                        <a href="Logout"> Đăng xuất</a>
+                                    <p>   <a href="Logout"> Đăng xuất</a></p>
                                     </c:if>
                                     <c:if test="${sessionScope.acc == null}">
                                         <a href="AdminLogin.jsp"><i class="fa fa-user"></i>Đăng Nhập</a>        
