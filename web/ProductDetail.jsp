@@ -31,7 +31,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Edit <b>Product</b></h2>
+                            <h2>Chỉnh sửa chi tiết sản phẩm</h2>
                         </div>
                         <div class="col-sm-6">
                         </div>
@@ -43,7 +43,7 @@
                     <div class="modal-content">
                         <form action="EditProduct" method="post">
                             <div class="modal-header">						
-                                <h4 class="modal-title">Add Product</h4>
+                               
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body">

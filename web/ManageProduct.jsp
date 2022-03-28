@@ -250,7 +250,7 @@
                                 <div class="modal-content">
                                     <form action="AddProduct" method="post">
                                         <div class="modal-header">						
-                                            <h4 class="modal-title">Add Product</h4>
+                                            <h4 class="modal-title">Thêm sản phẩm</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         </div>
                                         <div class="modal-body">					
