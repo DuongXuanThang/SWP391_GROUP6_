@@ -54,11 +54,11 @@
                             </thead>
 
                             <tbody>
-                                <c:forEach items="${listP}" var="o">
+                                <c:forEach items="${listOrder}" var="o">
                                     <tr>
                                         <td>${o.oid}</td>
                                         <td>${o.pid}</td>
-                                        <td>a</td>
+                                        <td>${o.pname}</td>
                                         <td>${o.quantity}</td>
                                         <td>${o.price} VND</td>
                                     </tr>

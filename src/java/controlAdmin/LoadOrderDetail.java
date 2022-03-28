@@ -6,7 +6,9 @@
 package controlAdmin;
 
 import dao.DAOAdmin;
+import entity.DetailOrder;
 import entity.OrderDetail;
+import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -41,8 +43,8 @@ public class LoadOrderDetail extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             String id = request.getParameter("proid");
             DAOAdmin dao = new DAOAdmin();
-            List<OrderDetail> listo = dao.getAllOrderDetailByOrderId(id);
-            request.setAttribute("listP", listo);
+            List<DetailOrder> listo = dao.getAllDetailOrderByOrderId(id);
+            request.setAttribute("listOrder", listo);
             request.getRequestDispatcher("LoadOrderDetail.jsp").forward(request, response);
         } catch (Exception ex) {
             Logger.getLogger(LoadOrderDetail.class.getName()).log(Level.SEVERE, null, ex);

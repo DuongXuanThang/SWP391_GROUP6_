@@ -9,6 +9,7 @@ import context.DBContext;
 import entity.Admin;
 import entity.Customer;
 import entity.Category;
+import entity.DetailOrder;
 import entity.Order;
 import entity.OrderDetail;
 import entity.Product;
@@ -291,7 +292,7 @@ public class DAOAdmin {
             ps = conn.prepareStatement(sql);
             ps.setString(1, status);
             ps.setString(2, date);
-            ps.setString(3,id);
+            ps.setString(3, id);
             ps.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(DAOAdmin.class.getName()).log(Level.SEVERE, null, ex);
@@ -299,12 +300,44 @@ public class DAOAdmin {
 
     }
 
-    public static void main(String[] args) {
+    public List<DetailOrder> getAllDetailOrderByOrderId(String id) throws Exception {
+        List<DetailOrder> list = new ArrayList<>();
+        String query = "SELECT [order_id]\n"
+                + "      ,[product_id]\n"
+                + "      ,[quantity_order]\n"
+                + "      ,[Product].[price]\n"
+                + "	  ,[name]\n"
+                + "  FROM [OrderDetail]\n"
+                + "\n"
+                + "  INNER JOIN [Product]\n"
+                + "ON [OrderDetail].product_id= [Product].id\n"
+                + "where order_id = ?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new DetailOrder(rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getInt(3),
+                        rs.getString(5),
+                        rs.getDouble(4)
+                ));
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DAOAdmin.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return list;
+    }
+
+    public static void main(String[] args) throws Exception {
         DAOAdmin dao = new DAOAdmin();
-        dao.updateOrder("Complete", "15");
-        List<Order> p = dao.getAllOrderByStatus("COMPLETE");
-        for (Order o : p) {
+
+        List<DetailOrder> p = dao.getAllDetailOrderByOrderId("5");
+        for (DetailOrder o : p) {
             System.out.println(o);
         }
+
     }
 }
