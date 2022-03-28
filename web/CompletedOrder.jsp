@@ -87,7 +87,7 @@
                          data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Quản lí đơn hàng:</h6>
-                            <a class="collapse-item" href="ManageShippingOrder">Đang vận chuyển</a>
+                             <a class="collapse-item" href="ManageShippingOrder">Đang vận chuyển</a>
                             <a class="collapse-item" href="CompletedOrder">Đã hoàn thành</a>
                             <a class="collapse-item" href="CanceledOrder">Đã hủy</a>
                         </div>
@@ -245,26 +245,36 @@
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
-                                            <tr>
+                                              <tr>
                                                 <th>ID</th>
-                                                <th>Tên</th>
+                                                <th>Ngày tạo</th>
+                                                <th>Ngày Hoàn Thành</th>
+                                                <th>ID Khách Hàng</th>
+                                                <th>Tổng Tiền</th>
+                                                <th>Xem Chi Tiết</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Tên</th>
+                                                <th>Ngày tạo</th>
+                                                <th>Ngày Hoàn Thành</th>
+                                                <th>ID Khách Hàng</th>
+                                                <th>Tổng Tiền</th>
+                                                <th>Xem Chi Tiết</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
                                             <c:forEach items="${listCate}" var="o">
                                                 <tr>
-                                                    <td>${o.cid}</td>
-                                                    <td>${o.cname}</td>
-
+                                                    <td>${o.id}</td>
+                                                    <td>${o.date}</td>
+                                                    <td>${o.endDate}</td>
+                                                    <td>${o.cusid}</td>
+                                                    <td>${o.totalmoney}</td>
+                                                    <td><a href="LoadOrderDetail?proid=${o.id}" class="btn btn-warning">Xem</a></td>
                                                 </tr>
                                             </c:forEach>
-<!--                                            
                                         </tbody>
                                     </table>
                                 </div>

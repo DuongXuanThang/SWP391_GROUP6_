@@ -9,10 +9,13 @@ import context.DBContext;
 import entity.Admin;
 import entity.Customer;
 import entity.Category;
+import entity.Order;
+import entity.OrderDetail;
 import entity.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -202,7 +205,93 @@ public class DAOAdmin {
             ps.setString(11, p.getImage3());
             ps.setString(12, p.getInformation());
             ps.setInt(15, p.getQuantity());
-            ps.setString(16,id);
+            ps.setString(16, id);
+            ps.executeUpdate();
+        } catch (Exception ex) {
+            Logger.getLogger(DAOAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public List<Order> getAllOrder() throws Exception {
+        List<Order> list = new ArrayList<>();
+        String query = "select * from [Order]";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Order(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DAOAdmin.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return list;
+    }
+
+    public List<Order> getAllOrderByStatus(String status) {
+        List<Order> list = new ArrayList<>();
+        String query = "select * from [Order]"
+                + "where status = ?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, status);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Order(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+
+        }
+        return list;
+    }
+
+    public List<OrderDetail> getAllOrderDetailByOrderId(String id) {
+        List<OrderDetail> list = new ArrayList<>();
+        String query = "select * from [OrderDetail]\n"
+                + "where order_id=?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new OrderDetail(rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getInt(3),
+                        rs.getDouble(4)
+                ));
+            }
+        } catch (Exception e) {
+
+        }
+        return list;
+    }
+
+    public void updateOrder(String status, String id) {
+        LocalDate curDate = java.time.LocalDate.now(); // lay ngay hien tai
+        String date = curDate.toString();
+        String sql = "UPDATE [Order]\n"
+                + "   SET [status] = ?\n"
+                + "      ,[end_date] =?\n"
+                + " WHERE id=?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, status);
+            ps.setString(2, date);
+            ps.setString(3,id);
             ps.executeUpdate();
         } catch (Exception ex) {
             Logger.getLogger(DAOAdmin.class.getName()).log(Level.SEVERE, null, ex);
@@ -212,11 +301,10 @@ public class DAOAdmin {
 
     public static void main(String[] args) {
         DAOAdmin dao = new DAOAdmin();
-        Product p = new Product(0, "asd", "asd", 0, "asd", "asd", "asd", "asd", "asd", "asd", 1, 10, "asd");
-        dao.editProduct(p, "14");
-        List<Product> listP = dao.getAllProduct();
-        for (Product product : listP) {
-            System.out.println(product);
+        dao.updateOrder("Complete", "15");
+        List<Order> p = dao.getAllOrderByStatus("COMPLETE");
+        for (Order o : p) {
+            System.out.println(o);
         }
     }
 }

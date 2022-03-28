@@ -15,6 +15,13 @@ public class OrderDetail {
     private double price;
     public  OrderDetail(){}
 
+    public OrderDetail(int oid, int pid, int quantity, double price) {
+        this.oid = oid;
+        this.pid = pid;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
     public int getOid() {
         return oid;
     }

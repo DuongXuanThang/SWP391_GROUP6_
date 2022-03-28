@@ -15,8 +15,37 @@ public class Order {
     private String date;
     private int cusid;
     private double totalmoney;
+    private String status;
+    private String endDate;
     public Order(){
         
+    }
+
+    public Order(int id, String date, int cusid, double totalmoney, String status, String endDate) {
+        this.id = id;
+        this.date = date;
+        this.cusid = cusid;
+        this.totalmoney = totalmoney;
+        this.status = status;
+        this.endDate = endDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getId() {
@@ -51,11 +80,18 @@ public class Order {
         this.totalmoney = totalmoney;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Order{" + "id=" + id + ", date=" + date + ", cusid=" + cusid + ", totalmoney=" + totalmoney + '}';
+//    }
+//    
+
     @Override
     public String toString() {
-        return "Order{" + "id=" + id + ", date=" + date + ", cusid=" + cusid + ", totalmoney=" + totalmoney + '}';
+        return "Order{" + "id=" + id + ", date=" + date + ", cusid=" + cusid + ", totalmoney=" + totalmoney + ", status=" + status + ", endDate=" + endDate + '}';
     }
-    
+
+
    
     
 }

@@ -109,33 +109,33 @@
 
                         <span>Báo Cáo</span>
                     </a>
-<!--                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Login Screens:</h6>
-                            <a class="collapse-item" href="login.html">Login</a>
-                            <a class="collapse-item" href="register.html">Register</a>
-                            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                            <div class="collapse-divider"></div>
-                            <h6 class="collapse-header">Other Pages:</h6>
-                            <a class="collapse-item" href="404.html">404 Page</a>
-                            <a class="collapse-item" href="blank.html">Blank Page</a>
-                        </div>
-                    </div>-->
+                    <!--                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                                            <div class="bg-white py-2 collapse-inner rounded">
+                                                <h6 class="collapse-header">Login Screens:</h6>
+                                                <a class="collapse-item" href="login.html">Login</a>
+                                                <a class="collapse-item" href="register.html">Register</a>
+                                                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                                                <div class="collapse-divider"></div>
+                                                <h6 class="collapse-header">Other Pages:</h6>
+                                                <a class="collapse-item" href="404.html">404 Page</a>
+                                                <a class="collapse-item" href="blank.html">Blank Page</a>
+                                            </div>
+                                        </div>-->
                 </li>
 
                 <!-- Nav Item - Charts -->
-<!--                <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Biểu Đồ</span></a>
-                </li>
-
-                 Nav Item - Tables 
-                <li class="nav-item">
-                    <a class="nav-link" href="tables.html">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Bảng</span></a>
-                </li>-->
+                <!--                <li class="nav-item">
+                                    <a class="nav-link" href="charts.html">
+                                        <i class="fas fa-fw fa-chart-area"></i>
+                                        <span>Biểu Đồ</span></a>
+                                </li>
+                
+                                 Nav Item - Tables 
+                                <li class="nav-item">
+                                    <a class="nav-link" href="tables.html">
+                                        <i class="fas fa-fw fa-table"></i>
+                                        <span>Bảng</span></a>
+                                </li>-->
 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
@@ -165,18 +165,18 @@
                         </button>
 
                         <!-- Topbar Search -->
-<!--                        <form
-                            class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group">
-                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                       aria-label="Search" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>-->
+                        <!--                        <form
+                                                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                                               aria-label="Search" aria-describedby="basic-addon2">
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-primary" type="button">
+                                                                <i class="fas fa-search fa-sm"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>-->
 
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -233,9 +233,9 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
-                        
+
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">Loại Sản Phẩm</h1>
+                        <h1 class="h3 mb-2 text-gray-800">Quản lý ship đơn</h1>
 
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
@@ -247,24 +247,35 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Tên</th>
+                                                <th>Ngày tạo</th>
+                                                <th>ID Khách Hàng</th>
+                                                <th>Tổng Tiền</th>
+                                                <th>Hủy Đơn</th>
+                                                <th>Kết Thúc Đơn</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Tên</th>
+                                                <th>Ngày tạo</th>
+                                                <th>ID Khách Hàng</th>
+                                                <th>Tổng Tiền</th>
+                                                <th>Hủy Đơn</th>
+                                                <th>Kết Thúc Đơn</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
                                             <c:forEach items="${listCate}" var="o">
                                                 <tr>
-                                                    <td>${o.cid}</td>
-                                                    <td>${o.cname}</td>
-
+                                                    <td>${o.id}</td>
+                                                    <td>${o.date}</td>
+                                                    <td>${o.cusid}</td>
+                                                    <td>${o.totalmoney}</td>
+                                                    <td><a href="CancelShippingOrder?pid=${o.id}" class="btn btn-danger">Hủy</a></td>
+                                                    <td><a href="CompleteShippingOrder?pid=${o.id}" class="btn btn-success">Hoàn Thành</a></td>
                                                 </tr>
                                             </c:forEach>
-<!--                                            
+
                                         </tbody>
                                     </table>
                                 </div>

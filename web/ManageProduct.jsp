@@ -87,11 +87,10 @@
                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                          data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Quản lí vận chuyển:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
+                            <h6 class="collapse-header">Quản lí đơn hàng:</h6>
+                            <a class="collapse-item" href="ManageShippingOrder">Đang vận chuyển</a>
+                            <a class="collapse-item" href="CompletedOrder">Đã hoàn thành</a>
+                            <a class="collapse-item" href="CanceledOrder">Đã hủy</a>
                         </div>
                     </div>
                 </li>
@@ -243,7 +242,7 @@
                                                                                                                href="https://datatables.net">official DataTables documentation</a>.</p>-->
                        
                         <!-- Add Product -->
-                        <a href="#addProductModal"  class="btn btn-success" data-toggle="modal"> <span>+Add New Product</span></a>
+                        <a href="#addProductModal"  class="btn btn-success" data-toggle="modal"> <span>+Thêm sản phẩm</span></a>
                        
                         <!-- Add Product Modal -->
                         <div id="addProductModal" class="modal fade">
@@ -323,23 +322,23 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Name</th>
-                                                <th>CategoryID</th>
-                                                <th>Price</th>
-                                                <th>Quantity</th>
-                                                <th>View</th>
-                                                <th>Delete</th>
+                                                <th>Tên</th>
+                                                <th>ID Loại Sản Phẩm</th>
+                                                <th>Giá Tiền</th>
+                                                <th>Số Lượng</th>
+                                                <th>Chi tiết</th>
+                                                <th>Xóa</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Name</th>
-                                                <th>CategoryID</th>
-                                                <th>Price</th>
-                                                <th>Quantity</th>
-                                                <th>View</th>
-                                                <th>Delete</th>
+                                                <th>Tên</th>
+                                                <th>ID Loại Sản Phẩm</th>
+                                                <th>Giá Tiền</th>
+                                                <th>Số Lượng</th>
+                                                <th>Chi tiết</th>
+                                                <th>Xóa</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
