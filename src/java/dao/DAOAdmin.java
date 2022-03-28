@@ -13,6 +13,7 @@ import entity.DetailOrder;
 import entity.Order;
 import entity.OrderDetail;
 import entity.Product;
+import entity.Report;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -299,6 +300,46 @@ public class DAOAdmin {
         }
 
     }
+        public List<Customer> selectTopUserByeProduct() {
+        List<Customer> list = new ArrayList<>();
+        String query = "SELECT TOP 5 Customer.id,Customer.[name],Customer.email,Customer.phone,Customer.username,Customer.[password] FROM [Order] JOIN Customer ON [Order].cus_id = Customer.id GROUP BY Customer.id , [name],email,phone,username,[password] ORDER BY COUNT(*) DESC";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Customer(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+        public List<Report> viewDetailTopUser(int id) {
+        List<Report> list = new ArrayList<>();
+        String query = "SELECT  Product.id , Product.[name],[Order].[date],[OrderDetail].quantity_order FROM (Customer JOIN [Order] ON Customer.id = [Order].cus_id) JOIN ( Product JOIN OrderDetail ON Product.id = OrderDetail.product_id ) ON [Order].id =OrderDetail.order_id WHERE Customer.[id] = ?" ;
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+             ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Report(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4))
+                     );
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
 
     public List<DetailOrder> getAllDetailOrderByOrderId(String id) throws Exception {
         List<DetailOrder> list = new ArrayList<>();
@@ -338,6 +379,5 @@ public class DAOAdmin {
         for (DetailOrder o : p) {
             System.out.println(o);
         }
-
     }
 }
